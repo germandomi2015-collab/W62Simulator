@@ -1012,6 +1012,18 @@
                     <button id="gBtnFemale" class="gender-btn" onclick="selectBirthGender('female')">♀️ Perempuan</button>
                 </div>
             </div>
+            <div>
+                <label style="font-size:11px; font-weight:900; color:#4a3520; display:block; margin-bottom:5px;">Status Agama:</label>
+                <select id="selectBirthReligion" class="input-text" style="padding:8px 10px;">
+                    <option value="random">🎲 Acak (100% RNG)</option>
+                    <option value="islam">☪️ Islam</option>
+                    <option value="kristen">✝️ Kristen Protestan</option>
+                    <option value="katolik">⛪ Katolik</option>
+                    <option value="hindu">🕉️ Hindu</option>
+                    <option value="buddha">☸️ Buddha</option>
+                    <option value="konghucu">🏮 Konghucu</option>
+                </select>
+            </div>
             <div style="background:#f8f1df; border:2px solid #decb9f; border-radius:12px; padding:10px; font-size:11px; color:#5c4028; font-weight:700;">
                 🔒 <b style="color:#b45309;">Parameter & Takdir Terkunci 100% RNG:</b><br>
                 • 8 Kota Domisili & Sekolah (Jaksel SCBD, Depok, Bekasi, Surabaya, Bandung, Medan, Jogja, Bali)<br>
@@ -1074,9 +1086,16 @@
                 <div style="display:flex; justify-content:space-between;"><span>Total Kekayaan & Aset:</span><b id="endWealth" style="color:#15803d;">-</b></div>
             </div>
 
+            <!-- Rincian Pencairan Waris Sesuai Agama -->
+            <div id="inheritanceBreakdownBox" style="background:#fffbeb; border:2px solid #f59e0b; border-radius:14px; padding:10px; font-size:11px; display:flex; flex-direction:column; gap:4px;">
+                <div style="font-weight:900; color:#92400e;">⚖️ Rincian Pencairan Waris Sesuai Agama</div>
+                <div id="inheritanceLawLabel" style="font-size:10px; color:#78350f; font-weight:700;">-</div>
+                <div id="inheritanceBreakdownList" style="display:flex; flex-direction:column; gap:3px; margin-top:3px;"></div>
+            </div>
+
             <!-- Seksi Warisan Ahli Waris -->
             <div id="heirSection" class="hidden" style="display:flex; flex-direction:column; gap:6px; margin-top:4px;">
-                <div style="font-size:11.5px; font-weight:900; color:#b45309;">👑 Wariskan 100% Harta & Lanjut Sebagai Ahli Waris:</div>
+                <div style="font-size:11.5px; font-weight:900; color:#b45309;">👑 Cairkan Waris & Lanjut Sebagai Ahli Waris:</div>
                 <div id="heirList" style="display:flex; flex-direction:column; gap:6px;"></div>
             </div>
 
@@ -2564,6 +2583,301 @@
         }
     ];
 
+    const RELIGIONS = [
+        { id: "islam", name: "Islam", icon: "☪️", lawName: "Hukum Waris Islam (Faraid)" },
+        { id: "kristen", name: "Kristen Protestan", icon: "✝️", lawName: "Hukum Waris KUHPerdata (Sama Rata)" },
+        { id: "katolik", name: "Katolik", icon: "⛪", lawName: "Hukum Waris KUHPerdata (Sama Rata)" },
+        { id: "hindu", name: "Hindu", icon: "🕉️", lawName: "Hukum Waris KUHPerdata / Perdata Umum" },
+        { id: "buddha", name: "Buddha", icon: "☸️", lawName: "Hukum Waris KUHPerdata (Sama Rata)" },
+        { id: "konghucu", name: "Konghucu", icon: "🏮", lawName: "Hukum Waris KUHPerdata (Sama Rata)" }
+    ];
+
+    function getPlayerReligionObj() {
+        if (!player || !player.religion) return RELIGIONS[0];
+        return RELIGIONS.find(r => r.id === player.religion.id) || player.religion || RELIGIONS[0];
+    }
+
+    function getNpcReligionObj(npc) {
+        if (!npc) return RELIGIONS[0];
+        if (!npc.religion) {
+            npc.religion = pickRandom(RELIGIONS);
+        }
+        return RELIGIONS.find(r => r.id === npc.religion.id) || npc.religion || RELIGIONS[0];
+    }
+
+    function createInitialSiblings(lastName, family) {
+        // RNG posisi kelahiran: Anak Bontot (punya 1-2 kakak), Anak Tengah (punya kakak & adik), Anak Sulung (punya adik), atau Anak Tunggal
+        const roll = Math.random();
+        let olderCount = 0;
+        let youngerCount = 0;
+        if (roll < 0.35) {
+            // Anak Bontot (sudah punya 1-2 kakak saat lahir)
+            olderCount = randInt(1, 2);
+        } else if (roll < 0.60) {
+            // Anak Tengah (punya 1 kakak & 1 adik)
+            olderCount = 1;
+            youngerCount = 1;
+        } else if (roll < 0.82) {
+            // Anak Sulung (punya 1 adik)
+            youngerCount = 1;
+        } else {
+            // Anak Tunggal
+            olderCount = 0;
+            youngerCount = 0;
+        }
+
+        const list = [];
+        for (let i = 0; i < olderCount; i++) {
+            const isMale = Math.random() < 0.5;
+            const first = isMale ? pickRandom(MALE_NAMES) : pickRandom(FEMALE_NAMES);
+            const sibAge = randInt(2 + i * 2, 5 + i * 3);
+            list.push({
+                id: "sib_old_" + Date.now() + "_" + i + "_" + randInt(10, 99),
+                name: `${first} ${lastName}`,
+                gender: isMale ? "Laki-laki" : "Perempuan",
+                genderIcon: isMale ? "♂️" : "♀️",
+                sibType: "kakak",
+                role: isMale ? "Kakak Laki-laki Kandung" : "Kakak Perempuan Kandung",
+                age: sibAge,
+                alive: true,
+                rel: randInt(58, 92),
+                wealth: 0,
+                income: 0,
+                relCountThisYear: 0,
+                stats: {
+                    happy: randInt(35, 88),
+                    health: randInt(40, 92),
+                    edu: randInt(25, 82),
+                    looks: randInt(30, 88),
+                    social: randInt(25, 85)
+                }
+            });
+        }
+        for (let i = 0; i < youngerCount; i++) {
+            const isMale = Math.random() < 0.5;
+            const first = isMale ? pickRandom(MALE_NAMES) : pickRandom(FEMALE_NAMES);
+            list.push({
+                id: "sib_yng_" + Date.now() + "_" + i + "_" + randInt(10, 99),
+                name: `${first} ${lastName}`,
+                gender: isMale ? "Laki-laki" : "Perempuan",
+                genderIcon: isMale ? "♂️" : "♀️",
+                sibType: "adik",
+                role: isMale ? "Adik Laki-laki Kandung" : "Adik Perempuan Kandung",
+                age: 0,
+                alive: true,
+                rel: randInt(60, 92),
+                wealth: 0,
+                income: 0,
+                relCountThisYear: 0,
+                stats: {
+                    happy: randInt(35, 88),
+                    health: randInt(40, 92),
+                    edu: randInt(25, 82),
+                    looks: randInt(30, 88),
+                    social: randInt(25, 85)
+                }
+            });
+        }
+        return list;
+    }
+
+    function getBirthOrderLabel(siblingsList) {
+        const list = siblingsList || [];
+        const older = list.filter(s => s.sibType === "kakak").length;
+        const younger = list.filter(s => s.sibType === "adik").length;
+        if (older === 0 && younger === 0) return "Anak Tunggal";
+        if (older > 0 && younger === 0) return `Anak Bontot (punya ${older} Kakak)`;
+        if (older === 0 && younger > 0) return `Anak Sulung (punya ${younger} Adik)`;
+        return `Anak Tengah (punya ${older} Kakak & ${younger} Adik)`;
+    }
+
+    // Kalkulator Pembagian Waris Sesuai Agama (Islam Faraid vs KUHPerdata)
+    // Memperhitungkan: Pasangan Sah, Anak (L/P), Orang Tua (Ayah/Ibu), Adik/Saudara Kandung, Mantan Istri/Suami, & Mantan Mertua
+    function calculateInheritanceDistribution() {
+        const relObj = getPlayerReligionObj();
+        const assetVal = (player.assets || []).reduce((s, a) => s + (a.price || 0), 0);
+        const totalEstate = Math.max(0, roundMoney(player.money + assetVal));
+        const breakdown = [];
+
+        const marriedSpouse = (player.partner && player.partner.status === "Menikah") ? player.partner : null;
+        const children = player.children || [];
+        const aliveParents = (player.parents || []).filter(p => p.alive);
+        const aliveDad = aliveParents.find(p => p.id === "dad");
+        const aliveMom = aliveParents.find(p => p.id === "mom");
+        const aliveSiblings = (player.siblings || []).filter(s => s.alive);
+        const exPartners = player.exPartners || [];
+        const exInLaws = player.exInLaws || [];
+
+        if (relObj.id === "islam") {
+            // ================= HUKUM WARIS ISLAM (FARAID) =================
+            let remaining = totalEstate;
+            const hasChildren = children.length > 0;
+
+            // 1. Pasangan Sah (Suami: 1/4 ada anak, 1/2 tanpa anak; Istri: 1/8 ada anak, 1/4 tanpa anak)
+            if (marriedSpouse) {
+                const isHusband = marriedSpouse.gender === "Laki-laki";
+                const frac = isHusband ? (hasChildren ? 0.25 : 0.50) : (hasChildren ? 0.125 : 0.25);
+                const share = roundMoney(totalEstate * frac);
+                remaining = Math.max(0, roundMoney(remaining - share));
+                breakdown.push({
+                    key: "partner",
+                    name: marriedSpouse.name,
+                    role: isHusband ? "Suami Sah" : "Istri Sah",
+                    pct: Math.round(frac * 1000) / 10,
+                    amount: share,
+                    note: isHusband ? (hasChildren ? "Faraid 1/4 (ada anak)" : "Faraid 1/2 (tanpa anak)") : (hasChildren ? "Faraid 1/8 (ada anak)" : "Faraid 1/4 (tanpa anak)")
+                });
+            }
+
+            // 2. Orang Tua Kandung (Ayah & Ibu: masing-masing 1/6 jika ada anak; jika tanpa anak Ibu 1/3 & Ayah Asabah)
+            if (aliveMom) {
+                const frac = hasChildren ? (1 / 6) : (aliveSiblings.length >= 2 ? (1 / 6) : (1 / 3));
+                const share = Math.min(remaining, roundMoney(totalEstate * frac));
+                remaining = Math.max(0, roundMoney(remaining - share));
+                breakdown.push({
+                    key: "mom",
+                    name: aliveMom.name,
+                    role: "Ibu Kandung",
+                    pct: totalEstate > 0 ? Math.round((share / totalEstate) * 1000) / 10 : 0,
+                    amount: share,
+                    note: hasChildren ? "Faraid 1/6" : "Faraid 1/3 (atau 1/6 jika ada ≥2 saudara)"
+                });
+            }
+            if (aliveDad) {
+                const share = hasChildren ? Math.min(remaining, roundMoney(totalEstate * (1 / 6))) : remaining;
+                remaining = Math.max(0, roundMoney(remaining - share));
+                breakdown.push({
+                    key: "dad",
+                    name: aliveDad.name,
+                    role: "Ayah Kandung",
+                    pct: totalEstate > 0 ? Math.round((share / totalEstate) * 1000) / 10 : 0,
+                    amount: share,
+                    note: hasChildren ? "Faraid 1/6" : "Asabah (penerima sisa)"
+                });
+            }
+
+            // 3. Anak Kandung (Rasio 2:1 antara Laki-laki dan Perempuan dari sisa harta)
+            if (hasChildren && remaining > 0) {
+                const totalUnits = children.reduce((sum, ch) => sum + (ch.gender === "Laki-laki" ? 2 : 1), 0);
+                children.forEach((ch, idx) => {
+                    const weight = ch.gender === "Laki-laki" ? 2 : 1;
+                    const share = roundMoney(remaining * (weight / totalUnits));
+                    breakdown.push({
+                        key: `child_${idx}`,
+                        name: ch.name,
+                        role: `Anak ${ch.gender === "Laki-laki" ? "Laki-laki" : "Perempuan"}`,
+                        pct: totalEstate > 0 ? Math.round((share / totalEstate) * 1000) / 10 : 0,
+                        amount: share,
+                        note: `Faraid Asabah (Rasio ${weight} bagian)`
+                    });
+                });
+                remaining = 0;
+            }
+
+            // 4. Adik / Saudara Kandung (Hanya mendapat waris jika Kalalah: tidak ada anak & tidak ada ayah)
+            if (aliveSiblings.length > 0) {
+                if (!hasChildren && !aliveDad && remaining > 0) {
+                    const totalUnits = aliveSiblings.reduce((sum, s) => sum + (s.gender === "Laki-laki" ? 2 : 1), 0);
+                    aliveSiblings.forEach((s, idx) => {
+                        const weight = s.gender === "Laki-laki" ? 2 : 1;
+                        const share = roundMoney(remaining * (weight / totalUnits));
+                        breakdown.push({
+                            key: `sibling_${idx}`,
+                            name: s.name,
+                            role: s.role,
+                            pct: totalEstate > 0 ? Math.round((share / totalEstate) * 1000) / 10 : 0,
+                            amount: share,
+                            note: "Faraid Kalalah (tanpa anak & ayah)"
+                        });
+                    });
+                    remaining = 0;
+                } else {
+                    aliveSiblings.forEach((s, idx) => {
+                        breakdown.push({
+                            key: `sibling_${idx}`,
+                            name: s.name,
+                            role: s.role,
+                            pct: 0,
+                            amount: 0,
+                            note: "Mahjub (terhalang oleh anak/ayah)"
+                        });
+                    });
+                }
+            }
+        } else {
+            // ================= HUKUM WARIS KUHPERDATA (AGAMA LAINNYA) =================
+            // Golongan I: Pasangan Sah & Anak-anak dibagi sama rata (1:1)
+            const gol1 = [];
+            if (marriedSpouse) gol1.push({ key: "partner", name: marriedSpouse.name, role: "Pasangan Sah" });
+            children.forEach((ch, idx) => gol1.push({ key: `child_${idx}`, name: ch.name, role: `Anak (${ch.gender})` }));
+
+            if (gol1.length > 0) {
+                const eachShare = roundMoney(totalEstate / gol1.length);
+                const eachPct = Math.round((100 / gol1.length) * 10) / 10;
+                gol1.forEach(item => {
+                    breakdown.push({
+                        key: item.key,
+                        name: item.name,
+                        role: item.role,
+                        pct: eachPct,
+                        amount: eachShare,
+                        note: "Golongan I KUHPerdata (Sama Rata)"
+                    });
+                });
+                // Orang tua & Adik tercatat terhalang Golongan I
+                aliveParents.forEach(pr => breakdown.push({ key: pr.id, name: pr.name, role: pr.role, pct: 0, amount: 0, note: "Terhalang Golongan I" }));
+                aliveSiblings.forEach((s, idx) => breakdown.push({ key: `sibling_${idx}`, name: s.name, role: s.role, pct: 0, amount: 0, note: "Terhalang Golongan I" }));
+            } else {
+                // Golongan II: Orang Tua & Adik/Saudara Kandung dibagi sama rata
+                const gol2 = [];
+                aliveParents.forEach(pr => gol2.push({ key: pr.id, name: pr.name, role: pr.role }));
+                aliveSiblings.forEach((s, idx) => gol2.push({ key: `sibling_${idx}`, name: s.name, role: s.role }));
+                if (gol2.length > 0) {
+                    const eachShare = roundMoney(totalEstate / gol2.length);
+                    const eachPct = Math.round((100 / gol2.length) * 10) / 10;
+                    gol2.forEach(item => {
+                        breakdown.push({
+                            key: item.key,
+                            name: item.name,
+                            role: item.role,
+                            pct: eachPct,
+                            amount: eachShare,
+                            note: "Golongan II KUHPerdata (Sama Rata)"
+                        });
+                    });
+                }
+            }
+        }
+
+        // Mantan Istri/Suami & Mantan Mertua selalu diperhitungkan & ditampilkan status hukumnya (0%)
+        exPartners.forEach((ex, idx) => {
+            breakdown.push({
+                key: `ex_${idx}`,
+                name: ex.name,
+                role: "Mantan Pasangan",
+                pct: 0,
+                amount: 0,
+                note: "Tidak berhak waris (status cerai/putus)"
+            });
+        });
+        exInLaws.forEach((exIl, idx) => {
+            breakdown.push({
+                key: `exil_${idx}`,
+                name: exIl.name,
+                role: "Mantan Mertua",
+                pct: 0,
+                amount: 0,
+                note: "Tidak berhak waris (bukan ahli waris)"
+            });
+        });
+
+        return {
+            religion: relObj,
+            totalEstate,
+            breakdown
+        };
+    }
+
     const TRAITS = [
         { name: "Koneksi Ordal Kuat", icon: "🤝" },
         { name: "Bibit Unggul Glowing", icon: "✨" },
@@ -2583,7 +2897,7 @@
 
     // Daftar Aset dengan Kategori Pajak (Vehicle: PKB 2% + Progresif, Property: PBB 0.2% + PPh Sewa Final 10%, Business: PPh Final UMKM 0.5%)
     const ASSETS = [
-        { id: "asuransi", name: "Polis Asuransi Kesehatan VIP", icon: "🛡️", category: "insurance", isLuxury: false, price: 35, passive: 0, happyBonus: 5, socialBonus: 5 },
+        { id: "asuransi", name: "Polis Asuransi Jiwa VIP", icon: "🛡️", category: "insurance", isLuxury: false, price: 25, annualPremium: 25, sumAssured: 600, maxOwned: 1, passive: 0, happyBonus: 6, socialBonus: 5 },
         { id: "beat", name: "Motor Matic Sejuta Umat", icon: "🛵", category: "vehicle", isLuxury: false, price: 18, passive: 2, happyBonus: 6, socialBonus: 3 },
         { id: "avanza", name: "Mobil Keluarga Sejuta Umat", icon: "🚗", category: "vehicle", isLuxury: false, price: 210, passive: 12, happyBonus: 12, socialBonus: 10 },
         { id: "subsidi", name: "Rumah KPR Subsidi Pinggir Kota", icon: "🏡", category: "property", isLuxury: false, price: 185, passive: 15, happyBonus: 14, socialBonus: 10 },
@@ -2592,6 +2906,92 @@
         { id: "pondokindah", name: "Mansion Sultan Pondok Indah", icon: "🏰", category: "property", isLuxury: true, price: 4200, passive: 450, happyBonus: 30, socialBonus: 35 },
         { id: "smelter", name: "Konsesi Tambang & Smelter", icon: "🏭", category: "business", isLuxury: true, price: 6500, passive: 1250, happyBonus: 35, socialBonus: 45 }
     ];
+
+    // =========================================================================
+    // HELPER POLIS ASURANSI JIWA VIP (RP 25 JT/THN, MAKS 1X, CANCEL KAPAN SAJA)
+    // Benefit: Semua biaya medis dicover 100%, sakit kritis -> bebas premi & santunan 50% (Rp 300 Jt),
+    // meninggal dunia (pemegang polis / pasangan / orang tua) -> santunan 100% (Rp 600 Jt)
+    // =========================================================================
+    function syncLifeInsuranceState() {
+        if (!player) return null;
+        if (!player.lifeInsurance) {
+            const hasLegacyAsset = Array.isArray(player.assets) && player.assets.some(a => a.id === "asuransi");
+            if (hasLegacyAsset) {
+                player.lifeInsurance = {
+                    active: true,
+                    annualPremium: 25,
+                    sumAssured: 600,
+                    criticalIllnessClaimed: false,
+                    waiverActive: false,
+                    deathClaimPaid: false
+                };
+            }
+        }
+        return player.lifeInsurance || null;
+    }
+
+    function hasActiveLifeInsurance() {
+        const ins = syncLifeInsuranceState();
+        return !!(ins && ins.active);
+    }
+
+    function getLifeInsuranceAnnualPremium() {
+        const ins = syncLifeInsuranceState();
+        if (!ins || !ins.active) return 0;
+        if (ins.waiverActive) return 0; // Bebas premi setelah sakit kritis
+        return ins.annualPremium || 25;
+    }
+
+    function cancelLifeInsurancePolicy() {
+        if (!player || !hasActiveLifeInsurance()) {
+            showToast("Kamu tidak memiliki Polis Asuransi Jiwa VIP aktif.");
+            return;
+        }
+        player.lifeInsurance = null;
+        if (Array.isArray(player.assets)) {
+            player.assets = player.assets.filter(a => a.id !== "asuransi");
+        }
+        addLog("🛡️ **POLIS ASURANSI JIWA VIP DIBATALKAN:** Kamu telah membatalkan **Polis Asuransi Jiwa VIP**. Premi tahunan Rp 25 Jt/thn dihentikan dan seluruh proteksi asuransi tidak lagi aktif.", "normal");
+        showToast("Polis Asuransi Jiwa VIP berhasil dibatalkan!");
+        if (currentModalType === "karir") renderKarirSheet("aset");
+        else if (currentModalType === "upgrade") renderUpgradeSheet("kesehatan");
+        updateUI();
+    }
+
+    function triggerCriticalIllnessBenefit(causeText = "Kondisi Kesehatan Kritis (≤25%)") {
+        if (!player || !player.alive || !hasActiveLifeInsurance()) return false;
+        const ins = player.lifeInsurance;
+        if (ins.criticalIllnessClaimed) return false;
+
+        ins.criticalIllnessClaimed = true;
+        ins.waiverActive = true;
+        const payout = roundMoney((ins.sumAssured || 600) * 0.5); // 50% = Rp 300 Jt
+        player.money = roundMoney(player.money + payout);
+        playGameSound("coin");
+        addLog(`🛡️ **KLAIM SAKIT KRITIS ASURANSI JIWA VIP:** Karena mengalami **${causeText}**, kamu menerima santunan sakit kritis **50% (+${formatShortJuta(payout)})** dan **Bebas Premi (Rp 0/thn)**! Perlindungan medis & santunan meninggal dunia **100% (Rp 600 Jt)** tetap aktif.`, "money");
+        showToast(`🛡️ Klaim Sakit Kritis +${formatShortJuta(payout)} & Bebas Premi!`);
+        return true;
+    }
+
+    function payLifeInsuranceDeathBenefit(deceasedLabel, isPolicyHolder = false) {
+        if (!player || !hasActiveLifeInsurance()) return 0;
+        const ins = player.lifeInsurance;
+        if (isPolicyHolder && ins.deathClaimPaid) return 0;
+
+        const payout = roundMoney(ins.sumAssured || 600); // 100% = Rp 600 Jt
+        player.money = roundMoney(player.money + payout);
+        if (isPolicyHolder) {
+            ins.deathClaimPaid = true;
+            ins.active = false;
+            if (Array.isArray(player.assets)) {
+                player.assets = player.assets.filter(a => a.id !== "asuransi");
+            }
+        }
+        playGameSound("coin");
+        addLog(`🛡️ **SANTUNAN ASURANSI JIWA VIP (100%):** Atas berpulangnya **${deceasedLabel}**, Polis Asuransi Jiwa VIP mencairkan santunan meninggal dunia sebesar **+${formatShortJuta(payout)}**!`, "money");
+        showToast(`🛡️ Santunan Jiwa VIP +${formatShortJuta(payout)} cair!`);
+        return payout;
+    }
 
     // Daftar Instrumen Saham & Crypto (Realistis & Sulit Cuan: Rawan Nyangkut, Bandar Guyur & Biaya Sekuritas)
     const MARKET_INSTRUMENTS = [
@@ -3130,6 +3530,7 @@
             name: generateFullName(isMale),
             gender: isMale ? "Laki-laki" : "Perempuan",
             genderIcon: isMale ? "♂️" : "♀️",
+            religion: pickRandom(RELIGIONS),
             age: fAge,
             stage: phaseLabel,
             role: pickRandom(pool),
@@ -3714,6 +4115,12 @@
             cost += bpjsObj.annualCost;
         }
 
+        // Premi Tahunan Polis Asuransi Jiwa VIP (Rp 25 Jt/thn, atau Rp 0 jika sudah bebas premi sakit kritis)
+        const lifeInsPrem = getLifeInsuranceAnnualPremium();
+        if (lifeInsPrem > 0) {
+            cost += lifeInsPrem;
+        }
+
         // Gaji Karyawan Bisnis Aktif
         cost += businessUpkeep;
 
@@ -3786,7 +4193,11 @@
         };
 
         const lastName = finalName.split(" ").pop() || "Saputra";
+        const relSelectEl = document.getElementById("selectBirthReligion");
+        const chosenRelId = relSelectEl ? relSelectEl.value : "random";
+        const chosenReligion = chosenRelId === "random" ? pickRandom(RELIGIONS) : (RELIGIONS.find(r => r.id === chosenRelId) || RELIGIONS[0]);
         const initialParents = createInitialParents(family, lastName);
+        const initialSiblings = createInitialSiblings(lastName, family);
         const combinedParentWealth = roundMoney(initialParents[0].wealth + initialParents[1].wealth);
         const eligibleKip = family.id === "sandwich" || family.id === "buruh" || family.parentIncome === 0;
 
@@ -3829,7 +4240,9 @@
             pension: 0,
             taxMode: "patuh",
             unpaidTaxArrears: 0,
+            religion: chosenReligion,
             parents: initialParents,
+            siblings: initialSiblings,
             friends: [],
             partner: null,
             inLaws: null,
@@ -3861,7 +4274,7 @@
         document.getElementById("birthModal").classList.add("hidden");
         document.getElementById("lifeLog").innerHTML = "";
 
-        addLog(`👶 **AKTA KELAHIRAN +62:** Kamu lahir sebagai **${player.name}** (${player.gender}) di **${player.city.name}** dari kasta **${player.family.name}** (${player.family.badge}).`, "birth");
+        addLog(`👶 **AKTA KELAHIRAN +62:** Kamu lahir sebagai **${player.name}** (${player.gender} • **${getBirthOrderLabel(initialSiblings)}**) di **${player.city.name}** dari kasta **${player.family.name}** (${player.family.badge}).`, "birth");
         addLog(`👨‍👩‍👦 **KONDISI EKONOMI ORANG TUA:** Ayah (**${player.parents[0].name}**) & Ibu (**${player.parents[1].name}**) memiliki total tabungan keluarga **${formatShortJuta(combinedParentWealth)}** (Penghasilan Ortu: Rp ${player.family.parentIncome} Jt/thn). ${player.kipActive ? '💳 Karena orang tua kurang mampu/tanpa pekerjaan tetap, kamu terdaftar sebagai penerima **Kartu Indonesia Pintar (KIP)** untuk sekolah gratis SD–SMA!' : ''}`, "normal");
         addLog(`🎲 **TAKDIR AWAL (100% RNG):** Kamu lahir membawa karakteristik unik **${player.trait.icon} ${player.trait.name}**. Amati perkembangan ke-5 bar parameter hidupmu di bagian bawah layar!`, "normal");
 
@@ -3920,7 +4333,9 @@
 
         // Badges
         const badgesEl = document.getElementById("uiBadges");
+        const relObjUi = getPlayerReligionObj();
         let bHtml = `
+            <span class="mini-badge" style="color:#1e40af; background:#dbeafe; border-color:#93c5fd;">${relObjUi.icon} ${relObjUi.name}</span>
             <span class="mini-badge">${player.family.badge}</span>
             <span class="mini-badge" style="color:#92400e; background:#fef3c7;">${player.trait.icon} ${player.trait.name}</span>
         `;
@@ -3953,6 +4368,10 @@
         }
         if (player.politicalParty) {
             bHtml += `<span class="mini-badge" style="color:#7e22ce; background:#f3e8ff;">🎗️ ${player.politicalParty.name}</span>`;
+        }
+        if (hasActiveLifeInsurance()) {
+            const insBadgeText = player.lifeInsurance.waiverActive ? "🛡️ Asuransi Jiwa VIP (Bebas Premi)" : "🛡️ Asuransi Jiwa VIP (25 Jt/thn)";
+            bHtml += `<span class="mini-badge" style="color:#0369a1; background:#e0f2fe; border-color:#38bdf8;">${insBadgeText}</span>`;
         }
         badgesEl.innerHTML = bHtml;
 
@@ -4209,6 +4628,7 @@
 
                     if (pr.age >= 72 && Math.random() < 0.20) {
                         pr.alive = false;
+                        payLifeInsuranceDeathBenefit(`${pr.name} (${pr.role})`, false);
                         if (pr.wealth > 0) {
                             if (pr.rel >= 55) {
                                 const warisanOrtu = roundMoney(pr.wealth);
@@ -4231,6 +4651,13 @@
                         }
                     }
                 }
+            });
+        }
+
+        if (player.siblings) {
+            player.siblings.forEach(sib => {
+                sib.relCountThisYear = 0;
+                if (sib.alive) sib.age += 1;
             });
         }
 
@@ -4548,13 +4975,18 @@
             modifyStats({ health: -randInt(2, 5) });
         }
 
-        // Dampak Kesehatan Rendah / Kemiskinan Ekstrem (Mengurangi kemampuan survive)
-        if (player.stats.health <= 25) {
+        // Dampak Kesehatan Rendah / Sakit Kritis (Klaim Sakit Kritis 50% & Bebas Premi jika punya Polis Asuransi Jiwa VIP)
+        if (player.stats.health <= 25 && player.stats.health > 0) {
+            triggerCriticalIllnessBenefit(`Kesehatan Menurun Kritis (${player.stats.health}%)`);
             modifyStats({ happy: -5 });
             if (player.job && Math.random() < 0.35) {
-                const sickCost = roundMoney(randInt(15, 45) / 10);
-                player.money = roundMoney(player.money - sickCost);
-                addLog(`🤒 **FISIK DROP SAAT KERJA:** Karena kesehatanmu kritis (${player.stats.health}%), kamu tumbang saat bekerja dan harus menebus obat **-${formatShortJuta(sickCost)}**!`, "danger");
+                if (hasActiveLifeInsurance()) {
+                    addLog(`🛡️ **FISIK DROP SAAT KERJA (TERCOVER ASURANSI JIWA VIP):** Kamu tumbang saat bekerja, namun seluruh biaya dokter & obat **dicover 100% (Rp 0)** oleh Polis Asuransi Jiwa VIP!`, "normal");
+                } else {
+                    const sickCost = roundMoney(randInt(15, 45) / 10);
+                    player.money = roundMoney(player.money - sickCost);
+                    addLog(`🤒 **FISIK DROP SAAT KERJA:** Karena kesehatanmu kritis (${player.stats.health}%), kamu tumbang saat bekerja dan harus menebus obat **-${formatShortJuta(sickCost)}**!`, "danger");
+                }
             }
         }
 
@@ -5286,6 +5718,35 @@
             bodyEl.appendChild(ppnBanner);
 
             ASSETS.forEach((as, idx) => {
+                if (as.id === "asuransi") {
+                    const isInsActive = hasActiveLifeInsurance();
+                    const ins = syncLifeInsuranceState();
+                    const card = document.createElement("div");
+                    card.className = "item-card";
+                    if (isInsActive) card.style.borderColor = "#0284c7";
+                    card.innerHTML = `
+                        <div class="item-row">
+                            <div>
+                                <span style="font-size:9.5px; font-weight:900; color:#0284c7;">🛡️ PROTEKSI JIWA & MEDIS VIP (MAKS 1 POLIS • BISA CANCEL KAPAN SAJA)</span>
+                                <div class="item-title" style="margin-top:2px;">${as.icon} ${as.name} ${isInsActive ? '<span style="color:#16a34a;">(AKTIF)</span>' : ''}</div>
+                                <div style="font-size:11px; color:${isInsActive && ins.waiverActive ? '#16a34a' : '#b45309'}; font-weight:900;">
+                                    ${isInsActive && ins.waiverActive ? '✅ BEBAS PREMI (Rp 0 / tahun — Klaim Sakit Kritis Aktif)' : 'Premi: Rp 25 Jt / tahun (Bebas PPN)'}
+                                </div>
+                                <div class="item-desc">
+                                    • <b>Benefit Medis:</b> Semua biaya rumah sakit, Penang/Singapura, obat & ambulans VIP <b>dicover 100% (Rp 0)</b>.<br>
+                                    • <b>Sakit Kritis (≤25% / Darurat):</b> <b>Bebas premi Rp 0/thn</b> + santunan tunai <b>50% (Rp 300 Jt)</b>.<br>
+                                    • <b>Santunan Meninggal Dunia (Pemegang Polis / Pasangan / Orang Tua):</b> Cair <b>100% senilai Rp 600 Jt</b>!
+                                </div>
+                            </div>
+                        </div>
+                        ${isInsActive
+                            ? `<button class="btn-action btn-rose" onclick="cancelLifeInsurancePolicy()">❌ Cancel Polis Asuransi Jiwa VIP Kapan Saja</button>`
+                            : `<button class="btn-action btn-primary" onclick="buyAssetItem(${idx})">🛡️ Daftar Polis Asuransi Jiwa VIP (Rp 25 Jt / Tahun)</button>`}
+                    `;
+                    bodyEl.appendChild(card);
+                    return;
+                }
+
                 const ownedCount = player.assets.filter(a => a.id === as.id).length;
                 const ppnRate = as.isLuxury ? 0.12 : 0.11;
                 const ppnAmt = roundMoney(as.price * ppnRate);
@@ -5294,7 +5755,6 @@
                 let taxTag = "PKB 2%/thn (Progresif jika >1 unit)";
                 if (as.category === "property") taxTag = `PBB ${as.isLuxury ? '0,3%' : '0,15%'}/thn + PPh Sewa 10%`;
                 if (as.category === "business") taxTag = "Pajak Hasil Usaha 8%/thn";
-                if (as.category === "insurance") taxTag = "Bebas Pajak & Maintenance";
 
                 const card = document.createElement("div");
                 card.className = "item-card";
@@ -5855,6 +6315,36 @@
     function buyAssetItem(idx) {
         const as = ASSETS[idx];
         if (!as) return;
+
+        if (as.id === "asuransi") {
+            if (hasActiveLifeInsurance()) {
+                showToast("Kamu sudah memiliki Polis Asuransi Jiwa VIP (maksimal hanya 1 polis)!");
+                return;
+            }
+            const firstPrem = as.annualPremium || 25;
+            if (player.money < firstPrem) {
+                showToast(`Saldomu kurang! Premi tahun pertama adalah Rp ${firstPrem} Jt.`);
+                return;
+            }
+            player.money = roundMoney(player.money - firstPrem);
+            player.lifeInsurance = {
+                active: true,
+                annualPremium: firstPrem,
+                sumAssured: as.sumAssured || 600,
+                criticalIllnessClaimed: false,
+                waiverActive: false,
+                deathClaimPaid: false
+            };
+            player.assets = (player.assets || []).filter(a => a.id !== "asuransi");
+            player.assets.push({ ...as, price: 0 });
+            modifyStats({ happy: as.happyBonus, social: as.socialBonus });
+            playGameSound("coin");
+            addLog(`🛡️ **POLIS ASURANSI JIWA VIP AKTIF:** Kamu resmi terdaftar sebagai pemegang **Polis Asuransi Jiwa VIP** dengan premi **Rp ${firstPrem} Jt/tahun** (bisa di-cancel kapan saja). Semua biaya medis dicover 100%, sakit kritis bebas premi + santunan 50% (Rp 300 Jt), dan santunan meninggal dunia 100% (Rp 600 Jt)!`, "money");
+            showToast("🛡️ Polis Asuransi Jiwa VIP aktif!");
+            renderKarirSheet("aset");
+            return;
+        }
+
         const ppnRate = as.isLuxury ? 0.12 : 0.11;
         const ppnAmt = roundMoney(as.price * ppnRate);
         const totalCost = roundMoney(as.price + ppnAmt);
@@ -6238,17 +6728,19 @@
             `;
             bodyEl.appendChild(bpjsCard);
 
+            const hasVipLife = hasActiveLifeInsurance();
             const rsCard = document.createElement("div");
             rsCard.className = "item-card";
             rsCard.innerHTML = `
                 <div class="item-title">🩺 Layanan Medis & Berobat ke Luar Negeri</div>
-                <div class="item-desc">Pilih fasilitas pengobatan sesuai kondisi kesehatanmu saat ini (Kesehatan: <b>${player.stats.health}%</b>):</div>
+                <div class="item-desc">Pilih fasilitas pengobatan sesuai kondisi kesehatanmu saat ini (Kesehatan: <b>${player.stats.health}%</b>):${hasVipLife ? '<br><b style="color:#16a34a;">🛡️ Polis Asuransi Jiwa VIP Aktif: Seluruh biaya medis & RS dicover 100% (Rp 0)!</b>' : ''}</div>
                 <button class="btn-action btn-primary" onclick="medicalTreatment('bpjs_rs')">
-                    🏥 Rawat Inap RSUD Pakai BPJS / Umum (Rp 1,5 Jt • Pemulihan Bertahap)
+                    🏥 Rawat Inap RSUD (${hasVipLife ? 'GRATIS — Tercover 100% Asuransi Jiwa VIP' : 'Rp 1,5 Jt / BPJS • Pemulihan Bertahap'})
                 </button>
                 <button class="btn-action btn-gold" onclick="medicalTreatment('penang')">
-                    ✈️ Medical Check-Up & Berobat ke Penang / Singapura (Rp 45 Jt • Pemulihan Ekspres!)
+                    ✈️ Medical Check-Up & Berobat ke Penang / Singapura (${hasVipLife ? 'GRATIS — Tercover 100% Asuransi Jiwa VIP!' : 'Rp 45 Jt • Pemulihan Ekspres!'})
                 </button>
+                ${hasVipLife ? `<button class="btn-action btn-rose" onclick="cancelLifeInsurancePolicy()">❌ Cancel Polis Asuransi Jiwa VIP</button>` : ''}
             `;
             bodyEl.appendChild(rsCard);
         }
@@ -6336,6 +6828,7 @@
             name: generateFullName(partnerIsMale),
             gender: partnerIsMale ? "Laki-laki" : "Perempuan",
             genderIcon: partnerIsMale ? "♂️" : "♀️",
+            religion: pickRandom(RELIGIONS),
             age: clamp(player.age + randInt(-3, 3), 18, 75),
             role: pickRandom(roles),
             tier: pTier,
@@ -6523,6 +7016,21 @@
                 bodyEl.appendChild(card);
             });
 
+            // Daftar Kakak & Adik (Saudara Kandung)
+            if (player.siblings && player.siblings.length > 0) {
+                player.siblings.forEach(sib => {
+                    const sCard = document.createElement("div");
+                    sCard.className = "item-card";
+                    sCard.style.borderColor = sib.rel < 40 ? "#ef4444" : "#0284c7";
+                    sCard.innerHTML = `
+                        <div class="item-title">🧒 ${sib.name} ${sib.genderIcon} (${sib.age} Thn)</div>
+                        <div class="item-desc">${sib.role} • Status: <b>${sib.alive ? 'Hidup' : 'Almarhum/ah'}</b></div>
+                        ${sib.alive ? renderRelBarHtml(sib.rel, "Hubungan Saudara Kandung") : ''}
+                    `;
+                    bodyEl.appendChild(sCard);
+                });
+            }
+
             // Kartu Mertua (Jika punya pasangan)
             if (player.inLaws) {
                 const il = player.inLaws;
@@ -6579,6 +7087,9 @@
             }
 
             const p = player.partner;
+            const myRel = getPlayerReligionObj();
+            const pRel = getNpcReligionObj(p);
+            const isSameRel = myRel.id === pRel.id;
             const metrics = ensureRelationshipMetrics(p);
             const readinessChecks = getMarriageReadiness(p);
             const readyCount = readinessChecks.filter(check => check.ready).length;
@@ -6591,6 +7102,9 @@
                     <div>
                         <span style="font-size:10px; font-weight:900; color:#f472b6;">STATUS: ${p.status.toUpperCase()} • ${p.tierBadge || '🛵 Menengah'}</span>
                         <div class="item-title" style="font-size:15px; margin-top:2px;">${p.name} ${p.genderIcon} (${p.age} Thn)</div>
+                        <div style="font-size:10.5px; font-weight:800; color:${isSameRel ? '#15803d' : '#dc2626'}; margin-top:2px;">
+                            ${pRel.icon} Agama Pasangan: ${pRel.name} ${isSameRel ? '(✅ Seagama — Bisa Menikah di Dalam Negeri)' : '(⚠️ Beda Agama — Tidak Bisa Menikah di Dalam Negeri, Harus Luar Negeri / Seagama)'}
+                        </div>
                         <div style="font-size:11px; color:#fcd34d;">Pekerjaan: ${p.role} (+Rp ${p.income || 0} Jt/thn • Pajak -Rp ${ptTax} Jt/thn)</div>
                         <div style="font-size:10px; color:#9ca3af; margin-top:2px;">
                             Tabungan Pasangan: <b style="color:#34d399;">${formatShortJuta(p.wealth || 0)}</b> • Interaksi Tahun Ini: ${p.relCountThisYear || 0}/${MAX_NPC_INTERACT_PER_YEAR}
@@ -7080,6 +7594,7 @@
                     name: fr.name,
                     gender: fr.gender,
                     genderIcon: fr.genderIcon,
+                    religion: getNpcReligionObj(fr),
                     age: fr.age,
                     role: fr.role,
                     tier: fr.tier,
@@ -7361,6 +7876,30 @@
         }
     }
 
+    function completeMarriageCeremony(cost, locationLabel) {
+        const p = player.partner;
+        if (!p || p.status === "Menikah") return;
+        if (player.money < cost) {
+            showToast(`Saldomu tidak cukup! Biaya pernikahan ${locationLabel} adalah ${formatShortJuta(cost)}.`);
+            return;
+        }
+        const metrics = ensureRelationshipMetrics(p);
+        player.money = roundMoney(player.money - cost);
+        p.status = "Menikah";
+        p.marriageLocation = locationLabel;
+        p.rel = clamp(p.rel + randInt(4, 9), 0, 100);
+        metrics.commitment = clamp(metrics.commitment + randInt(8, 14), 0, 100);
+        metrics.sharedValues = clamp(metrics.sharedValues + randInt(4, 9), 0, 100);
+        metrics.conflict = clamp(metrics.conflict - randInt(4, 10), 0, 100);
+        p.householdAgreement = "Kesepakatan bersama: pembagian tanggung jawab yang adil";
+        if (player.inLaws) player.inLaws.rel = clamp(player.inLaws.rel + randInt(5, 15), 0, 100);
+        modifyStats({ happy: randInt(8, 16), social: randInt(5, 10) });
+        playGameSound("love");
+        addLog(`💍 **RESMI MENIKAH (${locationLabel.toUpperCase()}):** Kamu dan **${p.name}** resmi menikah dengan kesepakatan berbagi tanggung jawab secara adil! Biaya pernikahan **-${formatShortJuta(cost)}**.`, "love");
+        showToast(`Selamat menempuh hidup baru bersama ${p.name}!`);
+        renderKeluargaSheet("pasangan");
+    }
+
     function marryCurrentPartner() {
         const p = player.partner;
         if (!p || p.status === "Menikah") return;
@@ -7373,21 +7912,63 @@
             showToast(`Belum siap menikah bersama: ${failedCheck.label}.`);
             return;
         }
-        const metrics = ensureRelationshipMetrics(p);
-        player.money = roundMoney(player.money - 25);
-        p.status = "Menikah";
-        p.rel = clamp(p.rel + randInt(4, 9), 0, 100);
-        metrics.commitment = clamp(metrics.commitment + randInt(8, 14), 0, 100);
-        metrics.sharedValues = clamp(metrics.sharedValues + randInt(4, 9), 0, 100);
-        metrics.conflict = clamp(metrics.conflict - randInt(4, 10), 0, 100);
-        p.householdAgreement = "Kesepakatan bersama: pembagian tanggung jawab yang adil";
-        if (player.inLaws) player.inLaws.rel = clamp(player.inLaws.rel + randInt(5, 15), 0, 100);
-        modifyStats({ happy: randInt(8, 16), social: randInt(4, 10) });
-        playGameSound("love");
-        addLog(`💍 **PERNIKAHAN ATAS KESEPAKATAN BERSAMA:** Kamu dan **${p.name}** sama-sama siap membangun rumah tangga (-Rp 25 Jt). Kalian sepakat membagi tanggung jawab secara adil dan saling menghormati.`, "love");
-        showToast(`Selamat menempuh hidup baru bersama ${p.name}!`);
-        saveGameToLocal();
-        renderKeluargaSheet("pasangan");
+
+        const myRel = getPlayerReligionObj();
+        const pRel = getNpcReligionObj(p);
+
+        if (myRel.id !== pRel.id) {
+            const overseasCost = 120;
+            showPopupEvent(
+                "🛂",
+                "Pernikahan Beda Agama Tidak Bisa di Dalam Negeri",
+                `Agamamu (<b>${myRel.icon} ${myRel.name}</b>) berbeda dengan pasanganmu <b>${p.name}</b> (<b>${pRel.icon} ${pRel.name}</b>).<br><br>Pernikahan beda agama tidak dapat dicatatkan di dalam negeri. Untuk tetap menikah, kalian harus <b>menikah di luar negeri</b> atau <b>menyamakan agama (seagama)</b> terlebih dahulu:`,
+                [
+                    {
+                        text: `✈️ Menikah di Luar Negeri — Singapura / Australia (Biaya ${formatShortJuta(overseasCost)})`,
+                        fn: () => completeMarriageCeremony(overseasCost, "Luar Negeri")
+                    },
+                    {
+                        text: `🙏 Kamu Pindah Agama ke ${pRel.icon} ${pRel.name} & Menikah di Dalam Negeri (Rp 25 Jt • ⚠️ Risiko Keluarga Kandung Retak)`,
+                        fn: () => {
+                            player.religion = pRel;
+                            // Dampak realistis: hubungan dengan orang tua & saudara kandung retak drastis
+                            (player.parents || []).forEach(pr => {
+                                if (pr.alive) pr.rel = clamp((pr.rel || 70) - randInt(35, 55), 0, 100);
+                            });
+                            (player.siblings || []).forEach(sib => {
+                                if (sib.alive) sib.rel = clamp((sib.rel || 70) - randInt(25, 45), 0, 100);
+                            });
+                            modifyStats({ happy: -randInt(5, 10) });
+                            addLog(`💔 **PINDAH AGAMA & KELUARGA KANDUNG RETAK:** Kamu memutuskan pindah ke agama **${pRel.icon} ${pRel.name}** demi menikah dengan **${p.name}** di dalam negeri. Keputusan ini memicu konflik besar hingga hubunganmu dengan **Orang Tua & Saudara Kandung** retak drastis!`, "danger");
+                            completeMarriageCeremony(25, "Dalam Negeri (Seagama)");
+                        }
+                    },
+                    {
+                        text: `💬 Ajak ${p.name} Pindah ke ${myRel.icon} ${myRel.name} & Menikah di Dalam Negeri (Rp 25 Jt • RNG)`,
+                        fn: () => {
+                            if (p.rel >= 75 && Math.random() < 0.65) {
+                                p.religion = myRel;
+                                addLog(`🕊️ **PASANGAN SEAGAMA:** **${p.name}** setuju memeluk agama **${myRel.icon} ${myRel.name}** agar kalian bisa menikah secara resmi di dalam negeri.`, "love");
+                                completeMarriageCeremony(25, "Dalam Negeri (Seagama)");
+                            } else {
+                                p.rel = clamp(p.rel - randInt(4, 9), 0, 100);
+                                addLog(`😔 **BELUM SEPAKAT PINDAH AGAMA:** **${p.name}** belum bersedia berpindah keyakinan. Kalian tetap harus memilih menikah di luar negeri atau menyamakan keyakinan di lain waktu.`, "normal");
+                                showToast(`${p.name} belum bersedia pindah agama!`);
+                                renderKeluargaSheet("pasangan");
+                            }
+                        }
+                    },
+                    {
+                        text: "✕ Batal / Pikirkan Dulu",
+                        fn: () => renderKeluargaSheet("pasangan")
+                    }
+                ],
+                "⚖️ ATURAN PERNIKAHAN BEDA AGAMA"
+            );
+            return;
+        }
+
+        completeMarriageCeremony(25, "Dalam Negeri");
     }
 
     function breakUpOrDivorce() {
@@ -8302,12 +8883,18 @@
                 `${c.desc}<br><span style="color:#fda4af; font-size:11px;">⚠️ PERINGATAN KEMATIAN MENDADAK: Nyawamu berada di ujung tanduk!</span>`,
                 [
                     {
-                        text: "🚁 Evakuasi Ambulans VIP & Tim Dokter Spesialis (Rp 20 Jt • Peluang Selamat Tinggi)",
+                        text: hasActiveLifeInsurance()
+                            ? "🛡️ Evakuasi Ambulans VIP & Tim Dokter Spesialis (GRATIS — Tercover 100% Asuransi Jiwa VIP!)"
+                            : "🚁 Evakuasi Ambulans VIP & Tim Dokter Spesialis (Rp 20 Jt • Peluang Selamat Tinggi)",
                         fn: () => {
-                            if (player.money >= 20) {
-                                player.money = roundMoney(player.money - 20);
+                            const hasVip = hasActiveLifeInsurance();
+                            if (hasVip || player.money >= 20) {
+                                if (!hasVip) player.money = roundMoney(player.money - 20);
                                 modifyStats({ health: -randInt(5, 10), happy: -randInt(6, 12), looks: -randInt(3, 7) });
-                                addLog(`🚑 **SELAMAT DARI MAUT:** Berkat tindakan cepat tim dokter spesialis (-Rp 20 Jt), nyawamu berhasil diselamatkan dari **${c.title}**!`, "danger");
+                                addLog(hasVip
+                                    ? `🛡️ **SELAMAT DARI MAUT (ASURANSI JIWA VIP):** Biaya evakuasi ambulans VIP & spesialis (Rp 20 Jt) **dicover 100% (Rp 0)**! Nyawamu berhasil diselamatkan dari **${c.title}**!`
+                                    : `🚑 **SELAMAT DARI MAUT:** Berkat tindakan cepat tim dokter spesialis (-Rp 20 Jt), nyawamu berhasil diselamatkan dari **${c.title}**!`, "danger");
+                                if (hasVip) triggerCriticalIllnessBenefit(c.title);
                                 showToast("Syukurlah, nyawamu berhasil diselamatkan!");
                             } else {
                                 if (Math.random() < 0.45) {
@@ -8378,11 +8965,19 @@
                 player.money = roundMoney(player.money + inh);
                 inheritanceMsg = ` Kamu menerima sisa tabungan warisan beliau sebesar <b>+${formatShortJuta(inh)}</b>.`;
             }
+            const insPay = payLifeInsuranceDeathBenefit(`${victim.obj.name} (${victim.label})`, false);
+            if (insPay > 0) {
+                inheritanceMsg += ` Polis Asuransi Jiwa VIP mencairkan santunan meninggal dunia sebesar <b>+${formatShortJuta(insPay)}</b>!`;
+            }
         } else if (victim.type === "partner") {
             const pWealth = roundMoney(Math.max(0, victim.obj.wealth || 0));
             if (pWealth > 0) {
                 player.money = roundMoney(player.money + pWealth);
                 inheritanceMsg = ` Seluruh tabungan mendiang pasanganmu sebesar <b>+${formatShortJuta(pWealth)}</b> diwariskan kepadamu.`;
+            }
+            const insPay = payLifeInsuranceDeathBenefit(`${victim.obj.name} (${victim.label})`, false);
+            if (insPay > 0) {
+                inheritanceMsg += ` Polis Asuransi Jiwa VIP mencairkan santunan meninggal dunia sebesar <b>+${formatShortJuta(insPay)}</b>!`;
             }
             player.partner = null;
             player.inLaws = null;
@@ -9337,11 +9932,11 @@
                 desc: "Tubuhmu mendadak ambruk karena komplikasi penyakit berat dan harus dilarikan ke IGD rumah sakit! Sayangnya ruang rawat inap BPJS dikabarkan penuh semua, sementara kondisimu butuh tindakan segera.",
                 choices: [
                     {
-                        text: player.assets && player.assets.some(a => a.id === "asuransi")
-                            ? "🛡️ Gunakan Asuransi VIP (Gratis, Tercover 100%)"
+                        text: hasActiveLifeInsurance()
+                            ? "🛡️ Gunakan Polis Asuransi Jiwa VIP (Gratis, Tercover 100%)"
                             : "💳 Masuk Jalur Umum / VIP Tanpa Antre (Biaya Medis Rp 12 Jt)",
                         fn: () => {
-                            const hasInsur = player.assets && player.assets.some(a => a.id === "asuransi");
+                            const hasInsur = hasActiveLifeInsurance();
                             if (!hasInsur && player.money < 12) {
                                 showToast("Uang tidak cukup untuk VIP! Harus tunggu antrean BPJS.");
                                 return;
@@ -9589,23 +10184,29 @@
 
     function medicalTreatment(mode) {
         if (!player) return;
+        const coveredByVip = hasActiveLifeInsurance();
         if (mode === "bpjs_rs") {
             const plan = BPJS_PLANS.find(b => b.id === (player.bpjsPlan || "none"));
             const baseFee = 1.5;
-            const finalFee = roundMoney(baseFee * (1 - (plan ? plan.coverage : 0)));
+            const finalFee = coveredByVip ? 0 : roundMoney(baseFee * (1 - (plan ? plan.coverage : 0)));
             if (player.money < finalFee) { showToast(`Saldo kurang ${formatShortJuta(finalFee)}!`); return; }
-            player.money = roundMoney(player.money - finalFee);
+            if (finalFee > 0) player.money = roundMoney(player.money - finalFee);
             const gain = randInt(8, 18);
             modifyStats({ health: gain, happy: randInt(1, 4) });
-            addLog(`🏥 **RAWAT INAP RS (${plan ? plan.name : 'Umum'}):** Kamu menjalani perawatan medis dengan biaya **-${formatShortJuta(finalFee)}** dan kesehatanmu membaik.`, "normal");
-            showToast("Perawatan RS selesai!");
+            addLog(coveredByVip
+                ? `🛡️ **RAWAT INAP RS (TERCOVER ASURANSI JIWA VIP):** Seluruh biaya perawatan rumah sakit **Rp 0 (Dicover 100%)** dan kesehatanmu membaik!`
+                : `🏥 **RAWAT INAP RS (${plan ? plan.name : 'Umum'}):** Kamu menjalani perawatan medis dengan biaya **-${formatShortJuta(finalFee)}** dan kesehatanmu membaik.`, "normal");
+            showToast(coveredByVip ? "Perawatan RS gratis (Asuransi Jiwa VIP)!" : "Perawatan RS selesai!");
         } else if (mode === "penang") {
-            if (player.money < 45) { showToast("Saldo kurang! Berobat ke Penang/Singapura butuh Rp 45 Jt."); return; }
-            player.money = roundMoney(player.money - 45);
+            const penangFee = coveredByVip ? 0 : 45;
+            if (player.money < penangFee) { showToast("Saldo kurang! Berobat ke Penang/Singapura butuh Rp 45 Jt."); return; }
+            if (penangFee > 0) player.money = roundMoney(player.money - penangFee);
             const gain = randInt(25, 45);
             modifyStats({ health: gain, happy: randInt(6, 12), looks: randInt(2, 5) });
-            addLog(`✈️ **BEROBAT KE PENANG / SINGAPURA:** Penanganan dokter spesialis luar negeri (-Rp 45 Jt) membuat staminamu pulih drastis!`, "love");
-            showToast("Pemulihan medis luar negeri sukses!");
+            addLog(coveredByVip
+                ? `🛡️ **BEROBAT KE PENANG / SINGAPURA (ASURANSI JIWA VIP):** Seluruh biaya rumah sakit luar negeri senilai Rp 45 Jt **dicover 100% (Rp 0)** dan kesehatanmu pulih drastis!`
+                : `✈️ **BEROBAT KE PENANG / SINGAPURA:** Penanganan dokter spesialis luar negeri (-Rp 45 Jt) membuat staminamu pulih drastis!`, "love");
+            showToast(coveredByVip ? "Berobat Penang/SG gratis (Asuransi Jiwa VIP)!" : "Pemulihan medis luar negeri sukses!");
         }
         renderUpgradeSheet("kesehatan");
     }
@@ -9752,6 +10353,10 @@
 
     function showEndGameModal(title, reason, emoji = "🪦") {
         if (player && !player.migrated) {
+            const deathPayout = payLifeInsuranceDeathBenefit(`${player.name} (Pemegang Polis)`, true);
+            if (deathPayout > 0) {
+                reason += ` 🛡️ Santunan Meninggal Dunia Polis Asuransi Jiwa VIP sebesar +${formatShortJuta(deathPayout)} (100%) telah cair ke harta warisanmu!`;
+            }
             playGameSound("death");
         }
         recordToHallOfFame(title, reason, emoji);
@@ -9767,18 +10372,46 @@
         const totalNetWorth = roundMoney(player.money + assetVal);
         document.getElementById("endWealth").textContent = `${formatShortJuta(player.money)} (+${player.assets.length} Aset: ${formatShortJuta(assetVal)})`;
 
-        // Daftar Ahli Waris (Pasangan & Anak) untuk Melanjutkan Permainan dengan 100% Aset Utuh
+        // Hitung & Tampilkan Rincian Pencairan Waris Sesuai Agama
+        const inhData = calculateInheritanceDistribution();
+        const lawEl = document.getElementById("inheritanceLawLabel");
+        const listEl = document.getElementById("inheritanceBreakdownList");
+        if (lawEl) lawEl.textContent = `${inhData.religion.icon} Agama: ${inhData.religion.name} — ${inhData.religion.lawName} (Total Harta: ${formatShortJuta(inhData.totalEstate)})`;
+        if (listEl) {
+            if (inhData.breakdown.length === 0) {
+                listEl.innerHTML = `<div style="color:#6b5344;">Tidak ada ahli waris tercatat. Harta diserahkan ke kas negara/yayasan.</div>`;
+            } else {
+                listEl.innerHTML = inhData.breakdown.map(b => `
+                    <div style="display:flex; justify-content:space-between; align-items:center; background:#fffdf9; border:1px solid #fde68a; border-radius:8px; padding:5px 7px;">
+                        <div><b>${b.name}</b> (${b.role})<br><span style="font-size:9.5px; color:#78350f;">${b.note}</span></div>
+                        <div style="text-align:right; font-weight:900; color:${b.amount > 0 ? '#15803d' : '#9ca3af'};">${b.pct}%<br>${formatShortJuta(b.amount)}</div>
+                    </div>
+                `).join("");
+            }
+        }
+
+        // Daftar Ahli Waris (Pasangan, Anak, & Adik) dengan bagian waris sesuai agama
         const heirSec = document.getElementById("heirSection");
         const heirList = document.getElementById("heirList");
         heirList.innerHTML = "";
 
         const heirs = [];
         if (player.partner && player.partner.age < 78) {
-            heirs.push({ type: "Pasangan", data: player.partner });
+            const shareObj = inhData.breakdown.find(b => b.key === "partner");
+            heirs.push({ type: "Pasangan", data: player.partner, shareAmount: shareObj ? shareObj.amount : totalNetWorth });
         }
         player.children.forEach((ch, idx) => {
             if (ch.age < 78) {
-                heirs.push({ type: `Anak Ke-${idx + 1}`, data: ch });
+                const shareObj = inhData.breakdown.find(b => b.key === `child_${idx}`);
+                heirs.push({ type: `Anak Ke-${idx + 1}`, data: ch, shareAmount: shareObj ? shareObj.amount : totalNetWorth });
+            }
+        });
+        (player.siblings || []).forEach((sib, idx) => {
+            if (sib.alive && sib.age < 78) {
+                const shareObj = inhData.breakdown.find(b => b.key === `sibling_${idx}`);
+                if (shareObj && shareObj.amount > 0) {
+                    heirs.push({ type: sib.role || "Saudara Kandung", data: sib, shareAmount: shareObj.amount });
+                }
             }
         });
 
@@ -9791,7 +10424,7 @@
                 btn.innerHTML = `
                     <div style="display:flex; justify-content:space-between; align-items:center;">
                         <span>👑 <b>${h.data.name}</b> (${h.type} • ${h.data.age} Thn)</span>
-                        <span style="font-size:10px; background:#090d16; color:#34d399; padding:2px 6px; border-radius:6px;">Warisi 100% Harta</span>
+                        <span style="font-size:10px; background:#090d16; color:#34d399; padding:2px 6px; border-radius:6px;">Cair ${formatShortJuta(h.shareAmount)}</span>
                     </div>
                 `;
                 btn.onclick = () => continueAsHeir(h);
@@ -9807,8 +10440,8 @@
 
     function continueAsHeir(heirObj) {
         const h = heirObj.data;
-        const inheritedMoney = roundMoney(player.money + (h.wealth || 0));
-        const inheritedAssets = [...player.assets];
+        const inheritedMoney = roundMoney((typeof heirObj.shareAmount === 'number' ? heirObj.shareAmount : player.money) + (h.wealth || 0));
+        const inheritedAssets = (player.assets || []).filter(a => a.id !== "asuransi");
         const nextGen = player.generation + 1;
         const oldName = player.name;
         
@@ -9879,6 +10512,8 @@
             genderIcon: h.genderIcon,
             age: clamp(h.age, 0, 75),
             city: player.city,
+            religion: getPlayerReligionObj(),
+            siblings: [],
             family: player.family,
             trait: pickRandom(TRAITS),
             money: inheritedMoney,
