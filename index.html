@@ -1848,6 +1848,855 @@
         }
     ];
 
+
+    // =========================================================================
+    // BANK SOAL UJIAN SIM A, SIM C, SIM B1 (PERSEORANGAN/UMUM) & SIM B2 (PERSEORANGAN/UMUM) (10 SOAL UNIK MASING-MASING • LULUS >= 80%)
+    // =========================================================================
+    const SIM_EXAMS = {
+        A: {
+            code: "A",
+            title: "Ujian SIM A (Mobil Penumpang / Roda 4)",
+            icon: "🚗",
+            fee: 0.12,
+            desc: "Syarat wajib membeli mobil pribadi serta melamar profesi Driver Taksi Online & Supir Eksekutif.",
+            questions: [
+                {
+                    q: "Berapa batas kecepatan maksimal standar untuk mobil penumpang di jalan tol dalam kota Indonesia?",
+                    options: ["60 km/jam", "80 km/jam", "120 km/jam", "140 km/jam"],
+                    answer: 1
+                },
+                {
+                    q: "Apa fungsi utama garis marka jalan putih utuh (tidak terputus) di tengah jalan dua arah?",
+                    options: ["Boleh mendahului jika jalan sepi", "Dilarang melintasi garis atau mendahului kendaraan lain", "Jalur khusus parkir darurat mobil", "Tanda batas kecepatan minimum"],
+                    answer: 1
+                },
+                {
+                    q: "Kapan penggunaan lampu hazard (lampu darurat berkedip bersamaan) pada mobil yang BENAR?",
+                    options: ["Saat hujan deras di jalan tol", "Saat lurus di persimpangan lampu merah", "Saat mobil mogok atau berhenti darurat di bahu jalan", "Saat melaju cepat di jalur kanan"],
+                    answer: 2
+                },
+                {
+                    q: "Siapakah yang wajib memakai sabuk pengaman (seatbelt) saat berkendara mobil sesuai UU LLAJ?",
+                    options: ["Hanya pengemudi saja", "Pengemudi dan penumpang di kursi depan", "Hanya saat melewati jalan tol", "Pengemudi saja jika kecepatan > 60 km/jam"],
+                    answer: 1
+                },
+                {
+                    q: "Apa yang dimaksud dengan 'blind spot' (titik buta) saat mengemudikan mobil?",
+                    options: ["Area lampu jauh yang tidak menyala", "Area di sekitar mobil yang tidak terlihat melalui kaca spion", "Kondisi kaca depan berembun saat hujan", "Jalanan menanjak tanpa penerangan"],
+                    answer: 1
+                },
+                {
+                    q: "Bagaimana teknik menjaga jarak aman ideal antar mobil saat melaju di kecepatan 60–80 km/jam?",
+                    options: ["Menempel sedekat mungkin agar tidak diserobot", "Menerapkan aturan jarak minimal 3 detik dari kendaraan depan", "Cukup berjarak 1 meter saja", "Mengandalkan klakson terus-menerus"],
+                    answer: 1
+                },
+                {
+                    q: "Saat mobil melintasi genangan air dengan kecepatan tinggi dan ban kehilangan traksi (aquaplaning), apa tindakan terbaik?",
+                    options: ["Injak rem mendadak sekuat tenaga", "Banting setir tajam ke bahu jalan", "Lepas pedal gas perlahan dan pertahankan setir tetap lurus", "Tarik rem tangan langsung"],
+                    answer: 2
+                },
+                {
+                    q: "Di bundaran lalu lintas tanpa lampu APILL, kendaraan manakah yang mendapat prioritas jalan?",
+                    options: ["Kendaraan yang baru akan masuk bundaran", "Kendaraan yang sudah berada di dalam jalur bundaran", "Kendaraan dengan ukuran paling besar", "Kendaraan yang membunyikan klakson lebih dulu"],
+                    answer: 1
+                },
+                {
+                    q: "Saat memarkir mobil di jalan menurun, ke arah mana ban depan sebaiknya diputar untuk keamanan tambahan?",
+                    options: ["Lurus ke depan", "Mengarah ke tepi/trotoar jalan", "Mengarah ke tengah badan jalan", "Bebas asalkan mesin dimatikan"],
+                    answer: 1
+                },
+                {
+                    q: "Berapa jarak minimal menyalakan lampu sein sebelum mobil berbelok atau berpindah lajur?",
+                    options: ["Tepat saat setir sudah diputar", "Sekitar 30 meter sebelum berbelok atau pindah lajur", "Tidak perlu jika tidak ada polisi", "Setelah selesai berpindah lajur"],
+                    answer: 1
+                }
+            ]
+        },
+        C: {
+            code: "C",
+            title: "Ujian SIM C (Sepeda Motor / Roda 2)",
+            icon: "🛵",
+            fee: 0.10,
+            desc: "Syarat wajib membeli motor serta melamar profesi Driver Ojek Online (Ojol) & Kurir Paket Motor.",
+            questions: [
+                {
+                    q: "Standar helm yang wajib digunakan pengendara dan pembonceng sepeda motor di Indonesia adalah?",
+                    options: ["Helm proyek bangunan", "Helm berstandar SNI dengan tali pengunci terpasang (klik)", "Helm sepeda gowes", "Topi tebal agar tidak kepanasan"],
+                    answer: 1
+                },
+                {
+                    q: "Mengapa sepeda motor di Indonesia wajib menyalakan lampu utama pada siang hari?",
+                    options: ["Agar aki motor cepat terisi", "Meningkatkan visibilitas motor agar mudah terlihat pengendara lain", "Syarat agar klakson bisa berbunyi", "Untuk menerangi aspal saat siang"],
+                    answer: 1
+                },
+                {
+                    q: "Lajur mana yang diperuntukkan bagi pengendara sepeda motor di jalan raya berlajur banyak?",
+                    options: ["Lajur paling kanan (lajur cepat)", "Lajur paling kiri sesuai peruntukan kendaraan lambat/motor", "Trotoar pejalan kaki saat macet", "Jalur khusus busway Transjakarta"],
+                    answer: 1
+                },
+                {
+                    q: "Berapa jumlah maksimal penumpang yang diperbolehkan pada satu unit sepeda motor biasa tanpa kereta samping?",
+                    options: ["1 pengemudi dan 1 penumpang (total 2 orang)", "1 pengemudi dan 2 penumpang dewasa", "Bebas selama jok masih muat", "Maksimal 4 orang untuk jarak dekat"],
+                    answer: 0
+                },
+                {
+                    q: "Bagaimana cara pengereman mendadak yang paling aman dan stabil pada sepeda motor?",
+                    options: ["Hanya menekan rem depan sekuatnya", "Hanya menekan rem belakang sampai ban terkunci", "Mengombinasikan rem depan dan rem belakang secara bertahap & seimbang", "Mematikan kunci kontak mesin"],
+                    answer: 2
+                },
+                {
+                    q: "Dari sisi manakah sepeda motor diperbolehkan mendahului kendaraan lain secara legal?",
+                    options: ["Dari sisi kiri bahu jalan", "Dari sisi kanan dengan ruang pandang aman dan menyalakan sein", "Dari sela-sela trotoar", "Dari sisi mana saja asal klakson kencang"],
+                    answer: 1
+                },
+                {
+                    q: "Apa hukumnya mengendarai sepeda motor melawan arus atau naik ke trotoar saat jalan macet?",
+                    options: ["Diperbolehkan jika terburu-buru", "Pelanggaran lalu lintas berat yang membahayakan & dapat ditilang", "Diperbolehkan khusus pengemudi ojek", "Sah jika menyalakan lampu hazard"],
+                    answer: 1
+                },
+                {
+                    q: "Kelengkapan spion standar yang wajib terpasang pada sepeda motor saat beroperasi di jalan raya adalah?",
+                    options: ["Cukup 1 spion di sisi kanan", "2 buah spion (kiri dan kanan) yang berfungsi jelas", "Tidak wajib jika leher bisa menoleh", "Spion kecil variasi yang tidak memantulkan bayangan"],
+                    answer: 1
+                },
+                {
+                    q: "Saat berkendara motor di kondisi hujan deras dan jalan licin, tindakan paling aman adalah?",
+                    options: ["Memacu kecepatan agar cepat sampai", "Mengurangi kecepatan, menjaga jarak lebih jauh, dan menghindari pengereman mendadak", "Memakai jas hujan model ponco lebar yang menjuntai ke rantai", "Mematikan lampu utama agar tidak silau"],
+                    answer: 1
+                },
+                {
+                    q: "Posisi kedua kaki yang benar saat sepeda motor sedang melaju normal di jalan raya adalah?",
+                    options: ["Menjuntai ke bawah menyentuh aspal", "Berada rapi di atas pijakan kaki (footstep) dengan lutut sedikit menjepit", "Diangkat ke atas setang", "Satu kaki di aspal agar siap mengerem"],
+                    answer: 1
+                }
+            ]
+        },
+        B1_P: {
+            code: "B1_P",
+            shortName: "SIM B1 Perseorangan",
+            title: "Ujian SIM B1 Perseorangan (Truk/Bus Pribadi >3.500 kg)",
+            icon: "🚚",
+            minAge: 20,
+            prereqSim: ["A"],
+            fee: 0.12,
+            desc: "Untuk mengemudikan kendaraan mobil barang/penumpang perseorangan dengan JBB > 3.500 kg (Truk Box/Engkel). Syarat: Usia ≥20 Thn & punya SIM A.",
+            questions: [
+                {
+                    q: "Berapa batas berat maksimum (JBB) minimal kendaraan yang mewajibkan pengemudi memiliki SIM B1 Perseorangan?",
+                    options: ["Di atas 1.000 kg", "Di atas 3.500 kg", "Di atas 10.000 kg", "Di bawah 2.000 kg"],
+                    answer: 1
+                },
+                {
+                    q: "Berapa usia minimal pemohon untuk dapat membuat SIM B1 Perseorangan di Indonesia?",
+                    options: ["17 tahun", "18 tahun", "20 tahun", "25 tahun"],
+                    answer: 2
+                },
+                {
+                    q: "Apa syarat kepemilikan SIM sebelumnya yang wajib dipenuhi untuk meningkatkan ke SIM B1 Perseorangan?",
+                    options: ["Memiliki SIM C minimal 6 bulan", "Memiliki SIM A terlebih dahulu", "Tidak memerlukan SIM sebelumnya", "Memiliki SIM B2 terlebih dahulu"],
+                    answer: 1
+                },
+                {
+                    q: "Mengapa jarak pengereman truk engkel/box bermuatan penuh jauh lebih panjang dibanding mobil pribadi?",
+                    options: ["Karena ukuran roda truk lebih kecil", "Karena massa dan momentum kendaraan jauh lebih besar", "Karena truk tidak memakai rem belakang", "Karena posisi duduk supir lebih tinggi"],
+                    answer: 1
+                },
+                {
+                    q: "Saat menuruni jalan pegunungan yang panjang dengan truk box bermuatan, teknik pengereman paling aman adalah?",
+                    options: ["Menetralkan gigi persneling agar hemat BBM", "Menginjak pedal rem terus-menerus tanpa henti", "Menggunakan gigi rendah (engine brake / exhaust brake) dibantu rem secara bertahap", "Mematikan mesin saat turunan"],
+                    answer: 2
+                },
+                {
+                    q: "Apa risiko utama mengangkut muatan melebihi kapasitas daya angkut (ODOL) pada truk engkel?",
+                    options: ["Hemat biaya operasional tanpa risiko", "Memicu rem blong, pecah ban, patah as roda, dan merusak jalan", "Membuat suspensi truk lebih empuk", "Menambah kecepatan maksimum truk"],
+                    answer: 1
+                },
+                {
+                    q: "Bagaimana cara menyusun muatan barang di dalam bak/box truk agar kendaraan tetap stabil saat berbelok?",
+                    options: ["Menumpuk barang paling berat di bagian paling atas", "Menempatkan barang terberat di bagian bawah dan merata di tengah sumbu roda", "Menumpuk seluruh barang di sisi kiri bak", "Membiarkan barang tidak diikat agar mudah dibongkar"],
+                    answer: 1
+                },
+                {
+                    q: "Di jalan tol multi-lajur, lajur mana yang WAJIB digunakan oleh kendaraan truk angkutan barang?",
+                    options: ["Lajur paling kanan (lajur cepat)", "Lajur paling kiri sesuai ketentuan kendaraan berat", "Bahu jalan tol agar bebas hambatan", "Bergantian kanan-kiri sesuka hati"],
+                    answer: 1
+                },
+                {
+                    q: "Apa fungsi utama pemeriksaan tekanan angin ban dan baut roda (pre-trip inspection) sebelum truk berangkat?",
+                    options: ["Sekadar formalitas perusahaan", "Mencegah ban pecah, oleng, atau roda terlepas saat membawa beban berat", "Agar warna velg terlihat mengilap", "Mengurangi kapasitas tangki solar"],
+                    answer: 1
+                },
+                {
+                    q: "Saat hendak berbelok ke kiri di persimpangan sempit dengan truk box panjang, apa yang wajib diperhatikan pengemudi?",
+                    options: ["Langsung memotong tajam dari sisi kiri", "Memperhatikan radius putar (tail swing) dan blind spot sisi kiri dari motor/pejalan kaki", "Mempercepat laju agar cepat lewat", "Melipat kaca spion agar tidak tersenggol"],
+                    answer: 1
+                }
+            ]
+        },
+        B1_U: {
+            code: "B1_U",
+            shortName: "SIM B1 Umum",
+            title: "Ujian SIM B1 Umum (Bus Pariwisata / Angkutan Umum >3.500 kg)",
+            icon: "🚌",
+            minAge: 20,
+            prereqSim: ["A"],
+            fee: 0.12,
+            desc: "Khusus pengemudi kendaraan umum berplat kuning > 3.500 kg (Bus AKAP, Bus Pariwisata, Truk Angkutan Umum). Syarat: Usia ≥20 Thn & punya SIM A.",
+            questions: [
+                {
+                    q: "Apa perbedaan utama antara SIM B1 Umum dengan SIM B1 Perseorangan?",
+                    options: ["SIM B1 Umum hanya untuk sepeda motor besar", "SIM B1 Umum wajib dimiliki pengemudi kendaraan angkutan umum/penumpang komersial >3.500 kg", "SIM B1 Umum tidak perlu uji teori", "SIM B1 Umum hanya berlaku di jalan tol"],
+                    answer: 1
+                },
+                {
+                    q: "Berapa batas waktu mengemudi maksimal berturut-turut bagi supir bus AKAP sebelum wajib beristirahat sesuai UU LLAJ?",
+                    options: ["Maksimal 4 jam berturut-turut, wajib istirahat minimal 30 menit", "Boleh 12 jam non-stop tanpa berhenti", "Maksimal 10 jam berturut-turut", "Tidak ada aturan batas waktu mengemudi"],
+                    answer: 0
+                },
+                {
+                    q: "Apa perlengkapan keselamatan darurat yang WAJIB tersedia di dalam kabin bus pariwisata?",
+                    options: ["Palu pemecah kaca, APAR (pemadam api), pintu darurat, dan kotak P3K", "Hanya klakson telolet dan lampu strobo", "Televisi layar lebar dan mesin kopi", "Cukup dongkrak ban saja"],
+                    answer: 0
+                },
+                {
+                    q: "Mengapa supir bus umum dilarang keras menaikkan atau menurunkan penumpang di bahu jalan tol?",
+                    options: ["Karena tarif tol akan menjadi lebih mahal", "Sangat membahayakan keselamatan penumpang dan melanggar peraturan lalu lintas jalan tol", "Agar AC bus tidak cepat panas", "Karena dilarang oleh kernet bus"],
+                    answer: 1
+                },
+                {
+                    q: "Apa yang harus dilakukan pengemudi bus AKAP saat merasa mulai mengantuk berat di tengah perjalanan malam?",
+                    options: ["Membuka jendela dan terus memacu kecepatan", "Menepi di rest area/tempat aman untuk tidur sejenak atau bergantian dengan supir cadangan", "Menyalakan lampu hazard sambil terus melaju", "Menyalakan musik keras agar tetap memaksa jalan"],
+                    answer: 1
+                },
+                {
+                    q: "Apa arti kode tanda bukti lulus uji berkala (KIR) pada bus dan truk angkutan umum?",
+                    options: ["Bukti bahwa kendaraan telah lulus uji kelaikan teknis dan keselamatan jalan", "Bukti pembayaran parkir bulanan terminal", "Izin memasang klakson variasi", "Tanda kepemilikan pribadi non-komersial"],
+                    answer: 0
+                },
+                {
+                    q: "Saat mengemudikan bus pariwisata melewati jalan berliku dan berkabut tebal di kawasan puncak, tindakan tepat adalah?",
+                    options: ["Menyalakan lampu jauh (high beam) terus-menerus", "Menyalakan lampu kabut/lampu dekat, kurangi kecepatan, dan jaga jarak aman", "Menyalip semua kendaraan di tikungan", "Mematikan semua lampu agar tidak silau"],
+                    answer: 1
+                },
+                {
+                    q: "Bagaimana etika berkendara yang benar bagi supir bus umum di jalan raya dua arah yang padat?",
+                    options: ["Mengambil jalur berlawanan (ngeblong) sambil menyalakan lampu dim", "Tetap berada di lajur sendiri, sabar mengikuti antrean, dan tidak membahayakan pengendara lain", "Membunyikan klakson terus-menerus agar motor minggir ke selokan", "Memotong antrean lewat bahu jalan berkerikil"],
+                    answer: 1
+                },
+                {
+                    q: "Sebelum bus pariwisata diberangkatkan, apa yang wajib disampaikan kru/pengemudi kepada penumpang?",
+                    options: ["Lokasi pintu darurat, palu pemecah kaca, APAR, dan imbauan memakai sabuk pengaman", "Harga bahan bakar solar terbaru", "Daftar bengkel sepanjang jalur tol", "Riwayat pemilik perusahaan otobus"],
+                    answer: 0
+                },
+                {
+                    q: "Jika indikator tekanan angin sistem rem (air brake) pada panel bus turun di bawah batas aman dan alarm berbunyi, tindakan yang benar adalah?",
+                    options: ["Tetap melanjutkan perjalanan sampai terminal tujuan", "Segera menepikan bus di lokasi aman dan memeriksa kebocoran sistem rem angin", "Mematikan suara alarm di dasbor", "Menginjak pedal gas lebih dalam"],
+                    answer: 1
+                }
+            ]
+        },
+        B2_P: {
+            code: "B2_P",
+            shortName: "SIM B2 Perseorangan",
+            title: "Ujian SIM B2 Perseorangan (Truk Tronton / Alat Berat / Gandeng Pribadi)",
+            icon: "🚜",
+            minAge: 21,
+            prereqSim: ["B1_P", "B1_U"],
+            fee: 0.12,
+            desc: "Untuk mengemudikan kendaraan alat berat, truk penarik, atau kendaraan gandengan perseorangan (>1.000 kg gandengan). Syarat: Usia ≥21 Thn & punya SIM B1.",
+            questions: [
+                {
+                    q: "Jenis kendaraan apa yang mewajibkan pengemudinya mengantongi SIM B2 Perseorangan?",
+                    options: ["Mobil sedan dan MPV keluarga", "Kendaraan alat berat, kendaraan penarik (tractor head), atau truk dengan kereta tempelan/gandengan perseorangan", "Sepeda motor touring di atas 500 cc", "Angkutan kota (angkot) dalam kota"],
+                    answer: 1
+                },
+                {
+                    q: "Berapa usia minimal yang disyaratkan untuk membuat SIM B2 Perseorangan di Indonesia?",
+                    options: ["17 tahun", "19 tahun", "21 tahun", "30 tahun"],
+                    answer: 2
+                },
+                {
+                    q: "Apa yang dimaksud dengan risiko 'jackknifing' (melipat seperti pisau lipat) pada truk trailer/gandeng?",
+                    options: ["Ban cadangan truk terlepas di jalan", "Bagian trailer belakang tergelincir dan melipat menyudut terhadap kepala truk akibat pengereman mendadak/licin", "Bak truk terbuka otomatis saat menanjak", "Lampu rem belakang mati total"],
+                    answer: 1
+                },
+                {
+                    q: "Komponen kunci apa yang wajib diperiksa kunciannya sebelum truk tractor head menarik tempelan (semi-trailer)?",
+                    options: ["Kunci laci dasbor", "Fifth wheel (kopling penghubung kingpin), selang rem angin, dan kabel lampu trailer", "Antena radio kabin", "Wiper kaca belakang"],
+                    answer: 1
+                },
+                {
+                    q: "Mengapa truk tronton dan dump truck tambang memiliki area blind spot (no-zone) yang sangat luas di depan dan samping?",
+                    options: ["Karena kaca depan selalu gelap", "Karena posisi kabin yang sangat tinggi dan dimensi bodi yang panjang", "Karena truk tidak dilengkapi spion", "Karena lampu truk terlalu redup"],
+                    answer: 1
+                },
+                {
+                    q: "Saat memundurkan truk tronton atau trailer panjang di area gudang/proyek, prosedur paling aman adalah?",
+                    options: ["Mundur secepat mungkin hanya mengandalkan spion tengah", "Menggunakan bantuan juru parkir (spotter), menyalakan lampu mundur/hazard, dan melaju sangat pelan", "Membuka pintu dan melompat keluar", "Mengandalkan klakson panjang tanpa melihat belakang"],
+                    answer: 1
+                },
+                {
+                    q: "Apa fungsi ganjal roda (wheel chock) saat truk berat/tronton diparkir di area miring atau sedang bongkar muat?",
+                    options: ["Sebagai hiasan ban belakang", "Mencegah truk berat meluncur atau bergerak tidak terkendali meski rem parkir aktif", "Untuk mengukur kedalaman alur ban", "Agar ban tidak cepat kempes"],
+                    answer: 1
+                },
+                {
+                    q: "Saat melewati jembatan atau jalan kelas III dengan rambu batas MST (Muatan Sumbu Terberat) 8 ton, apa yang harus dilakukan pengemudi truk berat?",
+                    options: ["Tetap melintas pelan meski bobot truk 30 ton", "Mematuhi rambu batas tonase dan mencari jalur alternatif sesuai kelas jalan", "Melintas dengan kecepatan tinggi agar cepat lewat", "Melewati jembatan hanya pada malam hari"],
+                    answer: 1
+                },
+                {
+                    q: "Mengapa pengemudi truk gandeng harus melakukan manuver berbelok lebih lebar (wide turn) di tikungan?",
+                    options: ["Agar terlihat gagah di jalan raya", "Karena lintasan roda belakang trailer (off-tracking) memotong lebih dalam dibanding roda depan", "Supaya ban depan tidak cepat aus", "Karena setir truk tidak bisa diputar penuh"],
+                    answer: 1
+                },
+                {
+                    q: "Apa bahaya utama membiarkan kampas rem truk berat terlalu panas (brake fade) saat melintasi jalur menurun panjang?",
+                    options: ["Rem menjadi semakin pakem", "Daya cengkeram rem hilang drastis hingga menyebabkan rem blong", "Konsumsi solar menjadi lebih irit", "Ban truk menjadi lebih dingin"],
+                    answer: 1
+                }
+            ]
+        },
+        B2_U: {
+            code: "B2_U",
+            shortName: "SIM B2 Umum",
+            title: "Ujian SIM B2 Umum (Truk Kontainer Trailer / Tangki BBM Komersial)",
+            icon: "🚛",
+            minAge: 21,
+            prereqSim: ["B1_U", "B2_P"],
+            fee: 0.12,
+            desc: "Tingkatan SIM tertinggi di Indonesia! Wajib untuk supir Truk Kontainer Trailer, Tangki BBM/B3, dan angkutan barang berat komersial. Syarat: Usia ≥21 Thn & punya SIM B1 Umum / B2 Perseorangan.",
+            questions: [
+                {
+                    q: "SIM B2 Umum merupakan golongan SIM tertinggi yang wajib dimiliki oleh pengemudi kendaraan apa?",
+                    options: ["Taksi online dan mobil travel", "Kendaraan penarik/gandengan/tempelan angkutan umum & barang komersial berat (truk kontainer trailer, tangki BBM)", "Sepeda motor pengantar logistik", "Mobil pribadi SUV mewah"],
+                    answer: 1
+                },
+                {
+                    q: "Pada truk kontainer trailer, apa fungsi utama 'twist lock' di empat sudut sasis trailer?",
+                    options: ["Mengatur suhu ruangan kontainer", "Mengunci peti kemas (kontainer) dengan kuat ke rangka sasis agar tidak jatuh saat bermanuver", "Membuka pintu belakang kontainer secara otomatis", "Menghubungkan klakson angin"],
+                    answer: 1
+                },
+                {
+                    q: "Saat mengemudikan truk tangki BBM/cairan kimia (B3), mengapa pengereman atau belokan mendadak sangat berbahaya?",
+                    options: ["Karena warna tangki mudah pudar", "Efek gelombang cairan (liquid surge/slosh) di dalam tangki dapat menggeser titik berat dan menggulingkan truk", "Karena tangki tidak memiliki rem", "Karena cairan akan langsung membeku"],
+                    answer: 1
+                },
+                {
+                    q: "Apa kewajiban khusus truk pengangkut Bahan Berbahaya dan Beracun (B3) / Tangki BBM di jalan raya?",
+                    options: ["Memasang plakat/simbol bahaya B3 resmi, membawa APAR khusus, dan mematuhi rute/jam operasional", "Melaju secepat mungkin di lajur kanan tol", "Tidak perlu membawa surat jalan", "Berhenti bebas di dekat pasar padat"],
+                    answer: 0
+                },
+                {
+                    q: "Saat truk kontainer trailer melintasi perlintasan rel kereta api, apa tindakan pencegahan paling krusial?",
+                    options: ["Berhenti di tengah rel jika lalu lintas depan macet", "Pastikan ruang di seberang rel cukup untuk seluruh panjang trailer sebelum melintas dan jangan ganti gigi di atas rel", "Menerobos palang pintu yang mulai turun", "Menyalakan lampu hazard di atas rel"],
+                    answer: 1
+                },
+                {
+                    q: "Bagaimana aturan jam operasional truk kontainer berat di ruas jalan tol dalam kota / jalur protokol tertentu?",
+                    options: ["Bebas melintas 24 jam di semua jalan protokol", "Wajib mematuhi pembatasan jam operasional kendaraan berat yang ditetapkan pemerintah/kepolisian", "Hanya boleh melintas saat jam berangkat kerja pagi", "Boleh melanggar jika membawa muatan ekspor"],
+                    answer: 1
+                },
+                {
+                    q: "Jika truk kontainer mogok di lajur kiri jalan tol pada malam hari, jarak minimal pemasangan segitiga pengaman adalah?",
+                    options: ["Tepat 1 meter di belakang bemper", "Cukup jauh di belakang kendaraan (minimal 30–50 meter) dengan lampu hazard dan reflektor menyala terang", "Tidak perlu memasang segitiga pengaman", "Diletakkan di dalam kabin pengemudi"],
+                    answer: 1
+                },
+                {
+                    q: "Apa yang wajib diperiksa pengemudi SIM B2 Umum terkait ketinggian muatan kontainer sebelum melintasi terowongan/underpass?",
+                    options: ["Memastikan tinggi total kendaraan + kontainer lebih rendah dari rambu batas ketinggian (clearance)", "Mengempiskan seluruh ban di depan terowongan", "Tetap melaju pelan meski menyentuh atap terowongan", "Hanya memperkirakan dengan perasaan saja"],
+                    answer: 0
+                },
+                {
+                    q: "Apa fungsi utama sistem ABS (Anti-lock Braking System) dan EBS pada truk trailer komersial modern?",
+                    options: ["Membuat klakson lebih nyaring", "Mencegah roda terkunci saat pengereman darurat agar pengemudi tetap bisa mengendalikan arah kemudi", "Menambah kapasitas muatan kontainer hingga 2 kali lipat", "Menggantikan fungsi sabuk pengaman"],
+                    answer: 1
+                },
+                {
+                    q: "Sebagai pengemudi profesional pemegang SIM B2 Umum, sikap apa yang wajib dijaga demi keselamatan jalan raya?",
+                    options: ["Memaksakan target ritase meski kurang tidur", "Menjaga kondisi fisik prima, bebas alkohol/narkoba, taat batas kecepatan, dan rutin memeriksa kelayakan armada", "Mengabaikan rambu larangan masuk kendaraan berat", "Menyerahkan setir kepada kernet yang belum memiliki SIM B2"],
+                    answer: 1
+                }
+            ]
+        }
+    };
+
+    // Profesi Khusus Tanpa Kacamata & Profesi Driver Wajib SIM (Tersedia di Semua Kota)
+    const SPECIAL_REQ_JOBS = [
+        // --- PROFESI TIDAK BOLEH MEMAKAI KACAMATA ---
+        {
+            id: "ng_pilot",
+            group: "no_glasses",
+            title: "Pilot Maskapai Komersial",
+            icon: "✈️",
+            salary: 340,
+            minAge: 21,
+            reqEdu: 75,
+            reqHealth: 80,
+            reqSocial: 45,
+            reqLooks: 0,
+            noGlasses: true,
+            reqSim: null,
+            taxType: "pph21",
+            desc: "Menerbangkan pesawat komersial lintas Nusantara. Syarat mutlak: mata sehat tanpa minus (tidak boleh berkacamata)!"
+        },
+        {
+            id: "ng_pramugari",
+            group: "no_glasses",
+            title: "Pramugari / Pramugara Maskapai",
+            icon: "🛫",
+            salary: 135,
+            minAge: 18,
+            reqEdu: 55,
+            reqHealth: 75,
+            reqSocial: 60,
+            reqLooks: 72,
+            noGlasses: true,
+            reqSim: null,
+            taxType: "pph21",
+            desc: "Awak kabin penerbangan domestik & internasional. Syarat mutlak: tidak boleh memakai kacamata!"
+        },
+        {
+            id: "ng_tni",
+            group: "no_glasses",
+            title: "Perwira TNI (Akmil / AAL / AAU)",
+            icon: "🎖️",
+            salary: 165,
+            minAge: 18,
+            reqEdu: 65,
+            reqHealth: 82,
+            reqSocial: 40,
+            reqLooks: 0,
+            noGlasses: true,
+            reqSim: null,
+            taxType: "pph21",
+            desc: "Mengabdi menjaga kedaulatan negara. Seleksi kesehatan mata sangat ketat — tidak boleh berkacamata!"
+        },
+        {
+            id: "ng_polri",
+            group: "no_glasses",
+            title: "Anggota Polri (Bintara / Akpol)",
+            icon: "👮",
+            salary: 145,
+            minAge: 18,
+            reqEdu: 60,
+            reqHealth: 80,
+            reqSocial: 50,
+            reqLooks: 0,
+            noGlasses: true,
+            reqSim: null,
+            taxType: "pph21",
+            desc: "Penegak hukum & pengayom masyarakat +62. Syarat fisik & mata normal tanpa kacamata!"
+        },
+        {
+            id: "ng_masinis",
+            group: "no_glasses",
+            title: "Masinis Kereta Api / Kereta Cepat",
+            icon: "🚄",
+            salary: 155,
+            minAge: 20,
+            reqEdu: 68,
+            reqHealth: 78,
+            reqSocial: 35,
+            reqLooks: 0,
+            noGlasses: true,
+            reqSim: null,
+            taxType: "pph21",
+            desc: "Mengemudikan rangkaian kereta api antar kota. Wajib penglihatan tajam & bebas kacamata!"
+        },
+        // --- PROFESI DRIVER WAJIB SIM ---
+        {
+            id: "drv_ojol",
+            group: "driver",
+            title: "Driver Ojek Online (Ojol) Motor",
+            icon: "🛵",
+            salary: 28,
+            minAge: 17,
+            reqEdu: 0,
+            reqHealth: 40,
+            reqSocial: 15,
+            reqLooks: 0,
+            noGlasses: false,
+            reqSim: "C",
+            taxType: "umkm",
+            desc: "Narik penumpang & antar makanan tiap hari. Syarat wajib: Lulus Ujian SIM C!"
+        },
+        {
+            id: "drv_kurir",
+            group: "driver",
+            title: "Kurir Paket Motor Ekspedisi",
+            icon: "📦",
+            salary: 34,
+            minAge: 17,
+            reqEdu: 15,
+            reqHealth: 45,
+            reqSocial: 20,
+            reqLooks: 0,
+            noGlasses: false,
+            reqSim: "C",
+            taxType: "pph21",
+            desc: "Mengantar ratusan paket COD belanja online. Syarat wajib: Lulus Ujian SIM C!"
+        },
+        {
+            id: "drv_taxol",
+            group: "driver",
+            title: "Driver Taksi Online (Mobil)",
+            icon: "🚕",
+            salary: 54,
+            minAge: 18,
+            reqEdu: 20,
+            reqHealth: 45,
+            reqSocial: 25,
+            reqLooks: 0,
+            noGlasses: false,
+            reqSim: "A",
+            taxType: "umkm",
+            desc: "Antar jemput penumpang bandara & dalam kota dengan mobil. Syarat wajib: Lulus Ujian SIM A!"
+        },
+        {
+            id: "drv_pribadi",
+            group: "driver",
+            title: "Supir Pribadi Bos / Eksekutif",
+            icon: "🚘",
+            salary: 76,
+            minAge: 18,
+            reqEdu: 25,
+            reqHealth: 50,
+            reqSocial: 45,
+            reqLooks: 0,
+            noGlasses: false,
+            reqSim: "A",
+            taxType: "pph21",
+            desc: "Mengemudikan mobil mewah direksi & pejabat. Syarat wajib: Lulus Ujian SIM A!"
+        },
+        {
+            id: "drv_truk_b1p",
+            group: "driver",
+            title: "Supir Truk Box / Engkel Logistik",
+            icon: "🚚",
+            salary: 88,
+            minAge: 20,
+            reqEdu: 20,
+            reqHealth: 50,
+            reqSocial: 25,
+            reqLooks: 0,
+            noGlasses: false,
+            reqSim: ["B1_P", "B1_U", "B2_P", "B2_U"],
+            taxType: "pph21",
+            desc: "Mengirim muatan logistik pabrik & gudang antar kota dengan truk engkel/box. Syarat wajib: SIM B1 Perseorangan atau B1 Umum!"
+        },
+        {
+            id: "drv_bus_b1u",
+            group: "driver",
+            title: "Supir Bus Pariwisata / AKAP",
+            icon: "🚌",
+            salary: 105,
+            minAge: 20,
+            reqEdu: 25,
+            reqHealth: 55,
+            reqSocial: 35,
+            reqLooks: 0,
+            noGlasses: false,
+            reqSim: ["B1_U", "B2_U"],
+            taxType: "pph21",
+            desc: "Mengemudikan bus pariwisata executive & rute AKAP lintas Jawa-Sumatera. Syarat wajib: SIM B1 Umum (atau B2 Umum)!"
+        },
+        {
+            id: "drv_tronton_b2p",
+            group: "driver",
+            title: "Supir Truk Tronton / Dump Truck Proyek",
+            icon: "🚜",
+            salary: 130,
+            minAge: 21,
+            reqEdu: 25,
+            reqHealth: 60,
+            reqSocial: 30,
+            reqLooks: 0,
+            noGlasses: false,
+            reqSim: ["B2_P", "B2_U"],
+            taxType: "pph21",
+            desc: "Mengoperasikan dump truck & truk tronton berat di proyek infrastruktur/tambang. Syarat wajib: SIM B2 Perseorangan atau B2 Umum!"
+        },
+        {
+            id: "drv_trailer_b2u",
+            group: "driver",
+            title: "Supir Truk Kontainer Trailer / Tangki BBM",
+            icon: "🚛",
+            salary: 155,
+            minAge: 21,
+            reqEdu: 30,
+            reqHealth: 65,
+            reqSocial: 35,
+            reqLooks: 0,
+            noGlasses: false,
+            reqSim: ["B2_U"],
+            taxType: "pph21",
+            desc: "Profesi driver kelas berat paling bergengsi: menarik kontainer pelabuhan & tangki BBM! Syarat wajib: SIM B2 Umum!"
+        }
+    ];
+
+    const SIM_ORDER = ["A", "C", "B1_P", "B1_U", "B2_P", "B2_U"];
+
+    function getSimLabel(code) {
+        const map = {
+            A: "SIM A",
+            C: "SIM C",
+            B1_P: "SIM B1 Perseorangan",
+            B1_U: "SIM B1 Umum",
+            B2_P: "SIM B2 Perseorangan",
+            B2_U: "SIM B2 Umum"
+        };
+        return map[code] || `SIM ${code}`;
+    }
+
+    function ensurePlayerSimAndEyes() {
+        if (!player) return;
+        if (!player.sim) {
+            player.sim = { A: false, C: false, B1_P: false, B1_U: false, B2_P: false, B2_U: false };
+        } else {
+            SIM_ORDER.forEach(k => {
+                if (typeof player.sim[k] !== "boolean") player.sim[k] = false;
+            });
+            if ("D1" in player.sim) delete player.sim.D1;
+        }
+        if (typeof player.wearsGlasses !== "boolean") player.wearsGlasses = false;
+        if (typeof player.eyeMinus !== "number") player.eyeMinus = 0;
+    }
+
+    function hasRequiredSim(reqSim) {
+        if (!reqSim) return true;
+        ensurePlayerSimAndEyes();
+        if (Array.isArray(reqSim)) {
+            return reqSim.some(code => !!player.sim[code]);
+        }
+        if (reqSim === "A") {
+            return !!(player.sim.A || player.sim.B1_P || player.sim.B1_U || player.sim.B2_P || player.sim.B2_U);
+        }
+        return !!player.sim[reqSim];
+    }
+
+    function getRequiredSimLabel(reqSim) {
+        if (!reqSim) return "";
+        if (Array.isArray(reqSim)) {
+            return reqSim.slice(0, 2).map(getSimLabel).join(" / ");
+        }
+        return getSimLabel(reqSim);
+    }
+
+    function triggerAge17EyeCheckEvent() {
+        if (!player || !player.alive) return;
+        ensurePlayerSimAndEyes();
+        showPopupEvent(
+            "👁️",
+            "Cek Kesehatan Mata Usia 17 Tahun!",
+            `Selamat menginjak usia <b>17 tahun</b>! Selain resmi punya KTP & sudah boleh mengikuti <b>Ujian SIM (A / C / B1 / B2)</b>, kamu menjalani pemeriksaan kesehatan mata rutin di klinik optik.<br><br>Mari cek apakah penglihatanmu normal atau mengalami rabun jauh (minus) yang mengharuskanmu memakai kacamata!`,
+            [
+                {
+                    text: "👓 Lakukan Pemeriksaan Mata (Tes Huruf Snellen • RNG)",
+                    fn: () => {
+                        const minusChance = (player.stats && player.stats.edu >= 75) ? 0.52 : 0.44;
+                        player.eyeChecked = true;
+                        if (Math.random() < minusChance) {
+                            const minusVal = Number((randInt(2, 18) * 0.25).toFixed(2));
+                            player.wearsGlasses = true;
+                            player.eyeMinus = minusVal;
+                            modifyStats({ happy: -randInt(1, 3) });
+                            addLog(`👓 **HASIL CEK MATA (MINUS -${minusVal.toFixed(2)}):** Matamu terdeteksi rabun jauh (**-${minusVal.toFixed(2)}**) sehingga mulai sekarang kamu **memakai kacamata**! Profesi ketat yang melarang kacamata (Pilot, Pramugari, TNI, Polri, Masinis) kini tertutup untukmu.`, "normal");
+                            showToast(`👓 Mata minus -${minusVal.toFixed(2)}! Kamu memakai kacamata.`);
+                        } else {
+                            player.wearsGlasses = false;
+                            player.eyeMinus = 0;
+                            modifyStats({ happy: randInt(2, 5) });
+                            addLog(`👁️ **HASIL CEK MATA (NORMAL 20/20):** Penglihatanmu sehat sempurna tanpa minus! Kamu tidak perlu memakai kacamata dan memenuhi syarat mata untuk profesi ketat (Pilot, Pramugari, TNI, Polri, Masinis).`, "school");
+                            showToast("👁️ Penglihatan normal! Bebas kacamata.");
+                        }
+                        updateUI();
+                    }
+                }
+            ],
+            "👁️ CEK KESEHATAN MATA (17 THN)"
+        );
+    }
+
+    let activeSimExam = null;
+
+    function startSimExam(simType) {
+        if (!player || !player.alive) return;
+        ensurePlayerSimAndEyes();
+        const exam = SIM_EXAMS[simType];
+        if (!exam) return;
+
+        const reqAge = exam.minAge || 17;
+        if (player.age < reqAge) {
+            showToast(`Minimal berusia ${reqAge} tahun untuk mengikuti Ujian ${getSimLabel(simType)}!`);
+            return;
+        }
+        if (exam.prereqSim && !hasRequiredSim(exam.prereqSim)) {
+            showToast(`Syarat wajib: harus memiliki ${getRequiredSimLabel(exam.prereqSim)} terlebih dahulu!`);
+            return;
+        }
+        if (player.sim[simType]) {
+            showToast(`Kamu sudah lulus dan memiliki ${getSimLabel(simType)}!`);
+            return;
+        }
+        if (player.money >= exam.fee) {
+            player.money = roundMoney(player.money - exam.fee);
+        }
+        activeSimExam = {
+            type: simType,
+            index: 0,
+            score: 0
+        };
+        updateUI();
+        renderSimQuestionPopup();
+    }
+
+    function renderSimQuestionPopup() {
+        if (!activeSimExam) return;
+        const exam = SIM_EXAMS[activeSimExam.type];
+        const total = exam.questions.length;
+        const qObj = exam.questions[activeSimExam.index];
+        if (!qObj) {
+            finishSimExam();
+            return;
+        }
+
+        const letters = ["A", "B", "C", "D"];
+        const choices = qObj.options.map((optText, optIdx) => ({
+            text: `<b>${letters[optIdx]}.</b> ${optText}`,
+            fn: () => {
+                if (optIdx === qObj.answer) {
+                    activeSimExam.score += 1;
+                }
+                activeSimExam.index += 1;
+                if (activeSimExam.index >= total) {
+                    finishSimExam();
+                } else {
+                    renderSimQuestionPopup();
+                }
+            }
+        }));
+
+        showPopupEvent(
+            exam.icon,
+            `Ujian ${getSimLabel(exam.code)} — Soal ${activeSimExam.index + 1} / ${total}`,
+            `<div style="font-size:12.5px; font-weight:800; color:#3d2b1f; margin-bottom:4px;">${qObj.q}</div><div style="font-size:10px; color:#7c6651;">Syarat Lulus: Minimal <b>80%</b> benar (8 dari 10 soal).</div>`,
+            choices,
+            `🪪 SATPAS POLRI — UJIAN ${getSimLabel(exam.code).toUpperCase()}`
+        );
+    }
+
+    function finishSimExam() {
+        if (!activeSimExam) return;
+        const exam = SIM_EXAMS[activeSimExam.type];
+        const total = exam.questions.length;
+        const score = activeSimExam.score;
+        const pct = Math.round((score / total) * 100);
+        const passed = pct >= 80;
+        activeSimExam = null;
+
+        const simLbl = getSimLabel(exam.code);
+        if (passed) {
+            player.sim[exam.code] = true;
+            playGameSound("coin");
+            modifyStats({ happy: randInt(4, 8), social: 2 });
+            addLog(`🪪 **LULUS UJIAN ${simLbl.toUpperCase()} (${pct}%):** Selamat! Kamu menjawab benar **${score}/${total} soal (${pct}%)** dan resmi mengantongi **${simLbl}**!`, "school");
+            showToast(`🎉 LULUS ${simLbl} (${pct}%)!`);
+            showPopupEvent(
+                "🎉",
+                `LULUS UJIAN ${simLbl.toUpperCase()}!`,
+                `Skor Ujianmu: <b>${score} / ${total} benar (${pct}%)</b>.<br>Selamat! Kamu memenuhi syarat kelulusan minimal <b>80%</b> dan resmi memiliki <b>🪪 ${simLbl}</b>.`,
+                [{ text: "✅ Mantap! Kembali ke Menu", fn: () => renderKarirSheet("sim") }],
+                `🪪 HASIL UJIAN ${simLbl.toUpperCase()}`
+            );
+        } else {
+            playGameSound("danger");
+            modifyStats({ happy: -randInt(2, 5) });
+            addLog(`❌ **GAGAL UJIAN ${simLbl.toUpperCase()} (${pct}%):** Kamu hanya menjawab benar **${score}/${total} soal (${pct}%)** (syarat lulus minimal 80% / 8 benar). Silakan belajar aturan lalu lintas dan ikut ujian ulang!`, "danger");
+            showToast(`❌ Belum lulus ${simLbl} (${pct}%). Min. 80%!`);
+            showPopupEvent(
+                "📝",
+                `Belum Lulus Ujian ${simLbl}`,
+                `Skor Ujianmu: <b>${score} / ${total} benar (${pct}%)</b>.<br>Syarat lulus adalah minimal <b>80% (8 dari 10 soal benar)</b>. Kamu dapat mengulang ujian ${simLbl} kapan saja.`,
+                [
+                    { text: `🔄 Ulangi Ujian ${simLbl}`, fn: () => startSimExam(exam.code) },
+                    { text: "✕ Kembali ke Menu", fn: () => renderKarirSheet("sim") }
+                ],
+                `🪪 HASIL UJIAN ${simLbl.toUpperCase()}`
+            );
+        }
+        updateUI();
+    }
+
+    function applySpecialReqJob(specIdx) {
+        if (!player || player.retired) return;
+        ensurePlayerSimAndEyes();
+        if (hasCriminalRecord()) {
+            showToast("Ditolak! Catatan pernah dipenjara membuatmu tidak bisa diterima kerja formal.");
+            return;
+        }
+        const jb = SPECIAL_REQ_JOBS[specIdx];
+        if (!jb) return;
+
+        if (player.age < jb.minAge) {
+            showToast(`Minimal berusia ${jb.minAge} tahun untuk melamar ${jb.title}!`);
+            return;
+        }
+        if (jb.noGlasses && player.wearsGlasses) {
+            showToast(`❌ Ditolak! ${jb.title} tidak boleh memakai kacamata (matamu minus -${player.eyeMinus.toFixed(2)}).`);
+            addLog(`👓 **DITOLAK TES KESEHATAN MATA (${jb.title}):** Lamaranmu sebagai **${jb.title}** gugur karena profesi ini tidak memperbolehkan pemakaian kacamata (minus -${player.eyeMinus.toFixed(2)}).`, "danger");
+            return;
+        }
+        if (jb.reqSim && !hasRequiredSim(jb.reqSim)) {
+            const reqLbl = getRequiredSimLabel(jb.reqSim);
+            showToast(`🪪 Wajib memiliki ${reqLbl}! Ikuti Ujian SIM terlebih dahulu.`);
+            return;
+        }
+        if (player.stats.edu < jb.reqEdu) {
+            showToast(`Kepintaran kurang! Butuh Pendidikan minimal ${jb.reqEdu}%.`);
+            return;
+        }
+        if (player.stats.health < jb.reqHealth) {
+            showToast(`Kesehatan fisik kurang! Butuh Kesehatan minimal ${jb.reqHealth}%.`);
+            return;
+        }
+        if (player.stats.looks < jb.reqLooks) {
+            showToast(`Penampilan kurang! Butuh Looks minimal ${jb.reqLooks}%.`);
+            return;
+        }
+        if (player.stats.social < jb.reqSocial) {
+            showToast(`Sosial kurang! Butuh Sosial minimal ${jb.reqSocial}%.`);
+            return;
+        }
+
+        const sideHrs = (player.sideJobs || []).reduce((s, sj) => s + (sj.hours || 0), 0);
+        if (40 + sideHrs > 40) {
+            showToast(`Pekerjaan ini Full-Time 40 Jam/minggu! Hentikan kerja sampinganmu (${sideHrs} jam) terlebih dahulu.`);
+            return;
+        }
+
+        player.job = {
+            id: jb.id,
+            title: jb.title,
+            city: player.city.name,
+            icon: jb.icon,
+            salary: jb.salary,
+            taxType: jb.taxType,
+            noGlasses: jb.noGlasses,
+            reqSim: jb.reqSim,
+            fullTimeOnly: true
+        };
+        player.jobHours = 40;
+        player.salary = jb.salary;
+        player.yearsWorked = 0;
+
+        modifyStats({ happy: randInt(4, 10), social: randInt(2, 5) });
+        playGameSound("coin");
+        addLog(`${jb.icon} **DITERIMA BEKERJA (${jb.title.toUpperCase()}):** Kamu resmi diterima sebagai **${jb.icon} ${jb.title}** dengan gaji **Rp ${jb.salary} Jt/tahun**!`, "career");
+        showToast(`Resmi bekerja sebagai ${jb.title}!`);
+        renderKarirSheet("kerja");
+    }
+
     function getSocialMediaAnnualIncome() {
         if (!player || !Array.isArray(player.socialMediaJobs)) return 0;
         return roundMoney(player.socialMediaJobs.reduce((sum, item) => sum + (item.salary || 0), 0));
@@ -1898,6 +2747,10 @@
 
     function takeResilientInformalJob(idx) {
         if (!player || player.retired) return;
+        if (player.age < 15) {
+            showToast("Minimal berusia 15 tahun untuk bekerja di sektor informal!");
+            return;
+        }
         const ij = INFORMAL_JOBS[idx];
         if (!ij) return;
         if (ij.reqCapital > 0 && player.money < ij.reqCapital) {
@@ -2898,10 +3751,13 @@
     // Daftar Aset dengan Kategori Pajak (Vehicle: PKB 2% + Progresif, Property: PBB 0.2% + PPh Sewa Final 10%, Business: PPh Final UMKM 0.5%)
     const ASSETS = [
         { id: "asuransi", name: "Polis Asuransi Jiwa VIP", icon: "🛡️", category: "insurance", isLuxury: false, price: 25, annualPremium: 25, sumAssured: 600, maxOwned: 1, passive: 0, happyBonus: 6, socialBonus: 5 },
-        { id: "beat", name: "Motor Matic Sejuta Umat", icon: "🛵", category: "vehicle", isLuxury: false, price: 18, passive: 2, happyBonus: 6, socialBonus: 3 },
-        { id: "avanza", name: "Mobil Keluarga Sejuta Umat", icon: "🚗", category: "vehicle", isLuxury: false, price: 210, passive: 12, happyBonus: 12, socialBonus: 10 },
+        { id: "beat", name: "Motor Matic Sejuta Umat", icon: "🛵", category: "vehicle", reqSim: "C", isLuxury: false, price: 18, passive: 2, happyBonus: 6, socialBonus: 3 },
+        { id: "avanza", name: "Mobil Keluarga Sejuta Umat", icon: "🚗", category: "vehicle", reqSim: "A", isLuxury: false, price: 210, passive: 12, happyBonus: 12, socialBonus: 10 },
         { id: "subsidi", name: "Rumah KPR Subsidi Pinggir Kota", icon: "🏡", category: "property", isLuxury: false, price: 185, passive: 15, happyBonus: 14, socialBonus: 10 },
-        { id: "pajero", name: "SUV Arogan Plat Strobo", icon: "🚙", category: "vehicle", isLuxury: true, price: 650, passive: 0, happyBonus: 20, socialBonus: 28 },
+        { id: "pajero", name: "SUV Arogan Plat Strobo", icon: "🚙", category: "vehicle", reqSim: "A", isLuxury: true, price: 650, passive: 0, happyBonus: 20, socialBonus: 28 },
+        { id: "truk_engkel", name: "Truk Box / Engkel Logistik", icon: "🚚", category: "vehicle", reqSim: ["B1_P", "B1_U", "B2_P", "B2_U"], isLuxury: false, price: 420, passive: 68, happyBonus: 12, socialBonus: 14 },
+        { id: "bus_pariwisata", name: "Bus Pariwisata Executive", icon: "🚌", category: "vehicle", reqSim: ["B1_U", "B2_U"], isLuxury: true, price: 1350, passive: 215, happyBonus: 20, socialBonus: 24 },
+        { id: "truk_kontainer", name: "Truk Kontainer Trailer Gandeng", icon: "🚛", category: "vehicle", reqSim: ["B2_P", "B2_U"], isLuxury: true, price: 1850, passive: 310, happyBonus: 22, socialBonus: 26 },
         { id: "kosan", name: "Bisnis Kos-Kosan 20 Pintu", icon: "🏢", category: "property", isLuxury: false, price: 1500, passive: 220, happyBonus: 18, socialBonus: 22 },
         { id: "pondokindah", name: "Mansion Sultan Pondok Indah", icon: "🏰", category: "property", isLuxury: true, price: 4200, passive: 450, happyBonus: 30, socialBonus: 35 },
         { id: "smelter", name: "Konsesi Tambang & Smelter", icon: "🏭", category: "business", isLuxury: true, price: 6500, passive: 1250, happyBonus: 35, socialBonus: 45 }
@@ -4241,6 +5097,10 @@
             taxMode: "patuh",
             unpaidTaxArrears: 0,
             religion: chosenReligion,
+            wearsGlasses: false,
+            eyeMinus: 0,
+            eyeChecked: false,
+            sim: { A: false, C: false, B1_P: false, B1_U: false, B2_P: false, B2_U: false },
             parents: initialParents,
             siblings: initialSiblings,
             friends: [],
@@ -4332,10 +5192,14 @@
         }
 
         // Badges
+        ensurePlayerSimAndEyes();
         const badgesEl = document.getElementById("uiBadges");
         const relObjUi = getPlayerReligionObj();
+        const ownedSims = SIM_ORDER.filter(k => player.sim && player.sim[k]).map(k => getSimLabel(k).replace("SIM ", ""));
         let bHtml = `
             <span class="mini-badge" style="color:#1e40af; background:#dbeafe; border-color:#93c5fd;">${relObjUi.icon} ${relObjUi.name}</span>
+            ${player.wearsGlasses ? `<span class="mini-badge" style="color:#7c2d12; background:#ffedd5; border-color:#fb923c;">👓 Kacamata (-${player.eyeMinus.toFixed(2)})</span>` : ''}
+            ${ownedSims.length > 0 ? `<span class="mini-badge" style="color:#065f46; background:#d1fae5; border-color:#34d399;">🪪 SIM ${ownedSims.join(", ")}</span>` : ''}
             <span class="mini-badge">${player.family.badge}</span>
             <span class="mini-badge" style="color:#92400e; background:#fef3c7;">${player.trait.icon} ${player.trait.name}</span>
         `;
@@ -4802,7 +5666,9 @@
             openSchoolEnrollmentDialog("smu", "SMA / SMK");
             ppdbTriggered = true;
         } else if (player.age === 17) {
-            addLog("🪪 **USIA 17 TAHUN (PUNYA KTP & NPWP NIK):** Fitur **Clubbing Malam, Pacaran, Mertua & Menikah** kini terbuka!", "love");
+            addLog("🪪 **USIA 17 TAHUN (PUNYA KTP & NPWP NIK):** Fitur **Ujian SIM (A / C / B1 / B2), Profesi Driver, Clubbing Malam, Pacaran & Menikah** kini terbuka!", "love");
+            triggerAge17EyeCheckEvent();
+            ppdbTriggered = true;
         } else if (player.age === 18) {
             player.currentSchool = null;
             addLog(`🎓 Kamu resmi **Lulus SMA** di **${player.city.name}**! Kini memasuki Fase Produktif (18-59 Thn): buka menu **💼 Karir/Aset** untuk daftar **Universitas**, melamar **12 Pekerjaan Khas ${player.city.name}**, atau **Merantau Pindah Kota**.`, "school");
@@ -5071,9 +5937,11 @@
         const tabsEl = document.getElementById("sheetTabs");
         const bodyEl = document.getElementById("sheetBody");
 
+        ensurePlayerSimAndEyes();
         tabsEl.innerHTML = `
             <button class="tab-btn ${tab === 'kerja' ? 'active' : ''}" onclick="renderKarirSheet('kerja')">💼 Kerja & Sampingan</button>
-            <button class="tab-btn ${tab === 'informal_resilient' ? 'active' : ''}" onclick="renderKarirSheet('informal_resilient')">📱 Medsos & Informal+</button>
+            <button class="tab-btn ${tab === 'informal_resilient' ? 'active' : ''}" onclick="renderKarirSheet('informal_resilient')">${player.age < 15 ? '🔒 Informal (15+)' : '📱 Medsos & Informal+'}</button>
+            <button class="tab-btn ${tab === 'sim' ? 'active' : ''}" onclick="renderKarirSheet('sim')">🪪 Ujian SIM (A/C/B1/B2)</button>
             <button class="tab-btn ${tab === 'bintang' ? 'active' : ''}" onclick="renderKarirSheet('bintang')">🌟 Atlet/Model/Artis</button>
             <button class="tab-btn ${tab === 'pejabat' ? 'active' : ''}" onclick="renderKarirSheet('pejabat')">🏛️ Pejabat Politik</button>
             <button class="tab-btn ${tab === 'kuliah' ? 'active' : ''}" onclick="renderKarirSheet('kuliah')">🎓 Kuliah & Sekolah</button>
@@ -5083,8 +5951,74 @@
         `;
         bodyEl.innerHTML = "";
 
+        // TAB UJIAN SIM (SIM A, SIM C, SIM B1 PERSEORANGAN/UMUM & SIM B2 PERSEORANGAN/UMUM — 10 SOAL UNIK MASING-MASING, LULUS >= 80%)
+        if (tab === "sim") {
+            ensurePlayerSimAndEyes();
+            const simIntro = document.createElement("div");
+            simIntro.className = "item-card";
+            simIntro.style.background = "#090d16";
+            simIntro.innerHTML = `
+                <div class="item-title" style="color:#fbbf24;">🪪 SATPAS POLRI — Ujian SIM A, C, B1 & B2</div>
+                <div class="item-desc" style="color:#e5e7eb;">
+                    • <b>SIM A & SIM C:</b> Minimal usia <b>17 tahun</b>.<br>
+                    • <b>SIM B1 (Perseorangan / Umum):</b> Minimal usia <b>20 tahun</b> & wajib sudah punya <b>SIM A</b>.<br>
+                    • <b>SIM B2 (Perseorangan / Umum):</b> Minimal usia <b>21 tahun</b> & wajib sudah punya <b>SIM B1</b>.<br>
+                    • Masing-masing ujian terdiri dari <b>10 pertanyaan berbeda</b> dengan syarat lulus minimal <b>80% benar (8/10)</b>!
+                </div>
+            `;
+            bodyEl.appendChild(simIntro);
+
+            if (player.age < 17) {
+                const lockCard = document.createElement("div");
+                lockCard.className = "item-card";
+                lockCard.style.borderColor = "#dc2626";
+                lockCard.innerHTML = `
+                    <div class="item-title" style="color:#b91c1c;">🔒 Belum Cukup Umur Mengikuti Ujian SIM</div>
+                    <div class="item-desc">Usiamu saat ini <b>${player.age} tahun</b>. Ujian SIM baru dibuka setelah berusia minimal <b>17 tahun</b> (sudah memiliki KTP).</div>
+                `;
+                bodyEl.appendChild(lockCard);
+                return;
+            }
+
+            SIM_ORDER.forEach(code => {
+                const ex = SIM_EXAMS[code];
+                const owned = !!(player.sim && player.sim[code]);
+                const reqAge = ex.minAge || 17;
+                const prereqOk = !ex.prereqSim || hasRequiredSim(ex.prereqSim);
+                const ageOk = player.age >= reqAge;
+                const simLbl = getSimLabel(code);
+                const prereqText = ex.prereqSim ? ` • Wajib ${getRequiredSimLabel(ex.prereqSim)}` : "";
+                const card = document.createElement("div");
+                card.className = "item-card";
+                if (owned) card.style.borderColor = "#16a34a";
+                card.innerHTML = `
+                    <div class="item-row">
+                        <div>
+                            <span style="font-size:9.5px; font-weight:900; color:${owned ? '#16a34a' : (ageOk && prereqOk ? '#0284c7' : '#dc2626')};">${owned ? '✅ SUDAH LULUS & AKTIF' : (ageOk && prereqOk ? '📝 10 SOAL UNIK • SYARAT LULUS 80%' : `🔒 USIA ≥${reqAge} THN${prereqText.toUpperCase()}`)}</span>
+                            <div class="item-title" style="margin-top:2px;">${ex.icon} ${ex.title}</div>
+                            <div class="item-desc">${ex.desc}<br><b>Syarat:</b> Usia ≥${reqAge} Thn${prereqText} • <b>Biaya PNBP:</b> ${formatShortJuta(ex.fee)}</div>
+                        </div>
+                    </div>
+                    ${owned
+                        ? `<button class="btn-action btn-emerald" disabled>✅ ${simLbl} Sudah Dimiliki</button>`
+                        : `<button class="btn-action ${ageOk && prereqOk ? 'btn-primary' : 'btn-dark'}" onclick="startSimExam('${code}')">📝 Mulai Ujian ${simLbl} (10 Soal • Pass ≥80%)</button>`}
+                `;
+                bodyEl.appendChild(card);
+            });
+            return;
+        }
+
         // TAB BARU: PEKERJAAN INFORMAL TAHAN BANTING, MEDIA SOSIAL & PROFESI KHUSUS NEGATIF
         if (tab === "informal_resilient") {
+            if (player.age < 15) {
+                bodyEl.innerHTML = `
+                    <div class="item-card" style="border-color:#dc2626; background:#fef2f2;">
+                        <div class="item-title" style="color:#b91c1c;">🔒 Tab Pekerjaan Informal & Medsos Ditutup (Min. Usia 15 Tahun)</div>
+                        <div class="item-desc">Kamu masih berusia <b>${player.age} tahun</b>! Masa bayi dan anak-anak belum diperbolehkan mengambil pekerjaan informal maupun media sosial. Tab ini baru terbuka setelah usiamu mencapai <b>15 tahun</b>.</div>
+                    </div>
+                `;
+                return;
+            }
             const banner = document.createElement("div");
             banner.className = "item-card";
             banner.style.background = "#090d16";
@@ -5250,13 +6184,80 @@
                 bodyEl.appendChild(card);
             });
 
+            // SEKSI PROFESI DRIVER WAJIB SIM (TERBUKA MULAI USIA 17 THN)
+            if (player.age >= 17) {
+                const drvHead = document.createElement("div");
+                drvHead.className = "item-card";
+                drvHead.style.borderColor = "#0284c7";
+                drvHead.innerHTML = `
+                    <div class="item-title">🚘 Profesi Driver & Transportasi (Wajib Memiliki SIM)</div>
+                    <div class="item-desc">Setiap profesi driver mewajibkan SIM sesuai jenis kendaraan (<b>SIM C</b> motor, <b>SIM A</b> mobil, <b>SIM B1 Perseorangan/Umum</b> truk engkel & bus, <b>SIM B2 Perseorangan/Umum</b> tronton & kontainer trailer).</div>
+                    <button class="btn-action btn-gold" onclick="renderKarirSheet('sim')">🪪 Buka Menu Ujian SIM (A / C / B1 / B2)</button>
+                `;
+                bodyEl.appendChild(drvHead);
+
+                SPECIAL_REQ_JOBS.forEach((jb, sIdx) => {
+                    if (jb.group !== "driver") return;
+                    const isCur = player.job && player.job.id === jb.id;
+                    const hasSim = hasRequiredSim(jb.reqSim);
+                    const reqSimLbl = getRequiredSimLabel(jb.reqSim);
+                    const card = document.createElement("div");
+                    card.className = "item-card";
+                    if (isCur) card.style.borderColor = "#16a34a";
+                    card.innerHTML = `
+                        <div class="item-row">
+                            <div>
+                                <span style="font-size:9.5px; font-weight:900; color:${hasSim ? '#16a34a' : '#dc2626'};">${hasSim ? `✅ ${reqSimLbl.toUpperCase()} DIMILIKI` : `🔒 WAJIB ${reqSimLbl.toUpperCase()}`}</span>
+                                <div class="item-title" style="margin-top:2px;">${jb.icon} ${jb.title} (+Rp ${jb.salary} Jt/thn)</div>
+                                <div class="item-desc">${jb.desc}<br><b>Syarat:</b> Usia ≥${jb.minAge} Thn • ${reqSimLbl} ${jb.reqSocial > 0 ? `• Sosial ≥${jb.reqSocial}%` : ''}</div>
+                            </div>
+                        </div>
+                        ${hasSim
+                            ? `<button class="btn-action ${isCur ? 'btn-emerald' : 'btn-primary'}" onclick="applySpecialReqJob(${sIdx})">${isCur ? '✅ Profesi Aktif' : `🚘 Lamar ${jb.title}`}</button>`
+                            : `<button class="btn-action btn-dark" onclick="renderKarirSheet('sim')">🪪 Ikuti Ujian ${reqSimLbl} Dulu</button>`}
+                    `;
+                    bodyEl.appendChild(card);
+                });
+            }
+
             if (player.age < 18) {
                 const ageNote = document.createElement("div");
                 ageNote.className = "item-card";
-                ageNote.innerHTML = `<div class="item-desc" style="text-align:center;">💡 Daftar <b>12 Pekerjaan Kota (${player.city.name})</b> & <b>Sektor Informal</b> terbuka setelah kamu berusia 18 tahun. Untuk menjadi <b>Atlet/Model/Penyanyi</b> (Usia 15+), buka tab <b>🌟 Atlet/Model/Artis</b> di atas!</div>`;
+                ageNote.innerHTML = `<div class="item-desc" style="text-align:center;">💡 Daftar <b>12 Pekerjaan Kota (${player.city.name})</b>, <b>Profesi Khusus Tanpa Kacamata</b> & <b>Sektor Informal</b> terbuka setelah kamu berusia 18 tahun. Untuk menjadi <b>Atlet/Model/Penyanyi</b> (Usia 15+), buka tab <b>🌟 Atlet/Model/Artis</b> di atas!</div>`;
                 bodyEl.appendChild(ageNote);
                 return;
             }
+
+            // SEKSI PROFESI KETAT TIDAK BOLEH MEMAKAI KACAMATA (USIA 18+)
+            const ngHead = document.createElement("div");
+            ngHead.className = "item-card";
+            ngHead.style.borderColor = player.wearsGlasses ? "#dc2626" : "#16a34a";
+            ngHead.innerHTML = `
+                <div class="item-title">👁️ Profesi Khusus Tanpa Kacamata (Syarat Mata Normal)</div>
+                <div class="item-desc">Status Matamu: <b style="color:${player.wearsGlasses ? '#dc2626' : '#16a34a'};">${player.wearsGlasses ? `👓 Berkacamata (Minus -${player.eyeMinus.toFixed(2)}) — Tidak Memenuhi Syarat!` : '✅ Mata Normal (Bebas Kacamata)'}</b></div>
+            `;
+            bodyEl.appendChild(ngHead);
+
+            SPECIAL_REQ_JOBS.forEach((jb, sIdx) => {
+                if (jb.group !== "no_glasses") return;
+                const isCur = player.job && player.job.id === jb.id;
+                const card = document.createElement("div");
+                card.className = "item-card";
+                if (isCur) card.style.borderColor = "#16a34a";
+                card.innerHTML = `
+                    <div class="item-row">
+                        <div>
+                            <span style="font-size:9.5px; font-weight:900; color:#dc2626;">🚫 TIDAK BOLEH MEMAKAI KACAMATA</span>
+                            <div class="item-title" style="margin-top:2px;">${jb.icon} ${jb.title} (+Rp ${jb.salary} Jt/thn)</div>
+                            <div class="item-desc">${jb.desc}<br><b>Syarat:</b> Usia ≥${jb.minAge} Thn • Pintar ≥${jb.reqEdu}% • Sehat ≥${jb.reqHealth}% ${jb.reqLooks > 0 ? `• Looks ≥${jb.reqLooks}%` : ''}</div>
+                        </div>
+                    </div>
+                    <button class="btn-action ${player.wearsGlasses ? 'btn-dark' : (isCur ? 'btn-emerald' : 'btn-primary')}" onclick="applySpecialReqJob(${sIdx})">
+                        ${player.wearsGlasses ? '🚫 Gugur Syarat (Kamu Memakai Kacamata)' : (isCur ? '✅ Profesi Aktif' : `${jb.icon} Lamar ${jb.title}`)}
+                    </button>
+                `;
+                bodyEl.appendChild(card);
+            });
 
             // SEKSI 2: 12 PEKERJAAN KHAS KOTA (DIBAGI FULL-TIME 40 JAM & PART-TIME 20 JAM)
             const cityJobs = player.city.jobs || [];
@@ -5769,7 +6770,10 @@
                             <div class="item-desc">Passive Income: <b>+Rp ${as.passive} Jt/thn</b> • Beban Pajak: ${taxTag}</div>
                         </div>
                     </div>
-                    <button class="btn-action btn-gold" onclick="buyAssetItem(${idx})">🛒 Beli Aset (${formatShortJuta(totalBuyPrice)})</button>
+                    ${as.reqSim ? `<div style="font-size:10px; font-weight:800; color:${hasRequiredSim(as.reqSim) ? '#15803d' : '#dc2626'};">🪪 Syarat Pembelian: Wajib ${getRequiredSimLabel(as.reqSim)} ${hasRequiredSim(as.reqSim) ? '(✅ Dimiliki)' : '(🔒 Belum Punya — Wajib Ujian SIM)'}</div>` : ''}
+                    <button class="btn-action ${as.reqSim && !hasRequiredSim(as.reqSim) ? 'btn-dark' : 'btn-gold'}" onclick="buyAssetItem(${idx})">
+                        ${as.reqSim && !hasRequiredSim(as.reqSim) ? `🪪 Ikuti Ujian ${getRequiredSimLabel(as.reqSim)} Dulu` : `🛒 Beli Aset (${formatShortJuta(totalBuyPrice)})`}
+                    </button>
                 `;
                 bodyEl.appendChild(card);
             });
@@ -6166,7 +7170,25 @@
         const jTitle = rawJobs[jobIdx];
         if (!jTitle) return;
 
+        ensurePlayerSimAndEyes();
         const jb = getJobSpec(player.city.name, jTitle, jobIdx);
+        const lowTitle = (jb.title || "").toLowerCase();
+        if (lowTitle.includes("perwira tni") && player.wearsGlasses) {
+            showToast(`❌ Ditolak! ${jb.title} tidak boleh memakai kacamata (minus -${player.eyeMinus.toFixed(2)}).`);
+            return;
+        }
+        if (lowTitle.includes("driver ojol") && !player.sim.C) {
+            showToast("🪪 Wajib lulus Ujian SIM C terlebih dahulu untuk menjadi Driver Ojol!");
+            return;
+        }
+        if (lowTitle.includes("supir truk") && !hasRequiredSim(["B1_P", "B1_U", "B2_P", "B2_U"])) {
+            showToast("🪪 Wajib lulus Ujian SIM B1 / SIM B2 terlebih dahulu untuk menjadi Supir Truk!");
+            return;
+        }
+        if (lowTitle.includes("supir angkot") && !hasRequiredSim("A")) {
+            showToast("🪪 Wajib lulus Ujian SIM A terlebih dahulu untuk menjadi Supir Angkot!");
+            return;
+        }
         const hours = (requestedHours === 20 && jb.allowPartTime) ? 20 : 40;
 
         if (requestedHours === 20 && !jb.allowPartTime) {
@@ -6342,6 +7364,13 @@
             addLog(`🛡️ **POLIS ASURANSI JIWA VIP AKTIF:** Kamu resmi terdaftar sebagai pemegang **Polis Asuransi Jiwa VIP** dengan premi **Rp ${firstPrem} Jt/tahun** (bisa di-cancel kapan saja). Semua biaya medis dicover 100%, sakit kritis bebas premi + santunan 50% (Rp 300 Jt), dan santunan meninggal dunia 100% (Rp 600 Jt)!`, "money");
             showToast("🛡️ Polis Asuransi Jiwa VIP aktif!");
             renderKarirSheet("aset");
+            return;
+        }
+
+        ensurePlayerSimAndEyes();
+        if (as.reqSim && !hasRequiredSim(as.reqSim)) {
+            showToast(`🚫 Syarat membeli ${as.name} wajib memiliki ${getRequiredSimLabel(as.reqSim)}! Lulus Ujian SIM dulu.`);
+            renderKarirSheet("sim");
             return;
         }
 
