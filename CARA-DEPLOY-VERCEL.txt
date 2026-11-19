@@ -1,0 +1,19 @@
+WARGA +62 SIMULATOR - PAKET DEPLOY VERCEL
+==========================================
+Isi paket:
+- index.html  : seluruh game (satu file, tanpa backend, progres tersimpan di browser)
+- vercel.json : pengaturan situs statis
+
+CARA 1 - Lewat GitHub (paling mudah)
+1. Buat repository baru di github.com, upload index.html dan vercel.json.
+2. Buka vercel.com > Add New > Project > Import repository tersebut.
+3. Framework Preset: "Other". Build Command & Output Directory: kosongkan.
+4. Klik Deploy. Selesai.
+
+CARA 2 - Lewat Vercel CLI
+1. Install Node.js, lalu buka terminal di folder ini.
+2. Jalankan: npx vercel        (login jika diminta)
+3. Untuk produksi: npx vercel --prod
+
+Catatan: progres game disimpan di localStorage browser masing-masing pemain,
+jadi tidak perlu database atau environment variable apa pun.
