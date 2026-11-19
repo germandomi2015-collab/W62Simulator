@@ -1736,6 +1736,364 @@
         }
     ];
 
+    // =========================================================================
+    // EKSPANSI: PEKERJAAN MEDIA SOSIAL, PROFESI KHUSUS NEGATIF (1-5 THN) & EVENT
+    // =========================================================================
+    const SOCIAL_MEDIA_JOBS = [
+        {
+            id: "soc_affiliate",
+            title: "Affiliate Kreator Keranjang Kuning (TikTok/Shopee)",
+            icon: "🛍️",
+            salary: 26,
+            minAge: 15,
+            reqSocial: 20,
+            reqLooks: 0,
+            desc: "Bikin video unboxing & racun belanja tiap hari. Komisi cair dari checkout penonton, tapi rawan sepi viewers saat algoritma berubah."
+        },
+        {
+            id: "soc_buzzer",
+            title: "Admin Jasa Buzzer & Paid Promote Medsos",
+            icon: "📣",
+            salary: 44,
+            minAge: 17,
+            reqSocial: 40,
+            reqLooks: 0,
+            desc: "Mengelola puluhan akun bayaran untuk meramaikan tagar & promosi campaign. Cuan lumayan, tapi rawan kena banned akun massal."
+        },
+        {
+            id: "soc_creator",
+            title: "Content Creator Short-Form & Komedi +62",
+            icon: "🎬",
+            salary: 78,
+            minAge: 17,
+            reqSocial: 50,
+            reqLooks: 45,
+            desc: "Produksi konten sketsa & opini harian. Sekali FYP bisa meledak, namun sangat rentan cancel culture netizen."
+        },
+        {
+            id: "soc_talent",
+            title: "Live Streamer & Talent Campaign Brand",
+            icon: "📡",
+            salary: 145,
+            minAge: 18,
+            reqSocial: 65,
+            reqLooks: 65,
+            desc: "Siaran langsung interaktif dan kerja sama endorsement brand besar dengan bayaran tinggi serta sorotan publik."
+        }
+    ];
+
+    const NEGATIVE_SPECIAL_JOBS = [
+        {
+            id: "neg_maling_ayam",
+            title: "Maling Ayam Kampung Malam Hari",
+            icon: "🐓",
+            salary: 22,
+            minAge: 15,
+            reqSocial: 15,
+            arrestChance: 0.06, // RNG sangat rendah (6% per tahun)
+            crimeName: "Pencurian Unggas / Maling Ayam Warga",
+            desc: "Beraksi diam-diam di kandang belakang rumah warga saat dini hari. Peluang tertangkap RNG sangat rendah, namun kalau ketahuan warga/polisi ancamannya 1–5 tahun."
+        },
+        {
+            id: "neg_dc",
+            title: "Debt Collector Lapangan (Penagih Tunggakan)",
+            icon: "🏍️",
+            salary: 58,
+            minAge: 18,
+            reqSocial: 45,
+            arrestChance: 0.05, // RNG sangat rendah (5% per tahun)
+            crimeName: "Perbuatan Tidak Menyenangkan & Penagihan Paksa Debt Collector",
+            desc: "Menyusuri alamat nasabah menunggak dengan motor & surat tugas. Penghasilan tinggi, tapi rawan bentrok dan berisiko terjerat hukum 1–5 tahun bila kelewat batas."
+        },
+        {
+            id: "neg_calo_sim",
+            title: "Calo SIM & Pengurusan Dokumen Kilat",
+            icon: "🪪",
+            salary: 74,
+            minAge: 18,
+            reqSocial: 55,
+            arrestChance: 0.045, // RNG sangat rendah (4.5% per tahun)
+            crimeName: "Percaloan & Pemalsuan Administrasi Dokumen",
+            desc: "Menawarkan jalur kilat tanpa antre dengan tarif tinggi. Peluang terciduk razia/operasi tangkap tangan sangat kecil, tetapi hukumannya 1–5 tahun."
+        },
+        {
+            id: "neg_makelar_tanah",
+            title: "Makelar Tanah Sengketa & Surat Bodong",
+            icon: "🗺️",
+            salary: 165,
+            minAge: 21,
+            reqSocial: 70,
+            arrestChance: 0.04, // RNG sangat rendah (4% per tahun)
+            crimeName: "Penipuan & Penggelapan Sengketa Tanah",
+            desc: "Mengatur transaksi lahan berstatus tumpang tindih atau sengketa waris. Komisi besar, namun sekali terseret kasus hukum risikonya 1–5 tahun."
+        }
+    ];
+
+    function getSocialMediaAnnualIncome() {
+        if (!player || !Array.isArray(player.socialMediaJobs)) return 0;
+        return roundMoney(player.socialMediaJobs.reduce((sum, item) => sum + (item.salary || 0), 0));
+    }
+
+    function getResilientInformalAnnualIncome() {
+        if (!player || !Array.isArray(player.resilientInformalJobs)) return 0;
+        return roundMoney(player.resilientInformalJobs.reduce((sum, item) => sum + (item.salary || 0), 0));
+    }
+
+    function takeSocialMediaJob(idx) {
+        if (!player || player.retired) return;
+        const sm = SOCIAL_MEDIA_JOBS[idx];
+        if (!sm) return;
+        if (player.age < sm.minAge) {
+            showToast(`Minimal berusia ${sm.minAge} tahun untuk pekerjaan media sosial ini!`);
+            return;
+        }
+        if (player.stats.social < sm.reqSocial) {
+            showToast(`Butuh Sosial minimal ${sm.reqSocial}%!`);
+            return;
+        }
+        if (player.stats.looks < sm.reqLooks) {
+            showToast(`Butuh Looks minimal ${sm.reqLooks}%!`);
+            return;
+        }
+        if (!Array.isArray(player.socialMediaJobs)) player.socialMediaJobs = [];
+        if (player.socialMediaJobs.some(x => x.id === sm.id)) {
+            showToast(`Kamu sudah menjalankan ${sm.title}!`);
+            return;
+        }
+        player.socialMediaJobs.push({ ...sm });
+        modifyStats({ social: 3, happy: 2 });
+        addLog(`📱 **PEKERJAAN MEDIA SOSIAL AKTIF:** Kamu mulai menekuni **${sm.icon} ${sm.title}** dengan estimasi penghasilan **+Rp ${sm.salary} Jt/tahun**.`, "career");
+        showToast(`Mulai ${sm.title}!`);
+        renderKarirSheet("informal_resilient");
+    }
+
+    function quitSocialMediaJob(id) {
+        if (!player || !Array.isArray(player.socialMediaJobs)) return;
+        const idx = player.socialMediaJobs.findIndex(x => x.id === id);
+        if (idx === -1) return;
+        const removed = player.socialMediaJobs.splice(idx, 1)[0];
+        addLog(`📱 **BERHENTI KONTEN MEDSOS:** Kamu menghentikan aktivitas **${removed.title}**.`, "normal");
+        showToast(`Berhenti dari ${removed.title}`);
+        renderKarirSheet("informal_resilient");
+    }
+
+    function takeResilientInformalJob(idx) {
+        if (!player || player.retired) return;
+        const ij = INFORMAL_JOBS[idx];
+        if (!ij) return;
+        if (ij.reqCapital > 0 && player.money < ij.reqCapital) {
+            showToast(`Modal kurang! Butuh ${formatShortJuta(ij.reqCapital)}.`);
+            return;
+        }
+        if (ij.reqCapital > 0) {
+            player.money = roundMoney(player.money - ij.reqCapital);
+        }
+        if (!Array.isArray(player.resilientInformalJobs)) player.resilientInformalJobs = [];
+        if (player.resilientInformalJobs.some(x => x.id === ij.id)) {
+            showToast(`Kamu sudah menjalankan ${ij.title}!`);
+            return;
+        }
+        const resilientSalary = roundMoney(ij.salary * 0.85);
+        player.resilientInformalJobs.push({ ...ij, salary: resilientSalary });
+        addLog(`🛠️ **INFORMAL TAHAN BANTING:** Kamu memulai **${ij.icon} ${ij.title}** (+Rp ${resilientSalary} Jt/thn) yang tetap terbuka meski pernah berurusan dengan hukum/penjara.`, "career");
+        showToast(`Mulai ${ij.title}!`);
+        renderKarirSheet("informal_resilient");
+    }
+
+    function quitResilientInformalJob(id) {
+        if (!player || !Array.isArray(player.resilientInformalJobs)) return;
+        const idx = player.resilientInformalJobs.findIndex(x => x.id === id);
+        if (idx === -1) return;
+        const removed = player.resilientInformalJobs.splice(idx, 1)[0];
+        addLog(`🛠️ **BERHENTI USAHA INFORMAL:** Kamu menghentikan **${removed.title}**.`, "normal");
+        showToast(`Berhenti dari ${removed.title}`);
+        renderKarirSheet("informal_resilient");
+    }
+
+    function takeNegativeSpecialJob(idx) {
+        if (!player || player.retired || player.inJail) return;
+        const ns = NEGATIVE_SPECIAL_JOBS[idx];
+        if (!ns) return;
+        if (player.age < ns.minAge) {
+            showToast(`Minimal berusia ${ns.minAge} tahun!`);
+            return;
+        }
+        if (player.stats.social < ns.reqSocial) {
+            showToast(`Butuh Sosial/Nyali minimal ${ns.reqSocial}%!`);
+            return;
+        }
+        if (player.job && player.job.id === ns.id) {
+            showToast(`Kamu sudah menjalani profesi ${ns.title}!`);
+            return;
+        }
+        player.job = {
+            id: ns.id,
+            title: ns.title,
+            city: player.city.name,
+            icon: ns.icon,
+            salary: ns.salary,
+            taxType: "umkm",
+            isNegativeSpecial: true,
+            arrestChance: ns.arrestChance,
+            crimeName: ns.crimeName
+        };
+        player.jobHours = 40;
+        player.salary = ns.salary;
+        player.yearsWorked = 0;
+        addLog(`🕵️ **PROFESI KHUSUS NEGATIF:** Kamu mulai menjalani **${ns.icon} ${ns.title}** (+Rp ${ns.salary} Jt/thn). Peluang tertangkap RNG sangat rendah, namun sekali kena hukum vonisnya **1–5 tahun**!`, "anomaly");
+        showToast(`Mulai ${ns.title}!`);
+        renderKarirSheet("informal_resilient");
+    }
+
+    function triggerNegativeAndSocialEvents() {
+        if (!player || !player.alive || player.inJail) return false;
+
+        // 1. Cek penangkapan RNG sangat rendah untuk profesi khusus negatif aktif
+        if (player.job && player.job.isNegativeSpecial) {
+            const chance = typeof player.job.arrestChance === "number" ? player.job.arrestChance : 0.05;
+            if (Math.random() < chance) {
+                const years = randInt(1, 5);
+                triggerCourtTrial(player.job.crimeName || `Kasus ${player.job.title}`, years, false);
+                return true;
+            }
+        }
+
+        // 2. Event spesifik profesi khusus negatif saat lolos dari penangkapan
+        if (player.job && player.job.isNegativeSpecial && Math.random() < 0.42) {
+            const jobId = player.job.id;
+            if (jobId === "neg_maling_ayam") {
+                showPopupEvent(
+                    "🐓",
+                    "Kandang Belakang Sepi Saat Ronda Malam!",
+                    "Saat mengendap di belakang rumah warga menjelang subuh, seekor ayam jago hampir berkokok keras tepat di sebelah pos ronda yang sedang mengantuk.",
+                    [
+                        {
+                            text: "🤫 Bungkam Cepat & Kabur Lewat Gang Sempit (+Rp 6 Jt)",
+                            fn: () => {
+                                modifyStats({ money: 6, happy: 3 });
+                                addLog("🐓 **LOLOS DARI RONDA:** Kamu berhasil membawa hasil tangkapan (**+Rp 6 Jt**) tanpa membangunkan satu warga pun.", "money");
+                            }
+                        },
+                        {
+                            text: "🏃 Panik & Menabrak Pagar Seng Warga (-Kesehatan, Aman dari Polisi)",
+                            fn: () => {
+                                modifyStats({ health: -randInt(4, 9), happy: -4 });
+                                addLog("🐓 Kamu lolos dari kejaran warga, namun tanganmu lecet terserempet pagar seng saat kabur.", "danger");
+                            }
+                        }
+                    ],
+                    "🐓 EVENT MALING AYAM"
+                );
+                return true;
+            }
+            if (jobId === "neg_dc") {
+                showPopupEvent(
+                    "🏍️",
+                    "Nasabah Menunggak Menantang di Teras Rumah!",
+                    "Saat menagih cicilan menunggak, nasabah justru merekam aksimu dengan ponsel dan memanggil tetangga sekitar.",
+                    [
+                        {
+                            text: "🗣️ Negosiasi Cicilan Ulang dengan Tenang (+Rp 8 Jt)",
+                            fn: () => {
+                                modifyStats({ money: 8, social: 2 });
+                                addLog("🏍️ Kamu berhasil meredam emosi nasabah dan mengamankan setoran penagihan **+Rp 8 Jt**.", "money");
+                            }
+                        },
+                        {
+                            text: "😠 Adu Mulut Keras di Depan Warga (-Sosial & -Bahagia)",
+                            fn: () => {
+                                modifyStats({ social: -randInt(4, 8), happy: -randInt(3, 6) });
+                                addLog("🏍️ Cekcok mulut di depan warga membuat reputasi sosialmu tercoreng hari ini.", "danger");
+                            }
+                        }
+                    ],
+                    "🏍️ EVENT DEBT COLLECTOR"
+                );
+                return true;
+            }
+            if (jobId === "neg_calo_sim") {
+                showPopupEvent(
+                    "🪪",
+                    "Klien Minta Dokumen Rampung Sebelum Jam Makan Siang!",
+                    "Seorang klien mendesak pengurusan berkas kilat dengan bayaran ekstra, sementara antrean loket sedang diawasi ketat.",
+                    [
+                        {
+                            text: "⚡ Selesaikan Lewat Jalur Belakang (+Rp 12 Jt)",
+                            fn: () => {
+                                modifyStats({ money: 12, happy: 3 });
+                                addLog("🪪 Transaksi kilat berjalan lancar dan kamu mengantongi komisi tambahan **+Rp 12 Jt**.", "money");
+                            }
+                        },
+                        {
+                            text: "🛑 Tunda & Kembalikan Uang Muka (-Sosial)",
+                            fn: () => {
+                                modifyStats({ social: -randInt(3, 7) });
+                                addLog("🪪 Klien kecewa karena proses tertahan dan menyebarkan kabar kurang sedap soal layananmu.", "danger");
+                            }
+                        }
+                    ],
+                    "🪪 EVENT CALO SIM"
+                );
+                return true;
+            }
+            if (jobId === "neg_makelar_tanah") {
+                showPopupEvent(
+                    "🗺️",
+                    "Ahli Waris Muncul Mendadak Saat Survei Lahan!",
+                    "Di tengah proses negosiasi jual-beli lahan, pihak keluarga lain muncul membawa fotokopi surat lama yang memicu perdebatan.",
+                    [
+                        {
+                            text: "🤝 Mediasi & Bagi Komisi Damai (+Rp 25 Jt)",
+                            fn: () => {
+                                modifyStats({ money: 25, social: 3 });
+                                addLog("🗺️ Berkat kelihaian negosiasi, sengketa sementara mereda dan kamu mengamankan fee **+Rp 25 Jt**.", "money");
+                            }
+                        },
+                        {
+                            text: "⚖️ Batal Transaksi & Rugi Biaya Survei (-Rp 10 Jt)",
+                            fn: () => {
+                                modifyStats({ money: -10, happy: -5 });
+                                addLog("🗺️ Kesepakatan batal di menit akhir sehingga biaya operasional survei **-Rp 10 Jt** hangus.", "danger");
+                            }
+                        }
+                    ],
+                    "🗺️ EVENT MAKELAR TANAH"
+                );
+                return true;
+            }
+        }
+
+        // 3. Event spesifik pekerjaan media sosial
+        if (Array.isArray(player.socialMediaJobs) && player.socialMediaJobs.length > 0 && Math.random() < 0.45) {
+            const smJob = pickRandom(player.socialMediaJobs);
+            showPopupEvent(
+                smJob.icon || "📱",
+                `Dinamika Konten: ${smJob.title}`,
+                `Salah satu unggahanmu di media sosial mendadak ramai dibicarakan warganet. Bagaimana kamu merespons momen ini?`,
+                [
+                    {
+                        text: "📈 Ikuti Tren & Balas Komentar Positif (+Rp 10 Jt)",
+                        fn: () => {
+                            modifyStats({ money: 10, social: randInt(2, 5), happy: 4 });
+                            addLog(`📱 **KONTEN NAIK DAUN:** Respons cepatmu membuat engagement akun **${smJob.title}** melonjak dan mendatangkan cuan tambahan **+Rp 10 Jt**!`, "money");
+                        }
+                    },
+                    {
+                        text: "😅 Salah Kaprah Kalimat & Diprotes Warganet (-Sosial & -Bahagia)",
+                        fn: () => {
+                            modifyStats({ social: -randInt(3, 8), happy: -randInt(3, 7) });
+                            addLog(`📱 **DRAMA KOMENTAR NETIZEN:** Candaanmu di konten **${smJob.title}** disalahartikan warganet hingga memicu kolom komentar penuh kritik.`, "danger");
+                        }
+                    }
+                ],
+                "📱 EVENT MEDIA SOSIAL"
+            );
+            return true;
+        }
+
+        return false;
+    }
+
     // Generator Atribut Lock/Unlock Sekolah berdasarkan indeks (0-1: Negeri/Favorit, 2-3: Swasta Menengah, 4: Swasta/Internasional Elit)
     function getSchoolSpec(level, schoolName, idx) {
         const isNegeri = schoolName.startsWith("SDN") || schoolName.startsWith("SMPN") || schoolName.startsWith("SMAN") || schoolName.startsWith("SMKN");
@@ -3275,6 +3633,8 @@
         let income = 0;
         if (player.job) income += player.salary;
         if (player.sideJobs && player.sideJobs.length > 0) income += getSideJobsAnnualIncome();
+        if (player.socialMediaJobs && player.socialMediaJobs.length > 0) income += getSocialMediaAnnualIncome();
+        if (player.resilientInformalJobs && player.resilientInformalJobs.length > 0) income += getResilientInformalAnnualIncome();
         if (player.retired) income += player.pension;
         if (player.age >= 6 && player.age <= 17) {
             const totalParentWealth = (player.parents || []).filter(p => p.alive).reduce((s, p) => s + p.wealth, 0);
@@ -4201,15 +4561,19 @@
         if (checkDeathConditions()) return;
 
         if (!ppdbTriggered) {
-            // 1. Cek Event Kematian Mendadak (Diri Sendiri, Ortu, Pasangan, Anak, Teman/Kolega)
-            const suddenTriggered = triggerSuddenDeathEvents();
-            if (!suddenTriggered) {
-                // 2. Cek Event Spesial Profesi Atlet / Model / Penyanyi
-                const specialJobTriggered = triggerSpecialCareerEvent();
-                if (!specialJobTriggered) {
-                    const triggeredRelEvent = triggerRelationshipKarmaEvent();
-                    if (!triggeredRelEvent && player.age >= 1 && Math.random() < 0.65) {
-                        triggerRandomEvent62();
+            // 0. Cek Event Profesi Khusus Negatif (Risiko 1-5 Thn) & Media Sosial
+            const negSocTriggered = triggerNegativeAndSocialEvents();
+            if (!negSocTriggered) {
+                // 1. Cek Event Kematian Mendadak (Diri Sendiri, Ortu, Pasangan, Anak, Teman/Kolega)
+                const suddenTriggered = triggerSuddenDeathEvents();
+                if (!suddenTriggered) {
+                    // 2. Cek Event Spesial Profesi Atlet / Model / Penyanyi
+                    const specialJobTriggered = triggerSpecialCareerEvent();
+                    if (!specialJobTriggered) {
+                        const triggeredRelEvent = triggerRelationshipKarmaEvent();
+                        if (!triggeredRelEvent && player.age >= 1 && Math.random() < 0.65) {
+                            triggerRandomEvent62();
+                        }
                     }
                 }
             }
@@ -4277,6 +4641,7 @@
 
         tabsEl.innerHTML = `
             <button class="tab-btn ${tab === 'kerja' ? 'active' : ''}" onclick="renderKarirSheet('kerja')">💼 Kerja & Sampingan</button>
+            <button class="tab-btn ${tab === 'informal_resilient' ? 'active' : ''}" onclick="renderKarirSheet('informal_resilient')">📱 Medsos & Informal+</button>
             <button class="tab-btn ${tab === 'bintang' ? 'active' : ''}" onclick="renderKarirSheet('bintang')">🌟 Atlet/Model/Artis</button>
             <button class="tab-btn ${tab === 'pejabat' ? 'active' : ''}" onclick="renderKarirSheet('pejabat')">🏛️ Pejabat Politik</button>
             <button class="tab-btn ${tab === 'kuliah' ? 'active' : ''}" onclick="renderKarirSheet('kuliah')">🎓 Kuliah & Sekolah</button>
@@ -4285,6 +4650,87 @@
             <button class="tab-btn ${tab === 'kota' ? 'active' : ''}" onclick="renderKarirSheet('kota')">🏙️ Pindah Kota (8)</button>
         `;
         bodyEl.innerHTML = "";
+
+        // TAB BARU: PEKERJAAN INFORMAL TAHAN BANTING, MEDIA SOSIAL & PROFESI KHUSUS NEGATIF
+        if (tab === "informal_resilient") {
+            const banner = document.createElement("div");
+            banner.className = "item-card";
+            banner.style.background = "#090d16";
+            banner.innerHTML = `
+                <div class="item-title" style="color:#fbbf24;">📱 Pekerjaan Media Sosial, Informal Tahan Banting & Jalur Gelap +62</div>
+                <div class="item-desc" style="color:#e5e7eb;">
+                    • <b>Informal Tahan Banting:</b> Tetap terbuka 100% walaupun memiliki catatan penjara (SKCK Merah).<br>
+                    • <b>Pekerjaan Media Sosial:</b> Bangun penghasilan digital lewat konten & live streaming.<br>
+                    • <b>Profesi Khusus Negatif:</b> Cuan cepat dengan peluang tertangkap RNG sangat rendah, namun sekali kena hukum vonisnya <b>1–5 tahun penjara</b>!
+                </div>
+            `;
+            bodyEl.appendChild(banner);
+
+            const smHead = document.createElement("div");
+            smHead.className = "item-card";
+            smHead.style.borderColor = "#0284c7";
+            smHead.innerHTML = `<div class="item-title">📲 Pekerjaan Melalui Media Sosial</div>`;
+            bodyEl.appendChild(smHead);
+
+            SOCIAL_MEDIA_JOBS.forEach((sm, idx) => {
+                const isActive = (player.socialMediaJobs || []).some(x => x.id === sm.id);
+                const card = document.createElement("div");
+                card.className = "item-card";
+                if (isActive) card.style.borderColor = "#16a34a";
+                card.innerHTML = `
+                    <div class="item-title">${sm.icon} ${sm.title} (+Rp ${sm.salary} Jt/thn)</div>
+                    <div class="item-desc">${sm.desc}<br><b>Syarat:</b> Usia ≥${sm.minAge} Thn • Sosial ≥${sm.reqSocial}% ${sm.reqLooks > 0 ? `• Looks ≥${sm.reqLooks}%` : ''}</div>
+                    ${isActive
+                        ? `<button class="btn-action btn-rose" onclick="quitSocialMediaJob('${sm.id}')">🛑 Berhenti dari ${sm.title}</button>`
+                        : `<button class="btn-action btn-primary" onclick="takeSocialMediaJob(${idx})">📱 Mulai Karir Medsos Ini</button>`}
+                `;
+                bodyEl.appendChild(card);
+            });
+
+            const infHead = document.createElement("div");
+            infHead.className = "item-card";
+            infHead.style.borderColor = "#16a34a";
+            infHead.innerHTML = `<div class="item-title">🛠️ Pekerjaan Informal Tahan Banting (Tetap Buka Walau Pernah Dipenjara)</div>`;
+            bodyEl.appendChild(infHead);
+
+            INFORMAL_JOBS.forEach((ij, idx) => {
+                const isActive = (player.resilientInformalJobs || []).some(x => x.id === ij.id);
+                const sal = roundMoney(ij.salary * 0.85);
+                const card = document.createElement("div");
+                card.className = "item-card";
+                if (isActive) card.style.borderColor = "#16a34a";
+                card.innerHTML = `
+                    <div class="item-title">${ij.icon} ${ij.title} (+Rp ${sal} Jt/thn)</div>
+                    <div class="item-desc">${ij.desc}<br><b>Modal:</b> ${ij.reqCapital > 0 ? `Rp ${ij.reqCapital} Jt` : 'Gratis'} • <b>Status Penjara:</b> Tidak Berpengaruh</div>
+                    ${isActive
+                        ? `<button class="btn-action btn-rose" onclick="quitResilientInformalJob('${ij.id}')">🛑 Berhenti</button>`
+                        : `<button class="btn-action btn-emerald" onclick="takeResilientInformalJob(${idx})">🛠️ Jalankan Usaha Informal Ini</button>`}
+                `;
+                bodyEl.appendChild(card);
+            });
+
+            const negHead = document.createElement("div");
+            negHead.className = "item-card";
+            negHead.style.borderColor = "#dc2626";
+            negHead.innerHTML = `<div class="item-title" style="color:#b91c1c;">🕵️ Profesi Khusus Negatif (Risiko Tertangkap RNG Rendah • Vonis 1–5 Thn)</div>`;
+            bodyEl.appendChild(negHead);
+
+            NEGATIVE_SPECIAL_JOBS.forEach((ns, idx) => {
+                const isCurrent = player.job && player.job.id === ns.id;
+                const card = document.createElement("div");
+                card.className = "item-card";
+                if (isCurrent) card.style.borderColor = "#dc2626";
+                card.innerHTML = `
+                    <div class="item-title">${ns.icon} ${ns.title} (+Rp ${ns.salary} Jt/thn)</div>
+                    <div class="item-desc">${ns.desc}<br><b>Syarat:</b> Usia ≥${ns.minAge} Thn • Sosial ≥${ns.reqSocial}% • <b>Risiko Penjara:</b> 1–5 Tahun</div>
+                    ${isCurrent
+                        ? `<button class="btn-action btn-dark" onclick="resignMainJob()">🚪 Berhenti dari ${ns.title}</button>`
+                        : `<button class="btn-action btn-rose" onclick="takeNegativeSpecialJob(${idx})">⚠️ Jalani Profesi Khusus Ini</button>`}
+                `;
+                bodyEl.appendChild(card);
+            });
+            return;
+        }
 
         // TAB 1: PEKERJAAN UTAMA (FULL-TIME / PART-TIME) & KERJA SAMPINGAN PER JAM (MULAI SMP USIA 12+)
         if (tab === "kerja") {
