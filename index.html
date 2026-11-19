@@ -3137,9 +3137,31 @@
                 playTone(523.25, 0, 0.14, "sine", 0.07);
                 playTone(659.25, 0.10, 0.14, "sine", 0.07);
                 playTone(783.99, 0.20, 0.26, "sine", 0.08);
-            } else if (type === "danger") {
-                playTone(220, 0, 0.18, "sawtooth", 0.07, 150);
-                playTone(185, 0.16, 0.25, "sawtooth", 0.07, 120);
+            } else if (type === "surprise") {
+                // Efek suara kejutan (surprise stinger cepat naik lalu berhenti mendadak)
+                playTone(587.33, 0.00, 0.09, "triangle", 0.09, 783.99);
+                playTone(783.99, 0.08, 0.11, "triangle", 0.09, 1046.50);
+                playTone(1174.66, 0.17, 0.22, "sine", 0.10, 987.77);
+            } else if (type === "misfortune" || type === "danger") {
+                // Efek suara kemalangan / musibah / sidang
+                playTone(261.63, 0.00, 0.20, "sawtooth", 0.08, 207.65);
+                playTone(196.00, 0.18, 0.24, "sawtooth", 0.08, 155.56);
+                playTone(146.83, 0.38, 0.36, "triangle", 0.09, 110.00);
+            } else if (type === "death") {
+                // Efek suara meninggal memakai ./death.mp3 dengan fallback Web Audio API
+                const deathAudioUrl = window.CUSTOM_DEATH_AUDIO_URL || "./death.mp3";
+                const playFallbackDeathTone = function () {
+                    playTone(293.66, 0.00, 0.32, "triangle", 0.09, 261.63);
+                    playTone(246.94, 0.28, 0.34, "triangle", 0.09, 220.00);
+                    playTone(196.00, 0.56, 0.55, "sawtooth", 0.08, 130.81);
+                };
+                if (deathAudioUrl) {
+                    const customAudio = new Audio(deathAudioUrl);
+                    customAudio.volume = 0.75;
+                    customAudio.play().catch(playFallbackDeathTone);
+                } else {
+                    playFallbackDeathTone();
+                }
             } else {
                 playTone(440, 0, 0.07, "sine", 0.05);
             }
@@ -7631,6 +7653,14 @@
     // 14. SISTEM KARMA RELASI & KEJADIAN ACAK KETAT SESUAI USIA (100% RNG)
     // =========================================================================
     function showPopupEvent(emoji, title, desc, choices, badgeText = "⚡ KEJADIAN +62") {
+        if (player && player.alive && !player.migrated) {
+            const bLower = (badgeText || "").toLowerCase();
+            if (bLower.includes("bahaya") || bLower.includes("musibah") || bLower.includes("hukum") || bLower.includes("audit") || bLower.includes("hutang") || bLower.includes("drama")) {
+                playGameSound("misfortune");
+            } else {
+                playGameSound("surprise");
+            }
+        }
         const modal = document.getElementById("eventModal");
         document.getElementById("evBadge").textContent = badgeText;
         document.getElementById("evAge").textContent = `Usia ${player ? player.age : 0} Thn`;
@@ -9275,6 +9305,9 @@
     }
 
     function showEndGameModal(title, reason, emoji = "🪦") {
+        if (player && !player.migrated) {
+            playGameSound("death");
+        }
         recordToHallOfFame(title, reason, emoji);
         const modal = document.getElementById("endModal");
         document.getElementById("endEmoji").textContent = emoji;
