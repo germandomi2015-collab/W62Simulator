@@ -4,6 +4,16 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
     <title>Warga +62 Simulator — Karier & Relasi</title>
+    <meta name="theme-color" content="#e11d48">
+    <meta name="mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+    <meta name="apple-mobile-web-app-title" content="Warga +62">
+    <link rel="manifest" href="/manifest.json">
+    <link rel="icon" type="image/png" sizes="192x192" href="/icon-192.png">
+    <link rel="icon" type="image/png" sizes="512x512" href="/icon-512.png">
+    <link rel="apple-touch-icon" href="/apple-touch-icon.png">
+    <link rel="shortcut icon" href="data:image/png;base64,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">
     <style>
         :root {
             --bg-dark: #fdfaf2;
@@ -286,10 +296,16 @@
             overflow-x: auto;
             margin-top: 8px;
             padding-top: 6px;
+            padding-bottom: 4px;
             border-top: 1.5px dashed #e2ce9f;
-            scrollbar-width: none;
+            scrollbar-width: thin;
+            scrollbar-color: #b89f69 #f6efe0;
+            cursor: grab;
         }
-        .badges-row::-webkit-scrollbar { display: none; }
+        .badges-row::-webkit-scrollbar { height: 5px; }
+        .badges-row::-webkit-scrollbar-track { background: #f6efe0; border-radius: 99px; }
+        .badges-row::-webkit-scrollbar-thumb { background: #b89f69; border-radius: 99px; }
+        .badges-row::-webkit-scrollbar-thumb:hover { background: #8c6d46; }
 
         .mini-badge {
             font-size: 10px;
@@ -566,13 +582,19 @@
         .sheet-tabs {
             display: flex;
             gap: 6px;
-            padding: 8px 14px;
+            padding: 8px 14px 6px;
             background: #f4ead2;
             border-bottom: 1.5px solid #decb9f;
             overflow-x: auto;
             flex-shrink: 0;
+            scrollbar-width: thin;
+            scrollbar-color: #b89f69 #ead4aa;
+            cursor: grab;
         }
-        .sheet-tabs::-webkit-scrollbar { display: none; }
+        .sheet-tabs::-webkit-scrollbar { height: 6px; }
+        .sheet-tabs::-webkit-scrollbar-track { background: #ead4aa; border-radius: 99px; }
+        .sheet-tabs::-webkit-scrollbar-thumb { background: #b89f69; border-radius: 99px; }
+        .sheet-tabs::-webkit-scrollbar-thumb:hover { background: #8c6d46; }
 
         .tab-btn {
             padding: 6px 12px;
@@ -839,19 +861,19 @@
     <header class="top-header">
         <div class="top-bar-row">
             <div class="brand-title">
-                <div class="flag-box">
-                    <div class="flag-red"></div>
-                    <div class="flag-white"></div>
-                </div>
+                <img src="data:image/png;base64,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" alt="Icon Warga +62 Kagetan" style="width:34px; height:34px; border-radius:10px; border:2px solid #b45309; object-fit:cover; flex-shrink:0; box-shadow:0 2px 5px rgba(0,0,0,0.2);">
                 <div>
                     <h1>Warga +62 Simulator</h1>
                     <p id="headerPhaseText">👶 Balita (0-5 Thn) • Gen Ke-1</p>
                 </div>
             </div>
             <div class="header-actions">
+                <button id="btnSoundToggle" class="btn-pill" title="Efek Suara" onclick="toggleGameSound()">🔊</button>
+                <button class="btn-pill" title="Hall of Fame & Batu Nisan Legasi" onclick="openModal('hof')">🏆 Legasi</button>
                 <button id="btnKaburHeader" class="btn-pill" onclick="openModal('imigrasi')">
                     ✈️ <span id="kaburPctLabel">0% Kabur</span>
                 </button>
+                <button id="btnManualSave" class="btn-pill" title="Simpan & Kelola Save LocalStorage" onclick="openLocalStorageManager()">💾 Save</button>
                 <button class="btn-pill" title="Reset Data & Mulai Baru" onclick="confirmResetGameData()">🗑️ Reset</button>
             </div>
         </div>
@@ -976,7 +998,7 @@
                 <p style="font-size:11px; color:#6b5344; font-weight:700;">Ketik namamu sendiri atau pilih secara acak. Seluruh parameter & kasta keluarga dikunci 100% RNG!</p>
             </div>
             <div>
-                <label style="font-size:11px; font-weight:900; color:#4a3520; display:block; margin-bottom:5px;">Nama Lengkap Calon Juragan:</label>
+                <label style="font-size:11px; font-weight:900; color:#4a3520; display:block; margin-bottom:5px;">Nama Lengkap Warga +62:</label>
                 <div style="display:flex; gap:6px;">
                     <input id="inputCustomName" type="text" class="input-text" placeholder="Ketik nama lengkap..." />
                     <button class="btn-action btn-dark" onclick="randomizeBirthNameInput()">🎲 Acak</button>
@@ -1069,7 +1091,61 @@
     // =========================================================================
     // 1. DATABASE LENGKAP 8 KOTA (CITIES_DATA), PAJAK UU HPP, ASET & WARGA +62
     // =========================================================================
-    const SAVE_STORAGE_KEY = "warga62_simulator_autosave_v1";
+    const SAVE_STORAGE_KEY = "warga62_simulator_autosave_v6";
+    const LEGACY_SAVE_KEYS = [
+        "warga62_simulator_autosave_v1",
+        "warga62_simulator_autosave_v2",
+        "warga62_simulator_autosave_v3",
+        "warga62_simulator_autosave_v4",
+        "warga62_simulator_autosave_v5",
+        "warga62_hall_of_fame_v1"
+    ];
+    let memoryFallbackSave = null;
+
+    function safeStorageGet(key) {
+        try {
+            return window.localStorage ? window.localStorage.getItem(key) : memoryFallbackSave;
+        } catch (e) {
+            return memoryFallbackSave;
+        }
+    }
+
+    function safeStorageSet(key, val) {
+        memoryFallbackSave = val;
+        try {
+            if (window.localStorage) window.localStorage.setItem(key, val);
+        } catch (e) {}
+    }
+
+    function safeStorageRemove(key) {
+        memoryFallbackSave = null;
+        try {
+            if (window.localStorage) {
+                window.localStorage.removeItem(key);
+                LEGACY_SAVE_KEYS.forEach(k => window.localStorage.removeItem(k));
+            }
+        } catch (e) {}
+    }
+
+    function purgeLegacyAndCorruptStorage() {
+        try {
+            if (window.localStorage) {
+                LEGACY_SAVE_KEYS.forEach(k => window.localStorage.removeItem(k));
+                const cur = window.localStorage.getItem(SAVE_STORAGE_KEY);
+                if (cur) {
+                    const parsed = JSON.parse(cur);
+                    if (!parsed || !parsed.player || !parsed.player.stats || !parsed.player.city) {
+                        window.localStorage.removeItem(SAVE_STORAGE_KEY);
+                    }
+                }
+            }
+        } catch (e) {
+            try {
+                if (window.localStorage) window.localStorage.removeItem(SAVE_STORAGE_KEY);
+            } catch (err) {}
+            memoryFallbackSave = null;
+        }
+    }
 
     function saveGameToLocal() {
         if (!player) return;
@@ -1080,15 +1156,16 @@
                 logsHtml: logEl ? logEl.innerHTML : "",
                 savedAt: Date.now()
             };
-            localStorage.setItem(SAVE_STORAGE_KEY, JSON.stringify(payload));
+            safeStorageSet(SAVE_STORAGE_KEY, JSON.stringify(payload));
         } catch (err) {
             console.warn("Gagal menyimpan ke LocalStorage:", err);
         }
     }
 
     function loadGameFromLocal() {
+        purgeLegacyAndCorruptStorage();
         try {
-            const raw = localStorage.getItem(SAVE_STORAGE_KEY);
+            const raw = safeStorageGet(SAVE_STORAGE_KEY);
             if (!raw) return false;
             const parsed = JSON.parse(raw);
             if (!parsed || !parsed.player) return false;
@@ -1130,11 +1207,10 @@
     }
 
     function clearLocalSaveData() {
+        safeStorageRemove(SAVE_STORAGE_KEY);
         try {
-            localStorage.removeItem(SAVE_STORAGE_KEY);
-        } catch (err) {
-            console.warn("Gagal menghapus LocalStorage:", err);
-        }
+            if (window.sessionStorage) window.sessionStorage.clear();
+        } catch (e) {}
     }
 
     function resetSavedDataAndOpenBirth() {
@@ -2159,7 +2235,7 @@
         { id: "smelter", name: "Konsesi Tambang & Smelter", icon: "🏭", category: "business", isLuxury: true, price: 6500, passive: 1250, happyBonus: 35, socialBonus: 45 }
     ];
 
-    // Daftar Instrumen Saham & Crypto (Harga Fluktuatif 100% RNG Tidak Terprediksi Tiap Tahun)
+    // Daftar Instrumen Saham & Crypto (Realistis & Sulit Cuan: Rawan Nyangkut, Bandar Guyur & Biaya Sekuritas)
     const MARKET_INSTRUMENTS = [
         {
             id: "saham_bluechip",
@@ -2167,9 +2243,10 @@
             icon: "📈",
             type: "Saham IHSG",
             basePrice: 5,
-            minPct: -25,
-            maxPct: 40,
-            desc: "Saham perbankan raksasa +62. Fluktuasi relatif moderat namun tetap tak bisa ditebak."
+            minPct: -28,
+            maxPct: 18,
+            winChance: 0.38,
+            desc: "Saham perbankan besar +62. Kenaikan tahunan terbatas (maks +18%), rawan koreksi asing & terpotong fee transaksi."
         },
         {
             id: "saham_gorengan",
@@ -2177,9 +2254,10 @@
             icon: "🍟",
             type: "Saham Spekulatif",
             basePrice: 2,
-            minPct: -75,
-            maxPct: 180,
-            desc: "Bisa Auto Reject Atas (ARA) berkali-kali lipat atau nyungsep Auto Reject Bawah (ARB) seketika!"
+            minPct: -78,
+            maxPct: 65,
+            winChance: 0.24,
+            desc: "Sangat berisiko diguyur bandar (ARB berjilid-jilid)! Lebih sering nyungsep daripada Auto Reject Atas."
         },
         {
             id: "crypto_btc",
@@ -2187,9 +2265,10 @@
             icon: "🪙",
             type: "Aset Crypto",
             basePrice: 15,
-            minPct: -55,
-            maxPct: 130,
-            desc: "Aset kripto global dengan volatilitas tinggi mengikuti siklus bull-run dan crypto winter."
+            minPct: -58,
+            maxPct: 48,
+            winChance: 0.32,
+            desc: "Volatilitas tinggi dengan siklus bear-market panjang; sulit menebak titik puncak dan rawan nyangkut."
         },
         {
             id: "crypto_micin",
@@ -2197,17 +2276,130 @@
             icon: "🐕",
             type: "Crypto Ekstrem",
             basePrice: 1,
-            minPct: -92,
-            maxPct: 350,
-            desc: "100% perjudian pasar kripto! Bisa pump ratusan persen dalam semalam atau rugpull mendadak."
+            minPct: -90,
+            maxPct: 110,
+            winChance: 0.16,
+            desc: "84% peluang anjlok / rugpull developer! Sangat sulit untung kecuali hoki luar biasa."
         }
     ];
 
+    function rollInstrumentPctChange(inst) {
+        const winProb = typeof inst.winChance === "number" ? inst.winChance : 0.30;
+        if (Math.random() < winProb) {
+            // Peluang hijau lebih kecil & cenderung di rentang bawah-menengah
+            const r = Math.pow(Math.random(), 1.65);
+            return Math.max(1, Math.round(1 + r * (inst.maxPct - 1)));
+        } else {
+            // Peluang merah lebih sering (rawan koreksi / diguyur bandar)
+            const r = Math.pow(Math.random(), 1.25);
+            return Math.min(-1, Math.round(-1 - r * (Math.abs(inst.minPct) - 1)));
+        }
+    }
+
+
+    // =========================================================================
+    // 1B. DATABASE PET (HEWAN PELIHARAAN), BPJS & RS LUAR NEGERI, PARTAI & HALL OF FAME
+    // =========================================================================
+    const HOF_STORAGE_KEY = "warga62_hall_of_fame_v2";
+
+    const PETS_CATALOG = [
+        {
+            id: "pet_kucing_oren",
+            name: "Kucing Oren Kampung (Barbar & Pemberani)",
+            icon: "🐈",
+            adoptCost: 0.2,
+            annualCost: 1.2,
+            maxAge: 16,
+            happyBonus: 5,
+            socialBonus: 2,
+            desc: "Adopsi dari gang komplek. Hobi malak whiskas, berantem sama kucing tetangga, tapi bikin rumah ramai."
+        },
+        {
+            id: "pet_kucing_persia",
+            name: "Kucing Persia / British Shorthair",
+            icon: "🐱",
+            adoptCost: 6,
+            annualCost: 4.5,
+            maxAge: 15,
+            happyBonus: 8,
+            socialBonus: 5,
+            desc: "Bulu tebal menggemaskan! Wajib grooming salon & makanan premium biar tidak jamuran."
+        },
+        {
+            id: "pet_anjing_kampung",
+            name: "Anjing Penjaga Setia (Si Blacky)",
+            icon: "🐕",
+            adoptCost: 1,
+            annualCost: 2.5,
+            maxAge: 15,
+            happyBonus: 7,
+            socialBonus: 3,
+            desc: "Penjaga rumah paling loyal! Menambah rasa aman dari maling dan siap diajak lari pagi."
+        },
+        {
+            id: "pet_golden",
+            name: "Anjing Golden Retriever / Pomeranian",
+            icon: "🦮",
+            adoptCost: 14,
+            annualCost: 7,
+            maxAge: 14,
+            happyBonus: 11,
+            socialBonus: 8,
+            desc: "Sahabat keluarga sultan yang ramah, pintar, dan sering diajak nongkrong di kafe pet-friendly."
+        },
+        {
+            id: "pet_lovebird",
+            name: "Burung Murai Batu / Lovebird Juara",
+            icon: "🦜",
+            adoptCost: 8,
+            annualCost: 3,
+            maxAge: 18,
+            happyBonus: 6,
+            socialBonus: 9,
+            desc: "Kicauannya bikin bapak-bapak komplek kumpul di teras! Bisa ikut kontes gantangan burung."
+        },
+        {
+            id: "pet_sugar_glider",
+            name: "Sugar Glider / Landak Mini",
+            icon: "🐹",
+            adoptCost: 2.5,
+            annualCost: 1.8,
+            maxAge: 10,
+            happyBonus: 6,
+            socialBonus: 4,
+            desc: "Hewan eksotis mungil yang praktis dipelihara di kamar kos maupun apartemen."
+        },
+        {
+            id: "pet_arwana",
+            name: "Ikan Arwana Super Red (Hoki Sultan)",
+            icon: "🐟",
+            adoptCost: 35,
+            annualCost: 6,
+            maxAge: 22,
+            happyBonus: 9,
+            socialBonus: 14,
+            desc: "Simbol kemakmuran ruang tamu konglomerat! Konon membawa hoki bisnis jika dirawat telaten."
+        }
+    ];
+
+    const BPJS_PLANS = [
+        { id: "none", name: "Tanpa BPJS (Bayar Tunai Mandiri)", annualCost: 0, coverage: 0, desc: "Biaya rumah sakit 100% ditanggung kantong sendiri." },
+        { id: "kelas3", name: "BPJS Kesehatan Kelas 3", annualCost: 0.5, coverage: 0.75, desc: "Iuran Rp 500 Rb/thn • Menanggung 75% biaya RS (antrean rujukan panjang)." },
+        { id: "kelas2", name: "BPJS Kesehatan Kelas 2", annualCost: 1.3, coverage: 0.85, desc: "Iuran Rp 1,3 Jt/thn • Menanggung 85% biaya RS dengan kamar rawat lebih nyaman." },
+        { id: "kelas1", name: "BPJS Kesehatan Kelas 1", annualCost: 1.8, coverage: 0.92, desc: "Iuran Rp 1,8 Jt/thn • Menanggung 92% biaya RS & akses rujukan cepat." }
+    ];
+
+    const POLITICAL_PARTIES = [
+        { id: "partai_merakyat", name: "Partai Wong Cilik Nusantara (PWCN)", fee: 15, reqSocial: 55, powerBonus: 0.08, desc: "Basis massa akar rumput kuat. Cocok untuk jalur Ketua RT, Lurah & Walikota." },
+        { id: "partai_elitis", name: "Partai Koalisi Garuda Emas (PKGE)", fee: 120, reqSocial: 75, powerBonus: 0.16, desc: "Partai koalisi besar dengan logistik kampanye kuat untuk Gubernur & Presiden." },
+        { id: "partai_sendiri", name: "Dirikan Partai Politik Sendiri (Ketua Umum)", fee: 1500, reqSocial: 88, powerBonus: 0.25, desc: "Kendali penuh 100% sebagai Ketua Umum Partai! Bebas mahar koalisi saat nyapres." }
+    ];
+
     const MIGRATION_COUNTRIES = [
-        { id: "sg", name: "Singapura", flag: "🇸🇬", cost: 10000, desc: "Tetangga dekat yang rapi, transportasi publik juara, bebas tukang parkir gaib." },
-        { id: "jp", name: "Jepang", flag: "🇯🇵", cost: 10000, desc: "Negeri Sakura yang tertib, bersih, dan kereta selalu tepat waktu." },
-        { id: "ch", name: "Swiss", flag: "🇨🇭", cost: 10000, desc: "Pemandangan Pegunungan Alpen yang tenang untuk menikmati sisa hidup." },
-        { id: "nl", name: "Belanda", flag: "🇳🇱", cost: 10000, desc: "Negara ramah sepeda dengan work-life balance terbaik di Eropa." }
+        { id: "sg", name: "Singapura", flag: "🇸🇬", cost: 100000, desc: "Tetangga dekat yang rapi, transportasi publik juara, bebas tukang parkir gaib." },
+        { id: "jp", name: "Jepang", flag: "🇯🇵", cost: 100000, desc: "Negeri Sakura yang tertib, bersih, dan kereta selalu tepat waktu." },
+        { id: "ch", name: "Swiss", flag: "🇨🇭", cost: 100000, desc: "Pemandangan Pegunungan Alpen yang tenang untuk menikmati sisa hidup." },
+        { id: "nl", name: "Belanda", flag: "🇳🇱", cost: 100000, desc: "Negara ramah sepeda dengan work-life balance terbaik di Eropa." }
     ];
 
     const FRIEND_TYPES = {
@@ -2715,7 +2907,7 @@
 
         if (roll < 0.42) {
             // Reaksi SANGAT SUKA (42% RNG)
-            deltaRel = randInt(8, 24);
+            deltaRel = randInt(4, 11);
             deltaHappy = randInt(3, 8);
             reactionTitle = "😍 Penerima Sangat Senang!";
             const likedStories = [
@@ -2738,7 +2930,7 @@
             logType = "normal";
         } else {
             // Reaksi TIDAK SUKA / TERSINGGUNG / CURIGA (28% RNG)
-            deltaRel = -randInt(6, 20);
+            deltaRel = -randInt(3, 10);
             deltaHappy = -randInt(3, 8);
             reactionTitle = "😒 Penerima Tidak Suka / Tersinggung!";
             const dislikedStories = gift.cost <= 0.5
@@ -2885,6 +3077,75 @@
         renderKeluargaSheet(returnTab);
     }
 
+
+    // =========================================================================
+    // AUDIO ENGINE RINGAN (WEB AUDIO API — TANPA FILE EKSTERNAL)
+    // =========================================================================
+    let gameSoundMuted = false;
+    let sharedAudioCtx = null;
+
+    function getAudioCtx() {
+        if (!sharedAudioCtx) {
+            const Ctx = window.AudioContext || window.webkitAudioContext;
+            if (Ctx) sharedAudioCtx = new Ctx();
+        }
+        if (sharedAudioCtx && sharedAudioCtx.state === "suspended") {
+            sharedAudioCtx.resume().catch(() => {});
+        }
+        return sharedAudioCtx;
+    }
+
+    function toggleGameSound() {
+        gameSoundMuted = !gameSoundMuted;
+        const btn = document.getElementById("btnSoundToggle");
+        if (btn) btn.textContent = gameSoundMuted ? "🔇" : "🔊";
+        if (!gameSoundMuted) playGameSound("click");
+        showToast(gameSoundMuted ? "🔇 Efek suara dimatikan" : "🔊 Efek suara aktif");
+    }
+
+    function playGameSound(type = "click") {
+        if (gameSoundMuted) return;
+        try {
+            const ctx = getAudioCtx();
+            if (!ctx) return;
+            const now = ctx.currentTime;
+
+            const playTone = (freq, startOffset, duration, wave = "sine", gainVal = 0.08, endFreq = null) => {
+                const osc = ctx.createOscillator();
+                const gain = ctx.createGain();
+                osc.type = wave;
+                osc.frequency.setValueAtTime(freq, now + startOffset);
+                if (endFreq) {
+                    osc.frequency.exponentialRampToValueAtTime(endFreq, now + startOffset + duration);
+                }
+                gain.gain.setValueAtTime(0.001, now + startOffset);
+                gain.gain.linearRampToValueAtTime(gainVal, now + startOffset + 0.015);
+                gain.gain.exponentialRampToValueAtTime(0.0001, now + startOffset + duration);
+                osc.connect(gain);
+                gain.connect(ctx.destination);
+                osc.start(now + startOffset);
+                osc.stop(now + startOffset + duration + 0.02);
+            };
+
+            if (type === "year") {
+                playTone(523.25, 0, 0.14, "triangle", 0.07);
+                playTone(659.25, 0.09, 0.22, "triangle", 0.08);
+            } else if (type === "coin") {
+                playTone(987.77, 0, 0.10, "sine", 0.08);
+                playTone(1318.51, 0.08, 0.24, "sine", 0.09);
+            } else if (type === "love") {
+                playTone(523.25, 0, 0.14, "sine", 0.07);
+                playTone(659.25, 0.10, 0.14, "sine", 0.07);
+                playTone(783.99, 0.20, 0.26, "sine", 0.08);
+            } else if (type === "danger") {
+                playTone(220, 0, 0.18, "sawtooth", 0.07, 150);
+                playTone(185, 0.16, 0.25, "sawtooth", 0.07, 120);
+            } else {
+                playTone(440, 0, 0.07, "sine", 0.05);
+            }
+        } catch (e) {}
+    }
+
     function showToast(msg) {
         const box = document.getElementById("toastBox");
         if (!box) return;
@@ -3001,8 +3262,14 @@
         }
 
         let passive = 0;
+        let businessUpkeep = 0;
         for (let i = 0; i < player.assets.length; i++) {
-            passive += (player.assets[i].passive || 0);
+            const asItem = player.assets[i];
+            const lvl = asItem.bizLevel || 1;
+            const emp = asItem.employees || 0;
+            const mult = 1 + (lvl - 1) * 0.45 + (emp * 0.15);
+            passive += roundMoney((asItem.passive || 0) * mult);
+            if (emp > 0) businessUpkeep += roundMoney(emp * 4.5);
         }
 
         let cost = 0;
@@ -3053,6 +3320,20 @@
                 cost += 4;
             }
         }
+
+        // Biaya Pemeliharaan Hewan Peliharaan (Pets)
+        (player.pets || []).forEach(pet => {
+            if (pet.alive) cost += (pet.annualCost || 2);
+        });
+
+        // Iuran Tahunan BPJS Kesehatan
+        const bpjsObj = BPJS_PLANS.find(b => b.id === (player.bpjsPlan || "none"));
+        if (bpjsObj && bpjsObj.annualCost > 0) {
+            cost += bpjsObj.annualCost;
+        }
+
+        // Gaji Karyawan Bisnis Aktif
+        cost += businessUpkeep;
 
         // Potongan Pajak Tahunan (PPh 21 / UMKM + PKB + PBB sesuai mode Coretax DJP)
         const taxSummary = calculateDetailedTaxSummary();
@@ -3227,12 +3508,12 @@
         cfEl.style.color = net >= 0 ? "#15803d" : "#dc2626";
 
         // Update persentase progres #KaburAjaDulu (> Rp 9.999 Jt)
-        const kaburPct = clamp(Math.floor((Math.max(0, player.money) / 10000) * 100), 0, 100);
+        const kaburPct = clamp(Math.floor((Math.max(0, player.money) / 100000) * 100), 0, 100);
         const kaburLabel = document.getElementById("kaburPctLabel");
         const kaburBtn = document.getElementById("btnKaburHeader");
-        if (kaburLabel) kaburLabel.textContent = player.money > 9999 ? "SIAP KABUR!" : `${kaburPct}% Kabur`;
+        if (kaburLabel) kaburLabel.textContent = player.money > 99999 ? "SIAP KABUR!" : `${kaburPct}% Kabur`;
         if (kaburBtn) {
-            kaburBtn.className = "btn-pill" + (player.money > 9999 ? " gold-glow" : "");
+            kaburBtn.className = "btn-pill" + (player.money > 99999 ? " gold-glow" : "");
         }
 
         // Highlight Pulau Kota Aktif di Latar Belakang
@@ -3278,8 +3559,18 @@
             const tx = calculateDetailedTaxSummary();
             bHtml += `<span class="mini-badge" style="color:#92400e; background:#fef9c3;">🧾 PTKP ${tx.ptkpCode}</span>`;
         }
+        if (hasCriminalRecord()) {
+            bHtml += `<span class="mini-badge" style="color:#b91c1c; border-color:#ef4444; background:#fee2e2;">⛓️ Mantan Napi (SKCK Merah)</span>`;
+        }
         if (player.partner) {
             bHtml += `<span class="mini-badge" style="color:#be185d; background:#fce7f3;">❤️ ${player.partner.status}: ${player.partner.name}</span>`;
+        }
+        const alivePets = (player.pets || []).filter(pt => pt.alive);
+        if (alivePets.length > 0) {
+            bHtml += `<span class="mini-badge" style="color:#047857; background:#d1fae5;">${alivePets[0].icon} ${alivePets[0].name}${alivePets.length > 1 ? ` (+${alivePets.length - 1})` : ''}</span>`;
+        }
+        if (player.politicalParty) {
+            bHtml += `<span class="mini-badge" style="color:#7e22ce; background:#f3e8ff;">🎗️ ${player.politicalParty.name}</span>`;
         }
         badgesEl.innerHTML = bHtml;
 
@@ -3319,6 +3610,22 @@
         saveGameToLocal();
     }
 
+    // Helper Cek Catatan Kriminal / Pernah Dipenjara (SKCK Merah Permanen)
+    function recordCriminalHistory(crimeLabel, yearsSentenced = 0) {
+        if (!player) return;
+        player.everInJail = true;
+        if (!Array.isArray(player.jailRecords)) player.jailRecords = [];
+        player.jailRecords.push({
+            age: player.age,
+            crime: crimeLabel,
+            years: yearsSentenced
+        });
+    }
+
+    function hasCriminalRecord() {
+        return !!(player && (player.everInJail || player.inJail || (player.jailRecords && player.jailRecords.length > 0)));
+    }
+
     // Helper Konsekuensi Kriminal: Drop Out Sekolah/Kampus, Dipecat Kerja (PHK), & Penyitaan Aset Korupsi
     function applyCrimeConsequences(reasonLabel, options = { confiscateAssets: false }) {
         if (!player) return;
@@ -3345,14 +3652,24 @@
             penalties.push(`di-Drop Out (DO) secara tidak hormat dari **${oldUni}**`);
         }
 
-        // 3. Jika sedang bekerja -> Dipecat Tidak Hormat (PHK)
+        // 3. Jika sedang bekerja -> Dipecat Tidak Hormat (PHK) / Dimakzulkan sesuai jabatan
         if (player.job) {
             const oldJob = player.job.title;
+            const jobId = player.job.id || "";
+            const isGov = !!player.job.isGov;
             player.job = null;
             player.jobHours = 0;
             player.salary = 0;
             player.yearsWorked = 0;
-            penalties.push(`dipecat secara tidak hormat (PHK) dari jabatan **${oldJob}**`);
+            player.govTermYears = 0;
+            player.govTermCount = 0;
+            if (jobId === "presiden") {
+                penalties.push(`dimakzulkan dan dilengserkan secara tidak hormat oleh DPR/MPR & rakyat dari kursi **${oldJob}**`);
+            } else if (isGov) {
+                penalties.push(`dicopot tidak hormat oleh DPRD/Mendagri dan didesak mundur warga dari jabatan **${oldJob}**`);
+            } else {
+                penalties.push(`dipecat secara tidak hormat (PHK) dari jabatan **${oldJob}**`);
+            }
         }
         if (player.sideJobs && player.sideJobs.length > 0) {
             player.sideJobs = [];
@@ -3377,6 +3694,11 @@
     // 6. CORE LOOP: +1 TAHUN, PPDB SEKOLAH (SD/SMP/SMU) & AUDIT PAJAK CORETAX
     // =========================================================================
     function openSchoolEnrollmentDialog(levelKey, levelTitle) {
+        if (hasCriminalRecord()) {
+            addLog(`🚫 **DITOLAK SELURUH SEKOLAH (${levelTitle}):** Karena memiliki catatan pernah dipenjara dalam riwayat hidupmu, seluruh sekolah menolak pendaftaranmu!`, "danger");
+            showToast("Ditolak semua sekolah karena catatan penjara!");
+            return;
+        }
         const rawList = (player.city.schools && player.city.schools[levelKey]) ? player.city.schools[levelKey] : [];
         const aliveParents = (player.parents || []).filter(p => p.alive);
         const parentWealth = aliveParents.reduce((s, p) => s + p.wealth, 0);
@@ -3455,6 +3777,7 @@
 
     function ageUp() {
         if (!player || !player.alive || player.migrated) return;
+        playGameSound("year");
 
         player.age += 1;
         player.actionsThisYear = 0;
@@ -3472,7 +3795,7 @@
         let portfolioLogNotes = [];
         MARKET_INSTRUMENTS.forEach(inst => {
             const oldPrice = player.marketPrices[inst.id] || inst.basePrice;
-            const pctChange = randInt(inst.minPct, inst.maxPct);
+            const pctChange = rollInstrumentPctChange(inst);
             const rawNew = oldPrice * (1 + pctChange / 100);
             const newPrice = Math.max(0.1, roundMoney(rawNew));
             player.marketPrices[inst.id] = newPrice;
@@ -3609,6 +3932,27 @@
                 ch.lastTaxPaid = chTax;
                 ch.wealth = roundMoney((ch.wealth || 0) + (ch.income || 0) - chTax);
             }
+        }
+
+        // Update Umur, Kesehatan & Kebahagiaan Hewan Peliharaan (Pets)
+        if (player.pets && player.pets.length > 0) {
+            player.pets.forEach(pet => {
+                if (!pet.alive) return;
+                pet.age += 1;
+                pet.interactThisYear = 0;
+                pet.hunger = clamp((pet.hunger || 80) - randInt(10, 22), 0, 100);
+                pet.health = clamp((pet.health || 85) - (pet.age > pet.maxAge - 3 ? randInt(8, 16) : randInt(2, 6)), 0, 100);
+                if (pet.hunger < 30) pet.health = clamp(pet.health - 10, 0, 100);
+
+                // Efek pasif pet menemani pemilik
+                modifyStats({ happy: randInt(1, 3) });
+
+                if (pet.age >= pet.maxAge || pet.health <= 0) {
+                    pet.alive = false;
+                    modifyStats({ happy: -randInt(8, 15) });
+                    addLog(`🌈 **PELANGI UNTUK HEWAN KESAYANGAN:** Peliharaanmu **${pet.icon} ${pet.name}** (${pet.speciesName}) tutup usia di umur ${pet.age} tahun setelah setia menemanimu.`, "love");
+                }
+            });
         }
 
         // Cek Penjara
@@ -3889,8 +4233,13 @@
         } else if (type === "imigrasi") {
             iconEl.textContent = "✈️";
             titleEl.textContent = "Pindah Warga Negara (#KaburAjaDulu)";
-            subEl.textContent = "Terbuka saat kekayaan bersih menembus > Rp 9.999 Juta";
+            subEl.textContent = "Terbuka saat kekayaan bersih menembus > Rp 99.999 Juta (Inflasi +62)";
             renderImigrasiSheet();
+        } else if (type === "hof") {
+            iconEl.textContent = "🏆";
+            titleEl.textContent = "Hall of Fame & Batu Nisan Legasi +62";
+            subEl.textContent = "Catatan Rekor & Gelar Kehidupan Generasi Terdahulu";
+            renderHallOfFameSheet();
         }
     }
 
@@ -3917,6 +4266,11 @@
 
         // TAB 1: PEKERJAAN UTAMA (FULL-TIME / PART-TIME) & KERJA SAMPINGAN PER JAM (MULAI SMP USIA 12+)
         if (tab === "kerja") {
+            if (hasCriminalRecord()) {
+                const recList = (player.jailRecords || []).map(r => `Usia ${r.age} Thn: ${r.crime}`).join(" • ") || "Tercatat pernah menjalani tahanan Lapas";
+                bodyEl.innerHTML = `<div class="item-card" style="border-color:#dc2626; background:#fef2f2;"><div class="item-title" style="color:#b91c1c;">⛓️ Akses Pekerjaan Ditutup Permanen (Catatan Penjara)</div><div class="item-desc">Riwayat pernah dipenjara tercatat permanen di kehidupanmu (<b>${recList}</b>). Seluruh instansi, perusahaan, maupun mitra kerja menolak lamaranmu. Kamu hanya bisa bertahan hidup dari tabungan, aset yang tersisa, atau bantuan keluarga.</div></div>`;
+                return;
+            }
             if (player.age < 12) {
                 bodyEl.innerHTML = `<div class="item-card"><div class="item-title">🔞 Belum Cukup Umur Bekerja</div><div class="item-desc">Kamu masih berusia ${player.age} tahun (${getRoleLabel()}). Kerja sampingan bayaran per jam terbuka mulai bangku <b>SMP (Usia 12 Tahun)</b>, dan pekerjaan utama terbuka di usia <b>18 Tahun</b>!</div></div>`;
                 return;
@@ -4176,18 +4530,41 @@
             return;
         }
 
-        // TAB PEJABAT POLITIK
+        // TAB PEJABAT POLITIK & PARTAI POLITIK
         if (tab === "pejabat") {
             const govIntro = document.createElement("div");
             govIntro.className = "item-card";
             govIntro.style.background = "#090d16";
             govIntro.innerHTML = `
-                <div class="item-title" style="color:#fbbf24;">🏛️ Karir Politik & Pemerintahan (Maks 2 Periode)</div>
+                <div class="item-title" style="color:#fbbf24;">🏛️ Karir Politik, Partai & Pemerintahan (Maks 2 Periode)</div>
                 <div class="item-desc" style="color:#e5e7eb;">
-                    Jabatan politik berjenjang dari Ketua RT hingga Presiden RI. Setiap jabatan memiliki masa bakti 1 Periode (5 Tahun) dan batas maksimal 2 Periode seumur hidup. Kampanye sangat bergantung pada modal dana dan elektabilitas (Sosial)!
+                    Untuk mencalonkan diri sebagai <b>Walikota, Gubernur, atau Presiden</b>, kamu wajib bergabung atau mendirikan <b>Partai Politik</b> terlebih dahulu!
                 </div>
             `;
             bodyEl.appendChild(govIntro);
+
+            // Kartu Kendaraan Partai Politik
+            const partyCard = document.createElement("div");
+            partyCard.className = "item-card";
+            partyCard.style.borderColor = "#9333ea";
+            if (player.politicalParty) {
+                partyCard.innerHTML = `
+                    <div class="item-title">🎗️ Kendaraan Politik: ${player.politicalParty.name}</div>
+                    <div class="item-desc">Bonus Elektabilitas Mesin Partai: <b>+${Math.round((player.politicalParty.powerBonus || 0) * 100)}% Peluang Menang Pemilu</b></div>
+                `;
+            } else {
+                let pBtns = POLITICAL_PARTIES.map((pt, pIdx) => `
+                    <button class="btn-action btn-primary" style="text-align:left;" onclick="joinPoliticalParty(${pIdx})">
+                        🎗️ <b>${pt.name}</b> — Mahar Rp ${pt.fee} Jt (Sosial ≥${pt.reqSocial}%)<br>
+                        <span style="font-size:9.5px; font-weight:600;">${pt.desc}</span>
+                    </button>
+                `).join("");
+                partyCard.innerHTML = `
+                    <div class="item-title">🎗️ Gabung / Dirikan Partai Politik (Syarat Pilkada & Pilpres)</div>
+                    <div style="display:flex; flex-direction:column; gap:6px;">${pBtns}</div>
+                `;
+            }
+            bodyEl.appendChild(partyCard);
 
             GOV_ROLES.forEach(gr => {
                 const isCurrent = player.job && player.job.id === gr.id;
@@ -4237,6 +4614,11 @@
 
         // TAB 2: UNIVERSITAS & RIWAYAT SEKOLAH KOTA
         if (tab === "kuliah") {
+            if (hasCriminalRecord()) {
+                const recList = (player.jailRecords || []).map(r => `Usia ${r.age} Thn: ${r.crime}`).join(" • ") || "Tercatat pernah dipenjara";
+                bodyEl.innerHTML = `<div class="item-card" style="border-color:#dc2626; background:#fef2f2;"><div class="item-title" style="color:#b91c1c;">🚫 Ditolak Seluruh Lembaga Pendidikan (Catatan Penjara)</div><div class="item-desc">Karena catatan pernah dipenjara tercatat dalam riwayat hidupmu (<b>${recList}</b>), seluruh sekolah dan universitas menolak pendaftaran pendidikanmu.</div></div>`;
+                return;
+            }
             const schHist = (player.schoolHistory || []).length > 0 ? player.schoolHistory.join(" ➔ ") : "Belum tercatat";
             
             let degreeStatus = 'Belum Kuliah S1';
@@ -4392,6 +4774,36 @@
                 bodyEl.appendChild(mCard);
             });
 
+            // MANAJEMEN BISNIS & PROPERTI AKTIF YANG DIMILIKI
+            const bizAssets = (player.assets || []).map((a, idx) => ({ a, idx })).filter(x => x.a.passive > 0);
+            if (bizAssets.length > 0) {
+                const bizCard = document.createElement("div");
+                bizCard.className = "item-card";
+                bizCard.style.borderColor = "#16a34a";
+                let bizRows = bizAssets.map(({ a, idx }) => {
+                    const lvl = a.bizLevel || 1;
+                    const emp = a.employees || 0;
+                    const upgCost = roundMoney(a.price * 0.35 * lvl);
+                    const curYield = roundMoney(a.passive * (1 + (lvl - 1) * 0.45 + emp * 0.15));
+                    return `
+                        <div style="background:#f8f1df; border:1.5px solid #decb9f; border-radius:10px; padding:8px; margin-top:4px;">
+                            <div style="font-size:11.5px; font-weight:900;">${a.icon} ${a.name} (Cabang Lv.${lvl} • ${emp} Karyawan)</div>
+                            <div style="font-size:10px; color:#15803d; font-weight:800;">Omzet Pasif: +Rp ${curYield} Jt/thn • Gaji Karyawan: -Rp ${roundMoney(emp * 4.5)} Jt/thn</div>
+                            <div style="display:grid; grid-template-columns:1fr 1fr; gap:5px; margin-top:5px;">
+                                <button class="btn-action btn-gold" style="padding:6px; font-size:10px;" onclick="upgradeBusinessAsset(${idx})">🏢 Buka Cabang (${formatShortJuta(upgCost)})</button>
+                                <button class="btn-action btn-primary" style="padding:6px; font-size:10px;" onclick="hireBusinessEmployee(${idx})">👨‍💼 Rekrut Staf (+1)</button>
+                            </div>
+                        </div>
+                    `;
+                }).join("");
+                bizCard.innerHTML = `
+                    <div class="item-title">🏢 Kelola Bisnis & Properti Aktif (Buka Cabang & Rekrut Karyawan)</div>
+                    <div class="item-desc">Tingkatkan level cabang dan rekrut karyawan untuk melipatgandakan pemasukan pasif tahunanmu!</div>
+                    ${bizRows}
+                `;
+                bodyEl.appendChild(bizCard);
+            }
+
             const ppnBanner = document.createElement("div");
             ppnBanner.className = "item-card";
             ppnBanner.style.background = "#090d16";
@@ -4542,6 +4954,11 @@
     }
 
     function enrollCityUniversity(uniIdx, nextLevel = 1, dur = 4, specCost = 5, reqEdu = 60) {
+        if (hasCriminalRecord()) {
+            addLog(`🚫 **DITOLAK UNIVERSITAS:** Pendaftaran kuliah ditolak karena catatan kriminal/penjara tercatat permanen dalam riwayat hidupmu!`, "danger");
+            showToast("Ditolak kuliah! Catatan penjara tercatat permanen.");
+            return;
+        }
         if (player.age < 18) {
             showToast("Minimal berusia 18 tahun (Lulus SMA)!");
             return;
@@ -4590,6 +5007,10 @@
 
     function runForOffice(roleId) {
         if (!player || player.retired) return;
+        if (hasCriminalRecord()) {
+            showToast("Ditolak! Catatan pernah dipenjara membuatmu tidak bisa diterima kerja lagi.");
+            return;
+        }
         const gr = GOV_ROLES.find(r => r.id === roleId);
         if (!gr) return;
 
@@ -4606,6 +5027,9 @@
                 showToast(`Kamu harus memiliki pengalaman menjabat sebagai ${prevDef.title} terlebih dahulu!`); return;
             }
         }
+        if ((gr.id === "walikota" || gr.id === "gubernur" || gr.id === "presiden") && !player.politicalParty) {
+            showToast(`Wajib bergabung atau mendirikan Partai Politik terlebih dahulu di tab Pejabat Politik!`); return;
+        }
         if (player.stats.social < gr.reqSocial) {
             showToast(`Elektabilitas sosial kurang! Butuh Sosial ≥ ${gr.reqSocial}%`); return;
         }
@@ -4618,8 +5042,9 @@
 
         player.money = roundMoney(player.money - gr.reqMoney);
         
-        // Peluang menang: 40% base + rng dari Social dan Edu.
-        const winChance = 0.4 + (player.stats.social / 200) + (player.stats.edu / 300); 
+        // Peluang menang: 40% base + rng dari Social, Edu, dan kekuatan Partai Politik.
+        const partyBonus = player.politicalParty ? (player.politicalParty.powerBonus || 0) : 0;
+        const winChance = 0.4 + (player.stats.social / 200) + (player.stats.edu / 300) + partyBonus; 
         if (Math.random() < winChance) {
             player.job = {
                 id: gr.id,
@@ -4643,12 +5068,12 @@
             player.govTermCount = player.govHistory[gr.id] + 1; // 1 or 2
             player.govTermYears = 1;
 
-            modifyStats({ happy: randInt(15, 25), social: randInt(10, 20) });
+            modifyStats({ happy: randInt(15, 25), social: randInt(5, 10) });
             addLog(`🗳️ **MENANG PEMILU:** Dana kampanye **-Rp ${gr.reqMoney} Jt** membuahkan hasil! Kamu terpilih menjadi **${gr.icon} ${gr.title}** (Periode ke-${player.govTermCount}). Seluruh pekerjaan sampingan dihentikan karena kamu mengabdi penuh 40 Jam/mgg!`, "career");
             showToast(`Selamat! Terpilih sebagai ${gr.title}!`);
             renderKarirSheet("pejabat");
         } else {
-            modifyStats({ happy: -randInt(10, 20), social: -randInt(5, 10) });
+            modifyStats({ happy: -randInt(5, 10), social: -randInt(5, 10) });
             addLog(`🗳️ **KALAH PEMILU:** Kampanyemu menghabiskan **-Rp ${gr.reqMoney} Jt**, namun perolehan suaramu kalah dari rival politik! Elektabilitasmu menurun.`, "danger");
             showToast(`Kalah dalam pemilihan ${gr.title}!`);
             renderKarirSheet("pejabat");
@@ -4683,6 +5108,10 @@
 
     function takeSideJob(ptIdx, hoursChosen) {
         if (!player || player.retired) return;
+        if (hasCriminalRecord()) {
+            showToast("Ditolak! Catatan pernah dipenjara membuatmu tidak bisa diterima kerja lagi.");
+            return;
+        }
         const pt = PART_TIME_HOURLY_JOBS[ptIdx];
         if (!pt) return;
 
@@ -4741,6 +5170,10 @@
 
     function applySpecialCareer(specIdx) {
         if (!player || player.retired) return;
+        if (hasCriminalRecord()) {
+            showToast("Ditolak! Catatan pernah dipenjara membuatmu tidak bisa diterima kerja lagi.");
+            return;
+        }
         const sc = SPECIAL_CAREERS[specIdx];
         if (!sc) return;
 
@@ -4797,6 +5230,10 @@
 
     function applyCityJob(jobIdx, useOrdal, requestedHours = 40) {
         if (player.age < 18 || player.retired) return;
+        if (hasCriminalRecord()) {
+            showToast("Ditolak! Catatan pernah dipenjara membuatmu tidak bisa diterima kerja lagi.");
+            return;
+        }
         const rawJobs = player.city.jobs || [];
         const jTitle = rawJobs[jobIdx];
         if (!jTitle) return;
@@ -4900,6 +5337,10 @@
 
     function applyInformalJob(infIdx, requestedHours = 40) {
         if (player.age < 18 || player.retired) return;
+        if (hasCriminalRecord()) {
+            showToast("Ditolak! Catatan pernah dipenjara membuatmu tidak bisa diterima kerja lagi.");
+            return;
+        }
         const ij = INFORMAL_JOBS[infIdx];
         if (!ij) return;
 
@@ -4958,6 +5399,7 @@
         player.money = roundMoney(player.money - totalCost);
         player.assets.push({ ...as });
         modifyStats({ happy: as.happyBonus, social: as.socialBonus });
+        playGameSound("coin");
         addLog(`🏠 **BELI ASET BARU (+PPN ${Math.round(ppnRate * 100)}%):** Kamu membeli **${as.icon} ${as.name}** seharga Rp ${as.price} Jt + PPN Rp ${ppnAmt} Jt (Total **-${formatShortJuta(totalCost)}**). Passive income bertambah **+Rp ${as.passive} Jt/thn**!`, "money");
         showToast(`Berhasil membeli ${as.name}!`);
         renderKarirSheet("aset");
@@ -4971,9 +5413,12 @@
         if (!player.portfolio) player.portfolio = {};
 
         const curPrice = player.marketPrices[instId] || inst.basePrice;
-        const totalCost = roundMoney(curPrice * unitCount);
+        const baseCost = roundMoney(curPrice * unitCount);
+        // Fee broker sekuritas / exchange & PPN transaksi 1.5%
+        const brokerFee = roundMoney(Math.max(0.1, baseCost * 0.015));
+        const totalCost = roundMoney(baseCost + brokerFee);
         if (player.money < totalCost) {
-            showToast(`Saldomu tidak cukup! Butuh ${formatShortJuta(totalCost)} untuk membeli ${unitCount} unit ${inst.name}.`);
+            showToast(`Saldomu tidak cukup! Butuh ${formatShortJuta(totalCost)} (termasuk fee broker Rp ${brokerFee} Jt).`);
             return;
         }
 
@@ -4984,7 +5429,8 @@
         player.portfolio[instId].units += unitCount;
         player.portfolio[instId].totalCost = roundMoney(player.portfolio[instId].totalCost + totalCost);
 
-        addLog(`📈 **BELI ${inst.type.toUpperCase()}:** Kamu membeli **${unitCount} unit ${inst.icon} ${inst.name}** di harga ${formatShortJuta(curPrice)}/unit (Total **-${formatShortJuta(totalCost)}**).`, "money");
+        playGameSound("coin");
+        addLog(`📈 **BELI ${inst.type.toUpperCase()}:** Kamu membeli **${unitCount} unit ${inst.icon} ${inst.name}** di harga ${formatShortJuta(curPrice)}/unit + fee broker Rp ${brokerFee} Jt (Total **-${formatShortJuta(totalCost)}**).`, "money");
         showToast(`Beli ${unitCount} unit ${inst.name}!`);
         renderKarirSheet("aset");
     }
@@ -4997,9 +5443,9 @@
 
         const curPrice = (player.marketPrices && player.marketPrices[instId]) ? player.marketPrices[instId] : inst.basePrice;
         const grossProceeds = roundMoney(holding.units * curPrice);
-        // Pajak final transaksi bursa/crypto 0.1%
-        const taxFee = roundMoney(grossProceeds * 0.001);
-        const netProceeds = roundMoney(grossProceeds - taxFee);
+        // Fee jual sekuritas + PPh final bursa/crypto 2.5%
+        const taxFee = roundMoney(Math.max(0.1, grossProceeds * 0.025));
+        const netProceeds = Math.max(0, roundMoney(grossProceeds - taxFee));
         const netProfit = roundMoney(netProceeds - holding.totalCost);
 
         player.money = roundMoney(player.money + netProceeds);
@@ -5007,12 +5453,14 @@
         delete player.portfolio[instId];
 
         if (netProfit >= 0) {
-            modifyStats({ happy: randInt(3, 8) });
-            addLog(`💰 **TAKE PROFIT ${inst.type.toUpperCase()}:** Kamu menjual seluruh **${soldUnits} unit ${inst.icon} ${inst.name}** dan mencairkan **+${formatShortJuta(netProceeds)}** (Cuan bersih: **+${formatShortJuta(netProfit)}**)!`, "money");
+            playGameSound("coin");
+            modifyStats({ happy: randInt(2, 5) });
+            addLog(`💰 **TAKE PROFIT ${inst.type.toUpperCase()}:** Kamu menjual seluruh **${soldUnits} unit ${inst.icon} ${inst.name}** dan mencairkan **+${formatShortJuta(netProceeds)}** setelah dipotong fee/pajak 2,5% (Cuan bersih: **+${formatShortJuta(netProfit)}**)!`, "money");
             showToast(`Cair ${formatShortJuta(netProceeds)} (Cuan +${formatShortJuta(netProfit)})!`);
         } else {
-            modifyStats({ happy: -randInt(3, 8) });
-            addLog(`📉 **CUT LOSS ${inst.type.toUpperCase()}:** Kamu menjual seluruh **${soldUnits} unit ${inst.icon} ${inst.name}** sebesar **+${formatShortJuta(netProceeds)}** (Rugi: **${formatShortJuta(netProfit)}**).`, "danger");
+            playGameSound("danger");
+            modifyStats({ happy: -randInt(2, 5) });
+            addLog(`📉 **CUT LOSS ${inst.type.toUpperCase()}:** Kamu menjual seluruh **${soldUnits} unit ${inst.icon} ${inst.name}** sebesar **+${formatShortJuta(netProceeds)}** (Rugi bersih: **${formatShortJuta(netProfit)}**).`, "danger");
             showToast(`Cut Loss ${formatShortJuta(netProceeds)} (Rugi ${formatShortJuta(netProfit)})`);
         }
         renderKarirSheet("aset");
@@ -5073,6 +5521,7 @@
             <button class="tab-btn ${tab === 'sekolah' ? 'active' : ''}" onclick="renderUpgradeSheet('sekolah')">🎒 Sekolah (6-17)</button>
             <button class="tab-btn ${tab === 'kerja' ? 'active' : ''}" onclick="renderUpgradeSheet('kerja')">💼 Kerja (18-59)</button>
             <button class="tab-btn ${tab === 'pensiun' ? 'active' : ''}" onclick="renderUpgradeSheet('pensiun')">🧓 Pensiun (60-80)</button>
+            <button class="tab-btn ${tab === 'kesehatan' ? 'active' : ''}" onclick="renderUpgradeSheet('kesehatan')">🏥 BPJS & RS Luar Negeri</button>
         `;
         bodyEl.innerHTML = "";
 
@@ -5124,7 +5573,7 @@
                     desc: "Biaya Rp 1,5 Jt (Usia 6-17 Thn) • Mengikuti les tambahan sepulang sekolah bersama tentor berpengalaman.",
                     minAge: 6, maxAge: 17,
                     outcomes: [
-                        { weight: 55, text: "Metode pengajaran tentor bimbel sangat cocok denganmu! Wawasan akademik dan pergaulan belajarmu berkembang pesat.", effects: () => ({ edu: randInt(7, 16), social: randInt(2, 6), happy: randInt(1, 5) }) },
+                        { weight: 55, text: "Metode pengajaran tentor bimbel sangat cocok denganmu! Wawasan akademik dan pergaulan belajarmu berkembang pesat.", effects: () => ({ edu: randInt(4, 9), social: randInt(2, 6), happy: randInt(1, 5) }) },
                         { weight: 25, text: "Materi tryout terasa sangat sulit, namun kamu masih mendapat sedikit tambahan ilmu.", effects: () => ({ edu: randInt(2, 5), happy: -randInt(2, 5) }) },
                         { weight: 20, text: "Jadwal bimbel yang terlalu padat membuatmu stres berat (burnout) dan kelelahan fisik!", effects: () => ({ edu: -randInt(1, 4), happy: -randInt(6, 12), health: -randInt(4, 8) }) }
                     ]
@@ -5148,7 +5597,7 @@
                     desc: "Biaya Rp 1 Jt (Usia 10-17 Thn) • Merawat kebersihan wajah dan penampilan agar tampil lebih percaya diri.",
                     minAge: 10, maxAge: 17,
                     outcomes: [
-                        { weight: 55, text: "Produk perawatan yang kamu pakai sangat cocok! Wajahmu tampak jauh lebih bersih dan segar.", effects: () => ({ looks: randInt(5, 14), happy: randInt(3, 8) }) },
+                        { weight: 55, text: "Produk perawatan yang kamu pakai sangat cocok! Wajahmu tampak jauh lebih bersih dan segar.", effects: () => ({ looks: randInt(3, 8), happy: randInt(3, 8) }) },
                         { weight: 25, text: "Tidak ada perubahan mencolok pada penampilanmu meski produk sudah habis dipakai.", effects: () => ({ looks: randInt(0, 2), happy: -randInt(1, 3) }) },
                         { weight: 20, text: "Kulitmu ternyata tidak cocok dengan kandungan produknya hingga memicu iritasi dan breakout parah!", effects: () => ({ looks: -randInt(5, 12), happy: -randInt(6, 11), health: -randInt(1, 4) }) }
                     ]
@@ -5161,7 +5610,7 @@
                     minAge: 12, maxAge: 17,
                     isTawuran: true,
                     outcomes: [
-                        { weight: 100, text: "Kamu terlibat bentrokan tawuran antar sekolah di jalan raya hingga dibubarkan aparat dan dipanggil pihak sekolah!", effects: () => ({ social: randInt(-6, 8), health: -randInt(8, 18), edu: -randInt(5, 12), happy: -randInt(5, 12) }) }
+                        { weight: 100, text: "Kamu terlibat bentrokan tawuran antar sekolah di jalan raya hingga dibubarkan aparat dan dipanggil pihak sekolah!", effects: () => ({ social: randInt(-6, 8), health: -randInt(4, 9), edu: -randInt(5, 12), happy: -randInt(5, 12) }) }
                     ]
                 },
                 {
@@ -5190,7 +5639,7 @@
                     desc: "Biaya Rp 1,5 Jt (Usia 18-59 Thn) • Menjaga kebugaran tubuh dan membentuk postur fisik di pusat kebugaran.",
                     minAge: 18, maxAge: 59,
                     outcomes: [
-                        { weight: 55, text: "Latihan rutinmu membuahkan hasil! Stamina tubuh meningkat tajam dan postur badan terlihat makin proporsional.", effects: () => ({ health: randInt(5, 14), looks: randInt(3, 9), happy: randInt(3, 8) }) },
+                        { weight: 55, text: "Latihan rutinmu membuahkan hasil! Stamina tubuh meningkat tajam dan postur badan terlihat makin proporsional.", effects: () => ({ health: randInt(3, 8), looks: randInt(3, 9), happy: randInt(3, 8) }) },
                         { weight: 25, text: "Karena sibuk pekerjaan, kamu hanya sempat datang beberapa kali sehingga hasilnya belum terlalu terasa.", effects: () => ({ health: randInt(1, 3), looks: randInt(0, 2) }) },
                         { weight: 20, text: "Kamu memaksakan angkat beban berlebih tanpa pemanasan yang cukup hingga mengalami cedera otot punggung!", effects: () => ({ health: -randInt(5, 12), happy: -randInt(4, 9) }) }
                     ]
@@ -5202,7 +5651,7 @@
                     desc: "Biaya Rp 6 Jt (Usia 18-59 Thn) • Mengasah keahlian profesional serta menambah jejaring dunia kerja.",
                     minAge: 18, maxAge: 59,
                     outcomes: [
-                        { weight: 55, text: "Kamu lulus ujian sertifikasi dengan hasil memuaskan dan mendapat kenalan profesional baru yang suportif.", effects: () => ({ edu: randInt(6, 15), social: randInt(4, 11), happy: randInt(2, 6) }) },
+                        { weight: 55, text: "Kamu lulus ujian sertifikasi dengan hasil memuaskan dan mendapat kenalan profesional baru yang suportif.", effects: () => ({ edu: randInt(3, 8), social: randInt(4, 11), happy: randInt(2, 6) }) },
                         { weight: 25, text: "Materi kursus terlalu teoritis dan kurang relevan dengan bidang kerjamu saat ini.", effects: () => ({ edu: randInt(1, 4), happy: -randInt(1, 4) }) },
                         { weight: 20, text: "Lembaga kursus yang kamu ikuti ternyata tidak kredibel dan kamu gagal dalam ujian akhir sertifikasi!", effects: () => ({ edu: -randInt(1, 3), happy: -randInt(6, 12), social: -randInt(2, 5) }) }
                     ]
@@ -5214,7 +5663,7 @@
                     desc: "Biaya Rp 8 Jt (Usia 18-59 Thn) • Perawatan wajah intensif dan pembaruan gaya busana profesional.",
                     minAge: 18, maxAge: 59,
                     outcomes: [
-                        { weight: 55, text: "Tindakan perawatan estetika berhasil sempurna! Penampilanmu terlihat jauh lebih segar, rapi, dan memikat.", effects: () => ({ looks: randInt(7, 17), social: randInt(3, 8), happy: randInt(4, 9) }) },
+                        { weight: 55, text: "Tindakan perawatan estetika berhasil sempurna! Penampilanmu terlihat jauh lebih segar, rapi, dan memikat.", effects: () => ({ looks: randInt(4, 9), social: randInt(3, 8), happy: randInt(4, 9) }) },
                         { weight: 25, text: "Hasil perawatan klinik hanya bertahan sebentar dan terlihat biasa saja.", effects: () => ({ looks: randInt(1, 4) }) },
                         { weight: 20, text: "Terjadi reaksi alergi dan pembengkakan pasca perawatan klinik sehingga wajahmu harus diperban sementara!", effects: () => ({ looks: -randInt(6, 14), health: -randInt(3, 8), happy: -randInt(7, 13) }) }
                     ]
@@ -5226,7 +5675,7 @@
                     desc: "Biaya Rp 12 Jt (Usia 18-59 Thn) • Bergaul di lingkar sosial elit untuk memperluas koneksi Orang Dalam (Ordal).",
                     minAge: 18, maxAge: 59,
                     outcomes: [
-                        { weight: 50, text: "Kamu berhasil akrab dengan sejumlah tokoh penting dan pejabat di lapangan golf, membuka banyak pintu koneksi!", effects: () => ({ social: randInt(8, 18), happy: randInt(4, 9) }) },
+                        { weight: 50, text: "Kamu berhasil akrab dengan sejumlah tokoh penting dan pejabat di lapangan golf, membuka banyak pintu koneksi!", effects: () => ({ social: randInt(4, 9), happy: randInt(4, 9) }) },
                         { weight: 30, text: "Para tamu VIP sibuk dengan kelompoknya masing-masing sehingga kamu hanya sekadar bertukar kartu nama.", effects: () => ({ social: randInt(1, 4), happy: -randInt(1, 3) }) },
                         { weight: 20, text: "Kamu salah bicara di depan tokoh berpengaruh hingga dipermalukan di hadapan tamu lounge lainnya!", effects: () => ({ social: -randInt(5, 13), happy: -randInt(7, 13) }) }
                     ]
@@ -5238,7 +5687,7 @@
                     desc: "Biaya Rp 3 Jt (Usia 18-59 Thn) • Berlangganan makanan sehat harian untuk menjamin asupan gizi di tengah sibuknya karir.",
                     minAge: 18, maxAge: 59,
                     outcomes: [
-                        { weight: 65, text: "Menu sehatnya sangat lezat dan memulihkan staminamu dari padatnya jadwal kerja lembur!", effects: () => ({ health: randInt(6, 15), happy: randInt(3, 7) }) },
+                        { weight: 65, text: "Menu sehatnya sangat lezat dan memulihkan staminamu dari padatnya jadwal kerja lembur!", effects: () => ({ health: randInt(3, 8), happy: randInt(3, 7) }) },
                         { weight: 25, text: "Kamu merasa asupan gizimu terjaga, meski rasanya hambar.", effects: () => ({ health: randInt(2, 6) }) },
                         { weight: 10, text: "Kamu keracunan makanan dari salah satu menu katering yang kurang segar!", effects: () => ({ health: -randInt(4, 10), happy: -randInt(3, 8) }) }
                     ]
@@ -5257,7 +5706,7 @@
                     desc: "Biaya Rp 500 Rb (Usia 60-80 Thn) • Aktivitas fisik ringan bersama warga lansia untuk menjaga kebugaran di masa tua.",
                     minAge: 60, maxAge: 80,
                     outcomes: [
-                        { weight: 60, text: "Udara pagi dan gerakan senam membuat persendianmu terasa jauh lebih ringan dan pikiran gembira.", effects: () => ({ health: randInt(5, 14), happy: randInt(4, 10), social: randInt(2, 6) }) },
+                        { weight: 60, text: "Udara pagi dan gerakan senam membuat persendianmu terasa jauh lebih ringan dan pikiran gembira.", effects: () => ({ health: randInt(3, 8), happy: randInt(4, 10), social: randInt(2, 6) }) },
                         { weight: 25, text: "Cuaca mendung dan gerimis membuat sesi jalan pagi berlangsung singkat.", effects: () => ({ health: randInt(1, 3), happy: randInt(1, 3) }) },
                         { weight: 15, text: "Kamu terpeleset ringan saat senam pagi hingga pinggangmu terasa pegal linu seharian.", effects: () => ({ health: -randInt(4, 9), happy: -randInt(3, 7) }) }
                     ]
@@ -5269,7 +5718,7 @@
                     desc: "Biaya Rp 1,5 Jt (Usia 60-80 Thn) • Mempererat silaturahmi masa tua dan ketenangan batin.",
                     minAge: 60, maxAge: 80,
                     outcomes: [
-                        { weight: 65, text: "Suasana keakraban bersama sesama pensiunan membuat hatimu sangat tenteram dan bahagia.", effects: () => ({ happy: randInt(7, 16), social: randInt(5, 12) }) },
+                        { weight: 65, text: "Suasana keakraban bersama sesama pensiunan membuat hatimu sangat tenteram dan bahagia.", effects: () => ({ happy: randInt(4, 9), social: randInt(5, 12) }) },
                         { weight: 20, text: "Pertemuan berjalan biasa saja sambil menikmati hidangan teh hangat dan kue tradisional.", effects: () => ({ happy: randInt(2, 4), social: randInt(1, 3) }) },
                         { weight: 15, text: "Terjadi perdebatan sengit antar anggota arisan lansia yang membuat suasana hati menjadi kurang nyaman.", effects: () => ({ happy: -randInt(4, 9), social: -randInt(3, 7) }) }
                     ]
@@ -5281,7 +5730,7 @@
                     desc: "Biaya Rp 8 Jt (Usia 60-80 Thn) • Pemeriksaan medis menyeluruh dan terapi pemulihan stamina usia senja.",
                     minAge: 60, maxAge: 80,
                     outcomes: [
-                        { weight: 65, text: "Terapi geriatri dan kombinasi vitamin dokter sangat cocok untuk tubuhmu, membuat kondisimu jauh lebih prima!", effects: () => ({ health: randInt(10, 22), looks: randInt(2, 6), happy: randInt(3, 8) }) },
+                        { weight: 65, text: "Terapi geriatri dan kombinasi vitamin dokter sangat cocok untuk tubuhmu, membuat kondisimu jauh lebih prima!", effects: () => ({ health: randInt(5, 11), looks: randInt(2, 6), happy: randInt(3, 8) }) },
                         { weight: 20, text: "Kondisi kesehatanmu relatif stabil meski dokter menyarankan istirahat lebih banyak.", effects: () => ({ health: randInt(2, 6) }) },
                         { weight: 15, text: "Efek samping obat terapi membuatmu mual dan lemas selama beberapa hari.", effects: () => ({ health: -randInt(3, 8), happy: -randInt(4, 8) }) }
                     ]
@@ -5293,13 +5742,47 @@
                     desc: "Biaya Rp 2 Jt (Usia 60-80 Thn) • Perawatan alternatif untuk melancarkan sirkulasi darah dan meredakan pegal linu.",
                     minAge: 60, maxAge: 80,
                     outcomes: [
-                        { weight: 60, text: "Tusukan jarum akupuntur sukses meredakan linu di punggungmu. Tubuh terasa lebih hangat dan enteng!", effects: () => ({ health: randInt(7, 16), happy: randInt(2, 6) }) },
+                        { weight: 60, text: "Tusukan jarum akupuntur sukses meredakan linu di punggungmu. Tubuh terasa lebih hangat dan enteng!", effects: () => ({ health: randInt(4, 9), happy: randInt(2, 6) }) },
                         { weight: 30, text: "Terapi memberikan sedikit rasa rileks di sekujur tubuh, walau linunya masih sesekali terasa.", effects: () => ({ health: randInt(2, 5) }) },
                         { weight: 10, text: "Kamu alergi dengan ramuan jamunya, membuat perutmu kembung seharian.", effects: () => ({ health: -randInt(2, 5), happy: -randInt(2, 5) }) }
                     ]
                 }
             ];
             renderUpgradeCards(acts, bodyEl);
+            return;
+        }
+
+        if (tab === "kesehatan") {
+            const curBpjs = player.bpjsPlan || "none";
+            const bpjsCard = document.createElement("div");
+            bpjsCard.className = "item-card";
+            bpjsCard.style.borderColor = "#0284c7";
+            let bpjsBtns = BPJS_PLANS.map(b => `
+                <button class="btn-action ${curBpjs === b.id ? 'btn-emerald' : 'btn-dark'}" style="text-align:left;" onclick="selectBpjsPlan('${b.id}')">
+                    ${curBpjs === b.id ? '✅ AKTIF:' : '💳 Pilih:'} <b>${b.name}</b> (${b.annualCost > 0 ? `Rp ${b.annualCost} Jt/thn` : 'Gratis'})<br>
+                    <span style="font-size:9.5px; font-weight:600;">${b.desc}</span>
+                </button>
+            `).join("");
+            bpjsCard.innerHTML = `
+                <div class="item-title">🏥 Kepesertaan BPJS Kesehatan Nasional</div>
+                <div class="item-desc">Iuran BPJS dibayar otomatis setiap tahun dan memangkas biaya pengobatan rumah sakit secara drastis!</div>
+                <div style="display:flex; flex-direction:column; gap:6px;">${bpjsBtns}</div>
+            `;
+            bodyEl.appendChild(bpjsCard);
+
+            const rsCard = document.createElement("div");
+            rsCard.className = "item-card";
+            rsCard.innerHTML = `
+                <div class="item-title">🩺 Layanan Medis & Berobat ke Luar Negeri</div>
+                <div class="item-desc">Pilih fasilitas pengobatan sesuai kondisi kesehatanmu saat ini (Kesehatan: <b>${player.stats.health}%</b>):</div>
+                <button class="btn-action btn-primary" onclick="medicalTreatment('bpjs_rs')">
+                    🏥 Rawat Inap RSUD Pakai BPJS / Umum (Rp 1,5 Jt • Pemulihan Bertahap)
+                </button>
+                <button class="btn-action btn-gold" onclick="medicalTreatment('penang')">
+                    ✈️ Medical Check-Up & Berobat ke Penang / Singapura (Rp 45 Jt • Pemulihan Ekspres!)
+                </button>
+            `;
+            bodyEl.appendChild(rsCard);
         }
     }
 
@@ -5368,7 +5851,7 @@
         const partnerIsMale = player.gender !== "Laki-laki";
         const pTier = rollWeightedFamily(player && player.stats.social >= 70 ? 0.6 : 0);
         let roles = ["Kasir Minimarket", "Admin Olshop", "Pekerja Lepas", "Staf Gudang"];
-        let pIncome = randInt(8, 18);
+        let pIncome = randInt(4, 9);
         let pWealth = roundMoney(randInt(1, 12));
 
         if (pTier.id === "asn" || pTier.id === "umkm") {
@@ -5449,12 +5932,14 @@
 
         const exCount = (player.exPartners ? player.exPartners.length : 0) + (player.exInLaws ? player.exInLaws.length : 0);
 
+        const alivePetsCount = (player.pets || []).filter(pt => pt.alive).length;
         tabsEl.innerHTML = `
             <button class="tab-btn ${tab === 'teman' ? 'active' : ''}" onclick="renderKeluargaSheet('teman')">🤝 Teman (${player.friends ? player.friends.length : 0})</button>
             <button class="tab-btn ${tab === 'ortu' ? 'active' : ''}" onclick="renderKeluargaSheet('ortu')">👨‍👩‍👦 Ortu & Mertua</button>
             <button class="tab-btn ${tab === 'pasangan' ? 'active' : ''}" onclick="renderKeluargaSheet('pasangan')">💑 Pasangan (${player.partner ? 1 : 0})</button>
             <button class="tab-btn ${tab === 'clubbing' ? 'active' : ''}" onclick="renderKeluargaSheet('clubbing')">🪩 Clubbing</button>
             <button class="tab-btn ${tab === 'anak' ? 'active' : ''}" onclick="renderKeluargaSheet('anak')">👶 Anak (${player.children.length})</button>
+            <button class="tab-btn ${tab === 'pets' ? 'active' : ''}" onclick="renderKeluargaSheet('pets')">🐾 Pet (${alivePetsCount})</button>
             <button class="tab-btn ${tab === 'mantan' ? 'active' : ''}" onclick="renderKeluargaSheet('mantan')">💔 Ex & Ex-Mertua (${exCount})</button>
         `;
         bodyEl.innerHTML = "";
@@ -5744,9 +6229,27 @@
         }
 
         // =====================================================
-        // TAB 5: ANAK & AKTIVITAS BERSAMA ANAK (100% RNG)
+        // TAB 5: ANAK & ADOPSI ANAK RESMI (USIA 21 - 40 TAHUN)
         // =====================================================
         if (tab === "anak") {
+            const canAdoptAge = player.age >= 21 && player.age <= 40;
+            const adoptBanner = document.createElement("div");
+            adoptBanner.className = "item-card";
+            adoptBanner.style.borderColor = canAdoptAge && !hasCriminalRecord() ? "#0284c7" : "#d4be8d";
+            adoptBanner.innerHTML = `
+                <div style="display:flex; justify-content:space-between; align-items:center;">
+                    <div class="item-title">🏛️ Dinas Sosial +62 — Adopsi Anak Resmi</div>
+                    <span style="font-size:10px; background:${canAdoptAge && !hasCriminalRecord() ? '#0284c7' : '#6b7280'}; color:#fff; padding:2px 8px; border-radius:99px; font-weight:800;">Usia 21–40 Thn</span>
+                </div>
+                <div class="item-desc">
+                    Terbuka bagi warga berusia <b>21 s/d 40 tahun</b> (baik lajang maupun menikah), bebas catatan penjara, dengan biaya administrasi panti & pengadilan <b>Rp 15 Jt</b>. Anak angkat sah mewarisi <b>100% harta</b> dan dihitung sebagai tanggungan PTKP pajak!
+                </div>
+                <button class="btn-action ${canAdoptAge && !hasCriminalRecord() ? 'btn-primary' : 'btn-dark'}" onclick="openAdoptChildModal()">
+                    ${hasCriminalRecord() ? '🔒 Ditolak Dinas Sosial (Catatan Penjara)' : (canAdoptAge ? '👶 Ajukan Adopsi Anak (Biaya Rp 15 Jt • 100% RNG)' : `🔒 Khusus Usia 21–40 Tahun (Usiamu: ${player.age} Thn)`)}
+                </button>
+            `;
+            bodyEl.appendChild(adoptBanner);
+
             if (player.children.length === 0) {
                 const noChild = document.createElement("div");
                 noChild.className = "item-card";
@@ -5754,7 +6257,7 @@
                 noChild.innerHTML = `
                     <div style="font-size:32px;">🍼</div>
                     <div class="item-title">Belum Memiliki Anak</div>
-                    <div class="item-desc">Kamu belum punya keturunan. Saat meninggal nanti, anak atau pasangan dapat mewarisi <b>100% uang dan seluruh asetmu</b> untuk melanjutkan permainan!</div>
+                    <div class="item-desc">Kamu belum punya keturunan kandung maupun anak angkat. Saat meninggal nanti, anak atau pasangan dapat mewarisi <b>100% uang dan seluruh asetmu</b> untuk melanjutkan permainan!</div>
                 `;
                 bodyEl.appendChild(noChild);
                 return;
@@ -5776,7 +6279,7 @@
                     <div class="item-row">
                         <div>
                             <div style="display:flex; gap:6px; align-items:center;">
-                                <span style="font-size:10px; font-weight:900; color:#38bdf8;">ANAK KANDUNG KE-${idx + 1}</span>
+                                <span style="font-size:10px; font-weight:900; color:${ch.isAdopted ? '#0284c7' : '#38bdf8'};">${ch.isAdopted ? '🤝 ANAK ANGKAT SAH' : 'ANAK KANDUNG'} KE-${idx + 1}</span>
                                 ${kipBadgeHtml}
                             </div>
                             <div class="item-title" style="font-size:14px; margin-top:2px;">${ch.name} ${ch.genderIcon} (${ch.age} Thn)</div>
@@ -5796,6 +6299,69 @@
                         <button class="btn-action btn-pink" onclick="childUpgradeActivity(${idx}, 'vacation')">🎡 Liburan & Quality Time<br><span style="font-size:9px; font-weight:600;">Rp 1,5 Jt • Hasil 100% RNG</span></button>
                         <button class="btn-action btn-dark" style="grid-column: span 2;" onclick="childUpgradeActivity(${idx}, 'social')">👑 Kenalkan Circle Pejabat/Les Musik (Rp 4 Jt • Hasil 100% RNG)</button>
                     </div>
+                `;
+                bodyEl.appendChild(card);
+            });
+            return;
+        }
+
+        // =====================================================
+        // TAB PET: HEWAN PELIHARAAN & ADOPSI PET SHOP +62
+        // =====================================================
+        if (tab === "pets") {
+            const petIntro = document.createElement("div");
+            petIntro.className = "item-card";
+            petIntro.style.background = "#090d16";
+            petIntro.innerHTML = `
+                <div class="item-title" style="color:#34d399;">🐾 Pet Shop & Adopsi Hewan Peliharaan +62</div>
+                <div class="item-desc" style="color:#e5e7eb;">
+                    Pelihara hewan kesayangan mulai dari Kucing Oren kampung hingga Arwana Super Red! Hewan peliharaan meningkatkan <b>Kebahagiaan</b> dan <b>Sosial</b> tiap tahun, namun butuh biaya pakan tahunan dan perawatan kesehatan.
+                </div>
+            `;
+            bodyEl.appendChild(petIntro);
+
+            // Daftar Pet yang Dimiliki
+            const myPets = (player.pets || []).filter(pt => pt.alive);
+            if (myPets.length > 0) {
+                player.pets.forEach((pt, idx) => {
+                    if (!pt.alive) return;
+                    const pCard = document.createElement("div");
+                    pCard.className = "item-card";
+                    pCard.style.borderColor = "#10b981";
+                    pCard.innerHTML = `
+                        <div class="item-row">
+                            <div>
+                                <span style="font-size:10px; font-weight:900; color:#059669;">HEWAN PELIHARAAN AKTIF • BIAYA PAKAN: Rp ${pt.annualCost} Jt/thn</span>
+                                <div class="item-title" style="font-size:14px; margin-top:2px;">${pt.icon} ${pt.name} (${pt.speciesName} • ${pt.age} Thn)</div>
+                                <div class="item-desc">
+                                    ❤️ Kesehatan Pet: <b>${pt.health}%</b> • 🍖 Kenyang: <b>${pt.hunger}%</b> • 💕 Kasih Sayang: <b>${pt.rel}%</b>
+                                </div>
+                            </div>
+                        </div>
+                        <div style="display:grid; grid-template-columns:1fr 1fr; gap:6px;">
+                            <button class="btn-action btn-gold" onclick="interactWithPet(${idx}, 'feed')">🍖 Beri Makan & Snack (Rp 200 Rb)</button>
+                            <button class="btn-action btn-pink" onclick="interactWithPet(${idx}, 'play')">🎾 Ajak Main & Jalan Sore (Gratis)</button>
+                            <button class="btn-action btn-primary" onclick="interactWithPet(${idx}, 'vet')">🩺 Vaksin & Dokter Hewan (Rp 1 Jt)</button>
+                            <button class="btn-action btn-dark" onclick="interactWithPet(${idx}, 'contest')">🏆 Ikut Kontes / Lomba Pet (Rp 1,5 Jt)</button>
+                        </div>
+                    `;
+                    bodyEl.appendChild(pCard);
+                });
+            }
+
+            // Katalog Adopsi Pet Baru
+            PETS_CATALOG.forEach((cat, cIdx) => {
+                const card = document.createElement("div");
+                card.className = "item-card";
+                card.innerHTML = `
+                    <div class="item-row">
+                        <div>
+                            <span style="font-size:9.5px; font-weight:900; color:#d97706;">ADOPSI PET • BIAYA RUTIN: Rp ${cat.annualCost} Jt/thn</span>
+                            <div class="item-title" style="margin-top:2px;">${cat.icon} ${cat.name}</div>
+                            <div class="item-desc">${cat.desc}<br><b>Bonus Awal:</b> +Kebahagiaan & +Sosial • Umur Maks: ~${cat.maxAge} Thn</div>
+                        </div>
+                    </div>
+                    <button class="btn-action btn-emerald" onclick="adoptNewPet(${cIdx})">🐾 Adopsi / Beli (${formatShortJuta(cat.adoptCost)})</button>
                 `;
                 bodyEl.appendChild(card);
             });
@@ -6063,7 +6629,7 @@
                 showToast(`Resmi berpacaran dengan ${player.partner.name}!`);
                 renderKeluargaSheet("pasangan");
             } else {
-                fr.rel = clamp(fr.rel - randInt(8, 18), 0, 100);
+                fr.rel = clamp(fr.rel - randInt(4, 9), 0, 100);
                 modifyStats({ happy: -randInt(4, 9) });
                 addLog(`💔 **FRIENDZONE AKUT:** Kamu menembak **${fr.name}**, tetapi ia menolak karena hanya menganggapmu sebatas teman biasa.`, "danger");
                 showToast("Ditolak! Kena friendzone.");
@@ -6074,7 +6640,7 @@
 
         if (type === "fight") {
             consumeRelQuota(fr);
-            fr.rel = clamp(fr.rel - randInt(18, 35), 0, 100);
+            fr.rel = clamp(fr.rel - randInt(8, 15), 0, 100);
             modifyStats({ happy: -randInt(3, 8), social: -randInt(2, 5) });
             addLog(`💢 **RIBUT DENGAN TEMAN:** Kamu terlibat cekcok panas dengan **${fr.name}** hingga hubungan kalian memburuk drastis dan rawan disabotase!`, "danger");
             showToast(`Hubungan dengan ${fr.name} memburuk!`);
@@ -6145,7 +6711,7 @@
 
         if (type === "argue") {
             consumeRelQuota(pr);
-            pr.rel = clamp(pr.rel - randInt(15, 30), 0, 100);
+            pr.rel = clamp(pr.rel - randInt(7, 14), 0, 100);
             modifyStats({ happy: -randInt(5, 12), social: -randInt(2, 6) });
             addLog(`💢 **DURHAKA PADA ORTU:** Kamu berdebat keras dengan **${pr.name}** sampai beliau mengelus dada dan kecewa berat padamu.`, "danger");
             showToast("Hubungan dengan orang tua retak!");
@@ -6218,8 +6784,8 @@
 
         if (type === "fight") {
             consumeRelQuota(il);
-            il.rel = clamp(il.rel - randInt(20, 35), 0, 100);
-            if (player.partner) player.partner.rel = clamp(player.partner.rel - randInt(10, 20), 0, 100);
+            il.rel = clamp(il.rel - randInt(8, 15), 0, 100);
+            if (player.partner) player.partner.rel = clamp(player.partner.rel - randInt(5, 10), 0, 100);
             modifyStats({ happy: -randInt(6, 12) });
             addLog(`💢 **KONFLIK PANAS MERTUA:** Kamu adu mulut terbuka dengan **${il.name}** hingga pasanganmu ikut menangis tertekan!`, "danger");
             showToast("Konflik besar dengan mertua!");
@@ -6241,7 +6807,7 @@
             consumeRelQuota(p);
             player.money = roundMoney(player.money - 1);
             if (Math.random() < 0.72) {
-                p.rel = clamp(p.rel + randInt(5, 14), 0, 100);
+                p.rel = clamp(p.rel + randInt(3, 8), 0, 100);
                 p.stats.happy = clamp(p.stats.happy + randInt(4, 12), 0, 100);
                 modifyStats({ happy: randInt(3, 9) });
                 addLog(`🍽️ **KENCAN ROMANTIS:** Makan malam bersama **${p.name}** berlangsung sangat manis dan mempererat ikatan batin kalian.`, "love");
@@ -6265,7 +6831,7 @@
             consumeRelQuota(p);
             player.money = roundMoney(player.money - 4);
             if (Math.random() < 0.70) {
-                p.stats.looks = clamp(p.stats.looks + randInt(5, 14), 0, 100);
+                p.stats.looks = clamp(p.stats.looks + randInt(3, 8), 0, 100);
                 p.stats.health = clamp(p.stats.health + randInt(3, 9), 0, 100);
                 p.stats.happy = clamp(p.stats.happy + randInt(4, 10), 0, 100);
                 p.rel = clamp(p.rel + randInt(4, 10), 0, 100);
@@ -6289,8 +6855,8 @@
             consumeRelQuota(p);
             player.money = roundMoney(player.money - 15);
             if (Math.random() < 0.80) {
-                p.rel = clamp(p.rel + randInt(10, 22), 0, 100);
-                p.stats.happy = clamp(p.stats.happy + randInt(8, 18), 0, 100);
+                p.rel = clamp(p.rel + randInt(5, 11), 0, 100);
+                p.stats.happy = clamp(p.stats.happy + randInt(4, 9), 0, 100);
                 p.stats.social = clamp(p.stats.social + randInt(3, 9), 0, 100);
                 modifyStats({ happy: randInt(6, 14), health: randInt(2, 6) });
                 addLog(`✈️ **BULAN MADU & LIBURAN:** Liburan bersama **${p.name}** berjalan luar biasa indah dan menyegarkan kebahagiaan rumah tangga kalian.`, "love");
@@ -6342,13 +6908,14 @@
         const metrics = ensureRelationshipMetrics(p);
         player.money = roundMoney(player.money - 25);
         p.status = "Menikah";
-        p.rel = clamp(p.rel + randInt(8, 18), 0, 100);
+        p.rel = clamp(p.rel + randInt(4, 9), 0, 100);
         metrics.commitment = clamp(metrics.commitment + randInt(8, 14), 0, 100);
         metrics.sharedValues = clamp(metrics.sharedValues + randInt(4, 9), 0, 100);
         metrics.conflict = clamp(metrics.conflict - randInt(4, 10), 0, 100);
         p.householdAgreement = "Kesepakatan bersama: pembagian tanggung jawab yang adil";
         if (player.inLaws) player.inLaws.rel = clamp(player.inLaws.rel + randInt(5, 15), 0, 100);
         modifyStats({ happy: randInt(8, 16), social: randInt(4, 10) });
+        playGameSound("love");
         addLog(`💍 **PERNIKAHAN ATAS KESEPAKATAN BERSAMA:** Kamu dan **${p.name}** sama-sama siap membangun rumah tangga (-Rp 25 Jt). Kalian sepakat membagi tanggung jawab secara adil dan saling menghormati.`, "love");
         showToast(`Selamat menempuh hidup baru bersama ${p.name}!`);
         saveGameToLocal();
@@ -6472,7 +7039,7 @@
             if (isFemalePlayer) {
                 const aliveParents = (player.parents || []).filter(pr => pr.alive);
                 aliveParents.forEach(pr => {
-                    pr.rel = clamp(pr.rel - randInt(20, 35), 0, 100);
+                    pr.rel = clamp(pr.rel - randInt(8, 15), 0, 100);
                 });
                 const parentNames = aliveParents.length > 0 ? aliveParents.map(pr => pr.name).join(" & ") : "Keluarga besarmu";
 
@@ -6558,6 +7125,98 @@
     }
 
     // Aktivitas Upgrade Anak (100% RNG tanpa menampilkan angka)
+
+    function openAdoptChildModal() {
+        if (!player) return;
+        if (hasCriminalRecord()) {
+            showToast("Permohonan adopsi ditolak otomatis karena catatan pernah dipenjara!");
+            return;
+        }
+        if (player.age < 21 || player.age > 40) {
+            showToast(`Adopsi anak hanya diperbolehkan pada rentang usia 21 s/d 40 tahun (Usiamu: ${player.age} Thn)!`);
+            return;
+        }
+        if (player.money < 15) {
+            showToast("Saldo kurang! Biaya administrasi panti asuhan & penetapan pengadilan adalah Rp 15 Jt.");
+            return;
+        }
+
+        const isMale = Math.random() < 0.5;
+        const last = player.name.split(" ").pop() || "Saputra";
+        const first = isMale ? pickRandom(MALE_NAMES) : pickRandom(FEMALE_NAMES);
+        const capFirst = first.charAt(0).toUpperCase() + first.slice(1);
+        const childAge = randInt(0, 7);
+        const candidateName = `${capFirst} ${last}`;
+
+        showPopupEvent(
+            "👶",
+            "Formulir Adopsi Anak — Dinas Sosial +62",
+            `Kamu mengajukan permohonan adopsi anak sah melalui Panti Asuhan & Pengadilan Negeri:<br>
+            <div style="background:#f8f1df; border:1.5px solid #decb9f; border-radius:10px; padding:8px; margin-top:6px; font-size:11px;">
+                • Nama Anak Angkat: <b>${candidateName}</b> (${isMale ? '♂️ Laki-laki' : '♀️ Perempuan'})<br>
+                • Usia Anak Saat Ini: <b>${childAge} Tahun</b><br>
+                • Biaya Administrasi & Notaris: <b style="color:#dc2626;">Rp 15 Jt</b><br>
+                • Status Persetujuan Dinas Sosial: <b>100% RNG</b>
+            </div>`,
+            [
+                {
+                    text: "✍️ Tandatangani Akta Adopsi & Bayar Biaya Administrasi (Rp 15 Jt)",
+                    fn: () => executeAdoptChild(candidateName, isMale, childAge)
+                },
+                {
+                    text: "✕ Batalkan Permohonan Adopsi",
+                    fn: () => renderKeluargaSheet("anak")
+                }
+            ],
+            "🏛️ DINAS SOSIAL +62"
+        );
+    }
+
+    function executeAdoptChild(childName, isMale, childAge) {
+        if (!player || player.age < 21 || player.age > 40 || hasCriminalRecord()) return;
+        if (player.money < 15) {
+            showToast("Saldomu tidak mencukupi Rp 15 Jt!");
+            return;
+        }
+
+        player.money = roundMoney(player.money - 15);
+        // Peluang disetujui 78% RNG (22% ditolak survei kelayakan lingkungan/administrasi)
+        if (Math.random() < 0.78) {
+            const adoptedChild = {
+                name: childName,
+                gender: isMale ? "Laki-laki" : "Perempuan",
+                genderIcon: isMale ? "♂️" : "♀️",
+                age: childAge,
+                isAdopted: true,
+                kipActive: isPlayerHouseholdEligibleForChildKip(),
+                kipRevoked: false,
+                jobTitle: "Belum Bekerja (Tanggungan Ortu)",
+                income: 0,
+                wealth: 0,
+                rel: randInt(72, 92),
+                stats: {
+                    happy: randInt(40, 88),
+                    health: randInt(45, 92),
+                    edu: randInt(25, 78),
+                    looks: randInt(30, 88),
+                    social: randInt(25, 80)
+                }
+            };
+            player.children.push(adoptedChild);
+            playGameSound("love");
+            modifyStats({ happy: randInt(6, 12), social: randInt(3, 7) });
+            addLog(`👶 **SAH ADOPSI ANAK:** Permohonan adopsimu disetujui pengadilan (-Rp 15 Jt)! Kini **${childName}** (${adoptedChild.gender}, usia ${childAge} tahun) resmi menjadi anak angkat sahmu dan berhak menjadi ahli waris.`, "birth");
+            showToast(`Selamat! ${childName} resmi menjadi anakmu!`);
+            renderKeluargaSheet("anak");
+        } else {
+            playGameSound("danger");
+            modifyStats({ happy: -randInt(3, 6) });
+            addLog(`📋 **ADOPSI DITUNDA DINAS SOSIAL:** Setelah survei tim pekerja sosial (-Rp 15 Jt biaya administrasi), permohonan adopsi untuk **${childName}** ditolak karena dinilai belum memenuhi kesiapan pengasuhan.`, "danger");
+            showToast("Permohonan adopsi ditolak tim survei Dinas Sosial.");
+            renderKeluargaSheet("anak");
+        }
+    }
+
     function childUpgradeActivity(idx, mode) {
         const ch = player.children[idx];
         if (!ch) return;
@@ -6576,7 +7235,7 @@
 
         if (mode === "edu") {
             if (roll < 0.65) {
-                ch.stats.edu = clamp(ch.stats.edu + randInt(6, 15), 0, 100);
+                ch.stats.edu = clamp(ch.stats.edu + randInt(3, 8), 0, 100);
                 ch.rel = clamp(ch.rel + randInt(2, 6), 0, 100);
                 addLog(`📚 **BIMBEL ANAK:** Anakmu **${ch.name}** mengikuti bimbingan belajar dengan tekun dan menunjukkan perkembangan kecerdasan yang membanggakan.`, "school");
                 showToast(`Perkembangan belajar ${ch.name} sangat bagus!`);
@@ -6589,7 +7248,7 @@
             }
         } else if (mode === "vacation") {
             if (roll < 0.75) {
-                ch.stats.happy = clamp(ch.stats.happy + randInt(7, 16), 0, 100);
+                ch.stats.happy = clamp(ch.stats.happy + randInt(4, 9), 0, 100);
                 ch.stats.health = clamp(ch.stats.health + randInt(4, 10), 0, 100);
                 ch.rel = clamp(ch.rel + randInt(6, 14), 0, 100);
                 modifyStats({ happy: randInt(3, 7) });
@@ -6602,7 +7261,7 @@
             }
         } else if (mode === "social") {
             if (roll < 0.65) {
-                ch.stats.social = clamp(ch.stats.social + randInt(7, 16), 0, 100);
+                ch.stats.social = clamp(ch.stats.social + randInt(4, 9), 0, 100);
                 ch.stats.looks = clamp(ch.stats.looks + randInt(4, 10), 0, 100);
                 ch.rel = clamp(ch.rel + randInt(3, 8), 0, 100);
                 addLog(`👑 **PERGAULAN & BAKAT ANAK:** **${ch.name}** makin percaya diri, berpenampilan menarik, dan punya banyak teman dari keluarga berpengaruh.`, "love");
@@ -6636,7 +7295,7 @@
                 player.partner = {
                     ...ex,
                     status: "Pacar (CLBK)",
-                    rel: clamp(ex.rel + randInt(10, 20), 0, 100),
+                    rel: clamp(ex.rel + randInt(5, 10), 0, 100),
                     relCountThisYear: 0
                 };
                 player.inLaws = createInLawsForPartner(ex.name, randInt(40, 65), ex.tier);
@@ -6645,7 +7304,7 @@
                 showToast(`Berhasil balikan (CLBK) dengan ${ex.name}!`);
                 renderKeluargaSheet("pasangan");
             } else {
-                ex.rel = clamp(ex.rel - randInt(8, 18), 0, 100);
+                ex.rel = clamp(ex.rel - randInt(4, 9), 0, 100);
                 modifyStats({ happy: -randInt(3, 8) });
                 addLog(`💔 **CLBK DITOLAK MENTAH-MENTAH:** **${ex.name}** menertawakan ajakan balikanmu dan menyuruhmu move on!`, "danger");
                 showToast("Ajakan CLBK ditolak!");
@@ -6655,7 +7314,7 @@
     }
 
     // =========================================================================
-    // 13. SHEET 4 & 5: ANOMALI HUKUM +62 & IMIGRASI (#KABURAJADULU > 9999 JT)
+    // 13. SHEET 4 & 5: ANOMALI HUKUM +62 & IMIGRASI (#KABURAJADULU > 99999 JT)
     // =========================================================================
     function renderHukumSheet() {
         const tabsEl = document.getElementById("sheetTabs");
@@ -6674,6 +7333,7 @@
                     <button class="btn-action btn-emerald" onclick="jailAnomalyAction('sopan')">🙏 Bersikap Sangat Sopan di Sidang PK (Gratis • Diskon Hukuman RNG)</button>
                     <button class="btn-action btn-gold" onclick="jailAnomalyAction('ordal')">📞 Telepon "Orang Dalam" & Pengacara Kondang (Rp 150 Jt • Bebas Murni)</button>
                     <button class="btn-action btn-primary" onclick="jailAnomalyAction('vip')">🛋️ Sewa Sel Mewah Fasilitas AC & Wifi (Rp 250 Jt • Bebas Stres di Lapas)</button>
+                    <button class="btn-action btn-pink" onclick="jailAnomalyAction('grasi')">📜 Ajukan Grasi / Amnesti Presiden (Sosial ≥85% + Rp 80 Jt • Bebas & Pulihkan Nama)</button>
                 </div>
             `;
             bodyEl.appendChild(jailCard);
@@ -6715,7 +7375,7 @@
             {
                 icon: "💼",
                 title: "Proyek Mark-Up Anggaran / Korupsi Pengadaan",
-                desc: "Khusus usia 20+ Tahun • Jalan pintas memperkaya diri secara instan, namun jika terkena OTT: OTOMATIS DIPECAT & SELURUH ASET DISITA NEGARA!",
+                desc: "Khusus usia 20+ Tahun • Jika terkena OTT & masuk penjara: Pejabat kehilangan 100% seluruh aset, sedangkan pekerja formal kehilangan setengah (50%) aset!",
                 btnText: "Eksekusi Proyek Korupsi",
                 fn: () => {
                     if (player.age < 20) { showToast("Minimal usia 20 tahun!"); return; }
@@ -6770,8 +7430,9 @@
             player.money = roundMoney(player.money - 150);
             player.inJail = false;
             player.jailYears = 0;
-            modifyStats({ happy: randInt(10, 20) });
-            addLog(`🕴️ **BEBAS JALUR ORDAL:** Setelah membayar Rp 150 Jt untuk tim pengacara kondang dan lobi tingkat tinggi, kamu resmi bebas murni hari ini juga!`, "anomaly");
+            player.everInJail = true;
+            modifyStats({ happy: randInt(4, 9) });
+            addLog(`🕴️ **KELUAR LAPAS JALUR ORDAL:** Setelah membayar Rp 150 Jt, kamu keluar dari sel tahanan hari ini. Namun catatan pernah dipenjara tetap tercatat dalam riwayat hidupmu (SKCK Merah)!`, "anomaly");
             showToast("Bebas murni dari penjara!");
             closeModal();
             return;
@@ -6786,42 +7447,137 @@
             addLog(`🛋️ **SEL MEWAH BER-AC:** Kamu menyulap kamar tahanan menjadi sel eksklusif lengkap dengan kasur empuk, AC, dan internet cepat (-Rp 250 Jt)!`, "anomaly");
             showToast("Sel Mewah VIP aktif!");
             renderHukumSheet();
+            return;
+        }
+        if (mode === "grasi") {
+            if (player.stats.social < 85) {
+                showToast("Koneksi politik/sosial minimal 85% untuk mengajukan Grasi Presiden!");
+                return;
+            }
+            if (player.money < 80) {
+                showToast("Butuh biaya administrasi hukum & lobi Rp 80 Jt!");
+                return;
+            }
+            player.money = roundMoney(player.money - 80);
+            if (Math.random() < 0.65) {
+                player.inJail = false;
+                player.jailYears = 0;
+                player.everInJail = false;
+                player.jailRecords = [];
+                modifyStats({ happy: 20, social: 10 });
+                addLog(`📜 **KEPPRES GRASI & REHABILITASI:** Permohonan grasimu dikabulkan Presiden! Kamu bebas hari ini dan catatan SKCK Merahmu diputihkan kembali!`, "anomaly");
+                showToast("Grasi dikabulkan! Nama baik pulih!");
+                closeModal();
+            } else {
+                addLog(`📜 **GRASI DITOLAK ISTANA:** Permohonan grasi ditolak karena sorotan tajam publik di media sosial (-Rp 80 Jt).`, "danger");
+                showToast("Permohonan grasi ditolak!");
+                renderHukumSheet();
+            }
+        }
+    }
+
+    // Penyitaan Aset Saat Masuk Penjara:
+    // - Pejabat Politik (isGov) -> Seluruh aset & portofolio disita 100% oleh negara
+    // - Pekerjaan Formal (atau warga non-pejabat) -> Setengah aset (50% unit aset & 50% portofolio/saldo) disita untuk denda/restitusi
+    function applyJailAssetConfiscation(crimeLabel, wasGovOfficial = false, wasFormalWorker = false) {
+        if (!player) return;
+        const notes = [];
+        const totalAssets = Array.isArray(player.assets) ? player.assets.length : 0;
+        const portfolioKeys = player.portfolio ? Object.keys(player.portfolio).filter(k => (player.portfolio[k]?.units || 0) > 0) : [];
+
+        if (wasGovOfficial) {
+            if (totalAssets > 0) {
+                const totalVal = roundMoney(player.assets.reduce((s, a) => s + (a.price || 0), 0));
+                player.assets = [];
+                notes.push(`seluruh **${totalAssets} aset kekayaan** senilai **${formatShortJuta(totalVal)}** disita 100% oleh KPK/Kejaksaan`);
+            }
+            if (portfolioKeys.length > 0) {
+                player.portfolio = {};
+                notes.push(`seluruh portofolio saham & kripto dibekukan/disita negara`);
+            }
+            if (player.money > 0) {
+                const seizedCash = roundMoney(player.money);
+                player.money = 0;
+                notes.push(`saldo rekening sebesar **${formatShortJuta(seizedCash)}** dirampas negara`);
+            }
+        } else {
+            // Hilang setengah (50%) untuk pekerjaan formal / terpidana umum
+            if (totalAssets > 0) {
+                const removeCount = Math.max(1, Math.ceil(totalAssets / 2));
+                const removedItems = player.assets.splice(0, removeCount);
+                const removedVal = roundMoney(removedItems.reduce((s, a) => s + (a.price || 0), 0));
+                notes.push(`setengah dari asetmu (**${removeCount} dari ${totalAssets} aset** senilai **${formatShortJuta(removedVal)}**) disita untuk biaya perkara & denda`);
+            }
+            if (portfolioKeys.length > 0) {
+                portfolioKeys.forEach(k => {
+                    const h = player.portfolio[k];
+                    const halfUnits = Math.floor(h.units / 2);
+                    if (halfUnits <= 0) {
+                        delete player.portfolio[k];
+                    } else {
+                        h.units = halfUnits;
+                        h.totalCost = roundMoney(h.totalCost * 0.5);
+                    }
+                });
+                notes.push(`50% unit investasi saham/kripto disita pengadilan`);
+            }
+            if (player.money > 0) {
+                const halfCash = roundMoney(player.money * 0.5);
+                player.money = roundMoney(player.money - halfCash);
+                notes.push(`50% saldo tabungan (**-${formatShortJuta(halfCash)}**) dipotong untuk denda negara`);
+            }
+        }
+
+        if (notes.length > 0) {
+            addLog(`🏛️ **PENYITAAN ASET TERPIDANA (${crimeLabel.toUpperCase()}):** Karena masuk penjara${wasGovOfficial ? ' sebagai Pejabat Negara' : (wasFormalWorker ? ' sebagai Pekerja Formal' : '')}, ${notes.join(", ")}!`, "danger");
         }
     }
 
     function triggerCourtTrial(crimeName, sentenceYears, isCorruption = false) {
-        // Begitu ditangkap polisi / masuk meja hijau, otomatis dipecat dari pekerjaan/sekolah, dan jika korupsi seluruh aset langsung disita!
-        applyCrimeConsequences(crimeName, { confiscateAssets: isCorruption });
+        playGameSound("danger");
+        const wasGovOfficial = !!(player.job && player.job.isGov);
+        const wasFormalWorker = !!(player.job && !player.job.isGov && !player.job.isInformal);
+
+        // Begitu ditangkap polisi / masuk meja hijau, otomatis dipecat dari pekerjaan/sekolah
+        applyCrimeConsequences(crimeName, { confiscateAssets: false });
+
+        const assetWarningText = wasGovOfficial
+            ? "Jika masuk penjara, <b>100% seluruh aset & kekayaanmu sebagai Pejabat akan disita penuh</b>!"
+            : "Jika masuk penjara, <b>setengah (50%) aset & hartamu akan disita negara</b>!";
 
         showPopupEvent(
             "⚖️",
             "Sidang Pengadilan Negeri +62",
-            `Kamu ditangkap aparat dan didakwa atas kasus <b>${crimeName}</b> dengan ancaman hukuman <b>${sentenceYears} tahun penjara</b>!<br><span style="color:#fda4af; font-size:11px;">⚠️ Status sekolah/pekerjaanmu otomatis diberhentikan${isCorruption ? ' dan seluruh asetmu telah disita negara' : ''}!</span>`,
+            `Kamu ditangkap aparat dan didakwa atas kasus <b>${crimeName}</b> dengan ancaman hukuman <b>${sentenceYears} tahun penjara</b>!<br><span style="color:#fda4af; font-size:11px;">⚠️ Status sekolah/pekerjaanmu otomatis diberhentikan! ${assetWarningText} Catatan kriminal juga tercatat seumur hidup (SKCK Merah) sehingga tidak bisa diterima kerja maupun sekolah/kuliah lagi!</span>`,
             [
                 {
-                    text: "🤝 Bayar 'Uang Damai' & Pengacara Kondang (Rp 120 Jt • Bebas Tahanan)",
+                    text: "🤝 Bayar 'Uang Damai' & Pengacara Kondang (Rp 120 Jt • Bebas Tahanan Sebelum Vonis)",
                     fn: () => {
                         if (player.money < 120) {
                             player.inJail = true;
                             player.jailYears = sentenceYears;
-                            addLog(`⛓️ **MASUK LAPAS:** Saldomu tidak cukup untuk membayar pengacara kondang. Kamu divonis **${sentenceYears} tahun penjara**!`, "danger");
+                            recordCriminalHistory(crimeName, sentenceYears);
+                            applyJailAssetConfiscation(crimeName, wasGovOfficial, wasFormalWorker);
+                            addLog(`⛓️ **MASUK LAPAS & CATATAN KRIMINAL SEUMUR HIDUP:** Saldomu tidak cukup untuk membayar pengacara kondang. Kamu divonis **${sentenceYears} tahun penjara** dan riwayat narapidana tercatat permanen di hidupmu!`, "danger");
                             showToast(`Divonis ${sentenceYears} tahun penjara!`);
                             return;
                         }
                         player.money = roundMoney(player.money - 120);
-                        addLog(`⚖️ **KASUS SP3 / DAMAI:** Berkat tim pengacara kondang dan uang damai Rp 120 Jt, kamu lolos dari kurungan penjara meski karirmu sudah hancur!`, "anomaly");
+                        addLog(`⚖️ **KASUS SP3 / DAMAI:** Berkat tim pengacara kondang dan uang damai Rp 120 Jt, berkas perkara dihentikan sebelum vonis penjara meski karirmu sudah terlanjur hancur!`, "anomaly");
                         showToast("Lolos penjara dengan uang damai!");
                     }
                 },
                 {
-                    text: "🙏 Menunduk Sopan & Menangis di Depan Hakim (Diskon Vonis 50%)",
+                    text: "🙏 Menunduk Sopan & Menangis di Depan Hakim (Diskon Vonis 50% • Tetap Masuk Penjara)",
                     fn: () => {
                         const discounted = Math.max(1, Math.floor(sentenceYears / 2));
                         player.inJail = true;
                         player.jailYears = discounted;
-                        modifyStats({ happy: -randInt(8, 15) });
-                        addLog(`⚖️ **DISKON KARENA SOPAN:** Hakim tersentuh melihat sikap sopanmu di persidangan dan memangkas vonis menjadi **${discounted} tahun penjara**!`, "anomaly");
-                        showToast(`Vonis ringan: ${discounted} tahun penjara.`);
+                        recordCriminalHistory(crimeName, discounted);
+                        applyJailAssetConfiscation(crimeName, wasGovOfficial, wasFormalWorker);
+                        modifyStats({ happy: -randInt(4, 8) });
+                        addLog(`⚖️ **VONIS PENJARA & CATATAN KRIMINAL PERMANEN:** Hakim memangkas vonis menjadi **${discounted} tahun penjara**, dan status mantan narapidana tercatat seumur hidup (SKCK Merah)!`, "danger");
+                        showToast(`Divonis ${discounted} tahun penjara!`);
                     }
                 }
             ],
@@ -6835,15 +7591,15 @@
         tabsEl.innerHTML = `<button class="tab-btn active">✈️ Pindah Warga Negara (#KaburAjaDulu)</button>`;
         bodyEl.innerHTML = "";
 
-        const unlocked = player.money > 9999;
+        const unlocked = player.money > 99999;
         const statusCard = document.createElement("div");
         statusCard.className = "item-card";
         statusCard.style.borderColor = unlocked ? "#10b981" : "#f59e0b";
         statusCard.innerHTML = `
-            <div class="item-title">${unlocked ? '✅ SYARAT TERPENUHI: SIAP PINDAH WARGA NEGARA!' : '🔒 SYARAT SALDO: > Rp 9.999 Juta (Rp 10 Miliar)'}</div>
+            <div class="item-title">${unlocked ? '✅ SYARAT TERPENUHI: SIAP PINDAH WARGA NEGARA!' : '🔒 SYARAT SALDO: > Rp 99.999 Juta (Rp 100 Miliar)'}</div>
             <div class="item-desc">
                 Kekayaan Bersihmu Saat Ini: <b style="color:#34d399;">${formatShortJuta(player.money)}</b>.<br>
-                ${unlocked ? 'Selamat! Kamu sudah melampaui batas Rp 9.999 Juta dan berhak menamatkan simulasi sebagai Sultan yang berhasil pindah kewarganegaraan!' : 'Kumpulkan kekayaan lebih dari Rp 9.999 Juta lewat karir, bisnis properti/tambang, atau warisan keluarga untuk membuka paspor emas.'}
+                ${unlocked ? 'Selamat! Kamu sudah melampaui batas Rp 99.999 Juta dan berhak menamatkan simulasi sebagai Sultan yang berhasil pindah kewarganegaraan!' : 'Kumpulkan kekayaan lebih dari Rp 99.999 Juta lewat karir, bisnis properti/tambang, atau warisan keluarga untuk membuka paspor emas.'}
             </div>
         `;
         bodyEl.appendChild(statusCard);
@@ -6853,19 +7609,19 @@
             card.className = "item-card";
             card.innerHTML = `
                 <div class="item-title">${c.flag} Kewarganegaraan ${c.name}</div>
-                <div class="item-desc">${c.desc}<br><b style="color:#fcd34d;">Biaya Golden Visa & Properti: Rp 10.000 Jt (Rp 10 Miliar)</b></div>
-                <button class="btn-action ${unlocked ? 'btn-gold' : 'btn-dark'}">${unlocked ? `✈️ Pindah Warga Negara ke ${c.name}` : '🔒 Terkunci (Butuh > Rp 9.999 Jt)'}</button>
+                <div class="item-desc">${c.desc}<br><b style="color:#fcd34d;">Biaya Golden Visa & Properti: Rp 100.000 Jt (Rp 100 Miliar)</b></div>
+                <button class="btn-action ${unlocked ? 'btn-gold' : 'btn-dark'}">${unlocked ? `✈️ Pindah Warga Negara ke ${c.name}` : '🔒 Terkunci (Butuh > Rp 99.999 Jt)'}</button>
             `;
             card.querySelector("button").onclick = () => {
                 if (!unlocked) {
-                    showToast("Saldomu harus lebih dari Rp 9.999 Juta!");
+                    showToast("Saldomu harus lebih dari Rp 99.999 Juta!");
                     return;
                 }
                 closeModal();
                 player.migrated = true;
                 player.migratedCountry = c;
                 addLog(`✈️ **TAMAT SULTAN (#KABURAJADULU):** Dengan kekayaan **${formatShortJuta(player.money)}**, kamu resmi pindah kewarganegaraan ke **${c.flag} ${c.name}** dan hidup tenang bebas anomali!`, "birth");
-                showEndGameModal(`🏆 TAMAT! Pindah Warga Negara ke ${c.flag} ${c.name}`, `Selamat! Kamu berhasil menembus kekayaan di atas Rp 9.999 Juta dan resmi memulai hidup baru sebagai warga negara ${c.name}.`, "✈️");
+                showEndGameModal(`🏆 TAMAT! Pindah Warga Negara ke ${c.flag} ${c.name}`, `Selamat! Kamu berhasil menembus kekayaan di atas Rp 99.999 Juta dan resmi memulai hidup baru sebagai warga negara ${c.name}.`, "✈️");
             };
             bodyEl.appendChild(card);
         });
@@ -6915,7 +7671,7 @@
                         text: "💸 Transfer Uang Damai Rp 3 Jt Agar Take Down Postingan",
                         fn: () => {
                             player.money = roundMoney(player.money - 3);
-                            angryEx.rel = clamp(angryEx.rel + randInt(12, 22), 0, 100);
+                            angryEx.rel = clamp(angryEx.rel + randInt(6, 11), 0, 100);
                             addLog(`💸 Kamu mentransfer Rp 3 Jt kepada **${angryEx.name}** agar menghapus thread viral tersebut.`, "anomaly");
                         }
                     },
@@ -7027,7 +7783,9 @@
 
                 if (a.isTawuran) {
                     addLog(`⚔️ **TAWURAN PELAJAR & DICIDUK POLISI:** ${chosenOutcome.text}`, "danger");
-                    applyCrimeConsequences("Tawuran Pelajar & Tertangkap Polisi", { confiscateAssets: false });
+                    closeModal();
+                    triggerCourtTrial("Tawuran Pelajar & Kekerasan Jalanan", 1, false);
+                    return;
                 } else {
                     addLog(`📈 **${a.title.toUpperCase()}:** ${chosenOutcome.text}`, "normal");
                     showToast(chosenOutcome.text.slice(0, 48) + "...");
@@ -7072,7 +7830,7 @@
                         fn: () => {
                             if (player.money >= 20) {
                                 player.money = roundMoney(player.money - 20);
-                                modifyStats({ health: -randInt(10, 20), happy: -randInt(6, 12), looks: -randInt(3, 7) });
+                                modifyStats({ health: -randInt(5, 10), happy: -randInt(6, 12), looks: -randInt(3, 7) });
                                 addLog(`🚑 **SELAMAT DARI MAUT:** Berkat tindakan cepat tim dokter spesialis (-Rp 20 Jt), nyawamu berhasil diselamatkan dari **${c.title}**!`, "danger");
                                 showToast("Syukurlah, nyawamu berhasil diselamatkan!");
                             } else {
@@ -7081,7 +7839,7 @@
                                     addLog(`🪦 **KEMATIAN MENDADAK:** Karena tidak mampu membayar tindakan medis darurat, nyawamu tidak tertolong akibat **${c.title}** di usia ${player.age} tahun.`, "danger");
                                     showEndGameModal(`🪦 Kematian Mendadak di Usia ${player.age} Tahun`, `Kamu meninggal dunia secara mendadak akibat: ${c.title}`, "🚑");
                                 } else {
-                                    modifyStats({ health: -randInt(25, 40), happy: -randInt(12, 20), looks: -randInt(6, 12) });
+                                    modifyStats({ health: -randInt(25, 40), happy: -randInt(5, 10), looks: -randInt(6, 12) });
                                     addLog(`🏥 **KRITIS TAPI SELAMAT:** Meski tanpa biaya VIP, keajaiban membuatmu selamat dari **${c.title}** walau kondisi fisik dan penampilanmu merosot tajam.`, "danger");
                                 }
                             }
@@ -7095,7 +7853,7 @@
                                 addLog(`🪦 **MENINGGAL MENDADAK:** Kamu menghembuskan napas terakhir di usia ${player.age} tahun akibat **${c.title}**.`, "danger");
                                 showEndGameModal(`🪦 Kematian Mendadak di Usia ${player.age} Tahun`, `Takdir berkata lain. Kamu meninggal dunia secara mendadak akibat: ${c.title}`, "🕊️");
                             } else {
-                                modifyStats({ health: -randInt(20, 35), happy: -randInt(10, 18), looks: -randInt(5, 10) });
+                                modifyStats({ health: -randInt(8, 15), happy: -randInt(10, 18), looks: -randInt(5, 10) });
                                 addLog(`😮‍💨 **LOLOS DARI MAUT:** Pertolongan warga sekitar berhasil menyelamatkan nyawamu dari **${c.title}**, namun fisikmu sangat terguncang!`, "danger");
                                 showToast("Selamat dari maut secara ajaib!");
                             }
@@ -7168,7 +7926,7 @@
                     fn: () => {
                         player.money = roundMoney(player.money - 3);
                         modifyStats({
-                            happy: -randInt(14, 24),
+                            happy: -randInt(6, 12),
                             health: -randInt(6, 12),
                             looks: -randInt(5, 10),
                             social: randInt(2, 6)
@@ -7181,8 +7939,8 @@
                     text: "😭 Mengurung Diri di Kamar Karena Syok Berat (Gratis • Fisik & Penampilan Drop Parah)",
                     fn: () => {
                         modifyStats({
-                            happy: -randInt(22, 35),
-                            health: -randInt(12, 22),
+                            happy: -randInt(9, 15),
+                            health: -randInt(6, 11),
                             looks: -randInt(10, 18),
                             social: -randInt(4, 8)
                         });
@@ -7453,12 +8211,12 @@
                                 if (player.stats.health >= 75 && Math.random() < 0.70) {
                                     const bonus = randInt(150, 350);
                                     player.salary = Math.round(player.salary * 1.15);
-                                    modifyStats({ money: bonus, happy: randInt(12, 20), social: randInt(8, 16), health: -randInt(4, 8) });
+                                    modifyStats({ money: bonus, happy: randInt(5, 10), social: randInt(8, 16), health: -randInt(4, 8) });
                                     addLog(`🥇 **JUARA & MEDALI EMAS:** Kamu mengharumkan nama bangsa! Pemerintah dan sponsor mencairkan bonus **+Rp ${bonus} Jt** serta menaikkan nilai kontrakmu!`, "career");
                                     showToast(`Juara! Bonus +Rp ${bonus} Jt!`);
                                 } else {
                                     player.salary = Math.max(40, Math.round(player.salary * 0.75));
-                                    modifyStats({ health: -randInt(18, 30), happy: -randInt(12, 20), looks: -randInt(4, 8) });
+                                    modifyStats({ health: -randInt(8, 14), happy: -randInt(5, 10), looks: -randInt(4, 8) });
                                     addLog(`🩼 **CEDERA LIGAMEN PARAH:** Kamu terjatuh keras di lapangan hingga mengalami cedera ligamen! Kesehatanmu anjlok dan nilai kontrakmu dipangkas.`, "danger");
                                     showToast("Cedera parah di pertandingan!");
                                 }
@@ -7497,7 +8255,7 @@
                                     addLog(`📸 **SUPERMODEL BERSINAR:** Penampilanmu di runway memukau dunia! Kamu menerima bayaran eksklusif **+Rp ${fee} Jt** dan kenaikan kontrak agensi!`, "career");
                                     showToast(`Sukses besar! +Rp ${fee} Jt!`);
                                 } else {
-                                    modifyStats({ health: -randInt(12, 22), looks: -randInt(8, 15), happy: -randInt(10, 18), social: -randInt(6, 12) });
+                                    modifyStats({ health: -randInt(6, 11), looks: -randInt(8, 15), happy: -randInt(10, 18), social: -randInt(6, 12) });
                                     addLog(`👠 **INSIDEN JATUH DI CATWALK:** Akibat kelelahan diet ekstrem, kamu terpeleset di panggung utama hingga videonya viral dan menurunkan reputasi modeling-mu!`, "danger");
                                     showToast("Terpeleset di panggung catwalk!");
                                 }
@@ -7532,12 +8290,12 @@
                                 if ((player.stats.social + player.stats.looks) >= 135 && Math.random() < 0.72) {
                                     const royalti = randInt(180, 420);
                                     player.salary = Math.round(player.salary * 1.20);
-                                    modifyStats({ money: royalti, happy: randInt(12, 22), social: randInt(10, 18) });
+                                    modifyStats({ money: royalti, happy: randInt(6, 11), social: randInt(10, 18) });
                                     addLog(`🎤 **LAGU VIRAL #1 TRENDING:** Single barumu meledak di seluruh platform musik! Kamu mengantongi royalti & tiket konser **+Rp ${royalti} Jt**!`, "career");
                                     showToast(`Lagu Viral #1! Royalti +Rp ${royalti} Jt!`);
                                 } else {
                                     player.salary = Math.max(45, Math.round(player.salary * 0.80));
-                                    modifyStats({ health: -randInt(10, 18), happy: -randInt(12, 20), social: -randInt(8, 15) });
+                                    modifyStats({ health: -randInt(10, 18), happy: -randInt(5, 10), social: -randInt(8, 15) });
                                     addLog(`😖 **SUARA FALS & PITA SUARA SERAK:** Suaramu pecah saat nada tinggi di konser live hingga potongan videonya dihujat netizen dan sponsor membatalkan kontrak!`, "danger");
                                     showToast("Suara pecah saat konser live!");
                                 }
@@ -7563,6 +8321,142 @@
     }
 
     // Kejadian Acak (Random Events) yang Di-filter Ketat Berdasarkan Kelompok Usia (Balita, Anak SD 5-12, Remaja SMP/SMA 13-17, Dewasa 18+)
+    // Konteks Pemberhentian / PHK Dinamis Sesuai Profesi (Pejabat Politik, Bintang, Pemilik Usaha, Informal, Karyawan)
+    function getContextualTerminationScenario(job) {
+        if (!job) return null;
+        const id = job.id || "";
+        const title = job.title || "Pekerjaan";
+        const lower = title.toLowerCase();
+
+        // 1. Pejabat Politik & Pemerintahan
+        if (job.isGov) {
+            if (id === "presiden") {
+                return {
+                    emoji: "🏛️",
+                    eventTitle: "Krisis Politik Nasional: Sidang Istimewa & Pemakzulan!",
+                    eventDesc: `Gelombang demonstrasi mahasiswa dan rakyat memenuhi jalanan ibu kota menuntutmu mundur sebagai <b>${title}</b>! Fraksi-fraksi di <b>DPR/MPR</b> sepakat menggelar Sidang Istimewa untuk memakzulkan dan memberhentikanmu dari kursi kepresidenan.`,
+                    choice1Text: "📜 Terima Keputusan Sidang Istimewa & Lengser dengan Legowo",
+                    choice1Log: `🏛️ **DILENGSERKAN DPR & RAKYAT:** Akibat tekanan demonstrasi rakyat dan ketok palu Sidang Istimewa DPR/MPR, kamu resmi dimakzulkan dari jabatan **${title}**!`,
+                    choice1Toast: "Dimakzulkan DPR & Rakyat!",
+                    choice2Text: "📢 Lobi Koalisi Partai & Konsolidasi Dukungan (Biaya Politik Rp 50 Jt • 50% Bertahan)",
+                    choice2Cost: 50,
+                    choice2WinLog: `🏛️ **LOLOS DARI PEMAKZULAN:** Lewat lobi politik tingkat tinggi dan kompromi koalisi di DPR, mosi pemakzulan terhadapmu sebagai **${title}** berhasil digagalkan!`,
+                    choice2LoseLog: `🏛️ **GAGAL LOBI & DIMAKZULKAN:** Meski sudah menggelontorkan dana politik **-Rp 50 Jt**, gelombang rakyat dan DPR tetap menjatuhkanmu dari kursi **${title}**!`,
+                    hasSeverance: false
+                };
+            }
+            if (id === "gubernur" || id === "walikota") {
+                return {
+                    emoji: "🏛️",
+                    eventTitle: `Mosi Tidak Percaya DPRD & Aksi Massa terhadap ${title}!`,
+                    eventDesc: `Ribuan warga mengepung kantor pemerintahan menuntutmu mundur sebagai <b>${title}</b> akibat polemik kebijakan daerah! <b>DPRD</b> mengajukan hak angket dan rekomendasi pemberhentian ke Kementerian Dalam Negeri.`,
+                    choice1Text: "📄 Mundur Terhormat Sebelum Diberhentikan Paksa",
+                    choice1Log: `🏛️ **DIGOYANG RAKYAT & DPRD:** Didesak aksi massa warga dan hak interpelasi DPRD, kamu resmi diberhentikan dari jabatan **${title}**!`,
+                    choice1Toast: `Diberhentikan dari ${title}!`,
+                    choice2Text: "🤝 Lobi Pimpinan Fraksi DPRD & Turun Temui Massa (Biaya Rp 20 Jt • 50% Bertahan)",
+                    choice2Cost: 20,
+                    choice2WinLog: `🏛️ **BERHASIL MEREDAM GEJOLAK:** Dialog langsung dengan perwakilan warga dan fraksi DPRD meredam mosi pemberhentianmu sebagai **${title}**!`,
+                    choice2LoseLog: `🏛️ **MOSI TIDAK PERCAYA GOL:** Meski sudah keluar biaya **-Rp 20 Jt**, DPRD dan Mendagri resmi memberhentikanmu dari jabatan **${title}**!`,
+                    hasSeverance: false
+                };
+            }
+            if (id === "lurah") {
+                return {
+                    emoji: "🏡",
+                    eventTitle: "Warga Desa Geruduk Kantor & Inspektorat Turun Tangan!",
+                    eventDesc: `Warga kelurahan/desa menggelar aksi protes terkait pelayanan dan transparansi anggaran hingga membuatmu dicopot oleh <b>Camat/Walikota</b> dari posisi <b>${title}</b>.`,
+                    choice1Text: "📄 Terima SK Pencopotan Jabatan Lurah",
+                    choice1Log: `🏡 **DICOPOT DARI JABATAN LURAH:** Akibat protes warga desa dan evaluasi Inspektorat Daerah, kamu resmi diberhentikan sebagai **${title}**!`,
+                    choice1Toast: "Dicopot dari jabatan Lurah!",
+                    choice2Text: "🗣️ Gelar Musyawarah Desa & Klarifikasi Terbuka (Biaya Rp 5 Jt • 50% Bertahan)",
+                    choice2Cost: 5,
+                    choice2WinLog: `🏡 **MUSYAWARAH BERHASIL:** Warga desa menerima klarifikasimu di balai desa dan kamu batal dicopot sebagai **${title}**!`,
+                    choice2LoseLog: `🏡 **TETAP DICOPOT:** Musyawarah buntu (-Rp 5 Jt) dan kamu resmi diberhentikan dari jabatan **${title}**!`,
+                    hasSeverance: false
+                };
+            }
+            // Ketua RT
+            return {
+                emoji: "🏘️",
+                eventTitle: "Rapat Warga RW Memanas: Ketua RT Digoyang Warga!",
+                eventDesc: `Warga komplek protes soal iuran kas dan keamanan lingkungan dalam rapat darurat malam ini, menuntut pergantianmu dari posisi <b>${title}</b>!`,
+                choice1Text: "🔑 Serahkan Stempel RT dengan Ikhlas",
+                choice1Log: `🏘️ **DILENGSERKAN WARGA KOMPLEK:** Lewat voting rapat darurat warga RW, kamu resmi diberhentikan dari jabatan **${title}**!`,
+                choice1Toast: "Dilengserkan warga dari Ketua RT!",
+                choice2Text: "☕ Traktir Rapat Warga & Pertanggungjawabkan Kas (Biaya Rp 1,5 Jt • 50% Bertahan)",
+                choice2Cost: 1.5,
+                choice2WinLog: `🏘️ **WARGA KEMBALI PERCAYA:** Laporan kas RT-mu terbukti transparan, warga sepakat mempertahankanmu sebagai **${title}**!`,
+                choice2LoseLog: `🏘️ **VOTING KALAH:** Warga tetap menuntut penyegaran pengurus dan mencopotmu dari **${title}** (-Rp 1,5 Jt)!`,
+                hasSeverance: false
+            };
+        }
+
+        // 2. Karir Bintang (Atlet, Model, Penyanyi, Seniman)
+        if (job.isSpecialCareer) {
+            const cat = job.category || "";
+            if (cat === "athlete") {
+                return {
+                    emoji: "🏅",
+                    eventTitle: "Perombakan Pelatnas & Pencoretan Atlet!",
+                    eventDesc: `Federasi olahraga melakukan evaluasi ketat performa fisik dan hasil pertandingan. Namamu masuk daftar atlet yang dicoret dari pelatnas <b>${title}</b>!`,
+                    choice1Text: "🎒 Terima Keputusan Pelatih & Keluar dari Pelatnas",
+                    choice1Log: `🏅 **DICORET DARI PELATNAS:** Karena evaluasi performa federasi, kontrakmu sebagai **${title}** resmi diputus!`,
+                    choice1Toast: "Dicoret dari Pelatnas!",
+                    choice2Text: "💪 Sewa Pelatih Fisik Pribadi & Ikut Seleksi Ulang (Biaya Rp 10 Jt • 50% Bertahan)",
+                    choice2Cost: 10,
+                    choice2WinLog: `🏅 **LOLOS SELEKSI ULANG:** Catatan waktumu menembus batas kualifikasi dan kamu batal dicoret sebagai **${title}**!`,
+                    choice2LoseLog: `🏅 **GAGAL SELEKSI ULANG:** Sudah keluar biaya latih **-Rp 10 Jt**, namamu tetap dicoret dari **${title}**!`,
+                    hasSeverance: true
+                };
+            }
+            return {
+                emoji: "📸",
+                eventTitle: "Kontrak Agensi Diputus Sepihak / Cancel Culture Netizen!",
+                eventDesc: `Pergeseran tren industri hiburan dan rumor miring di media sosial membuat pihak manajemen & sponsor memutus kontrakmu sebagai <b>${title}</b>!`,
+                choice1Text: "📄 Terima Pemutusan Kontrak Agensi",
+                choice1Log: `🌟 **KONTRAK DIPUTUS AGENSI:** Akibat perubahan arah industri hiburan, kontrakmu sebagai **${title}** resmi dihentikan!`,
+                choice1Toast: "Kontrak agensi diputus!",
+                choice2Text: "📣 Sewa Tim PR & Klarifikasi Media (Biaya Rp 12 Jt • 50% Bertahan)",
+                choice2Cost: 12,
+                choice2WinLog: `🌟 **REPUTASI PULIH:** Konferensi pers yang dikelola tim PR (-Rp 12 Jt) membuat sponsor kembali memperpanjang kontrakmu sebagai **${title}**!`,
+                choice2LoseLog: `🌟 **SPONSOR TETAP HENGKANG:** Klarifikasi tidak mempan (-Rp 12 Jt) dan kontrakmu sebagai **${title}** tetap diputus!`,
+                hasSeverance: true
+            };
+        }
+
+        // 3. Bos / Pemilik Usaha / CEO / Konglomerat / Pengusaha
+        if (lower.includes("ceo") || lower.includes("pemilik") || lower.includes("owner") || lower.includes("pengusaha") || lower.includes("konglomerat") || lower.includes("toke")) {
+            return {
+                emoji: "📉",
+                eventTitle: "Kudeta RUPS Pemegang Saham / Usaha Pailit!",
+                eventDesc: `Krisis likuiditas dan anjloknya permintaan pasar menghantam usahamu! Dewan komisaris dan kreditur mendesakmu mundur dari posisi <b>${title}</b> akibat gagal bayar.`,
+                choice1Text: "📉 Mundur & Likuidasi Operasional Usaha",
+                choice1Log: `📉 **DILENGSERKAN RUPS / USAHA PAILIT:** Akibat tekanan kreditur dan dewan komisaris, kamu resmi kehilangan posisi **${title}**!`,
+                choice1Toast: `Lengser dari ${title}!`,
+                choice2Text: "💼 Suntik Dana Restrukturisasi Utang (Biaya Rp 25 Jt • 50% Bertahan)",
+                choice2Cost: 25,
+                choice2WinLog: `💼 **RESTRUKTURISASI BERHASIL:** Suntikan modal penyelamat (-Rp 25 Jt) meyakinkan investor untuk mempertahankanmu sebagai **${title}**!`,
+                choice2LoseLog: `💼 **GAGAL BAYAR KREDITUR:** Dana **-Rp 25 Jt** tak mampu menutup kerugian dan kamu tetap dilengserkan dari **${title}**!`,
+                hasSeverance: false
+            };
+        }
+
+        // 4. Default: Karyawan Swasta / BUMN / Pabrik / Profesional
+        return {
+            emoji: "📉",
+            eventTitle: "Cobaan Berat: Badai Efisiensi & PHK Mendadak!",
+            eventDesc: `Gelombang efisiensi ekonomi menghantam tempat kerjamu! Manajemen memanggilmu ke ruangan HRD dan menyodorkan surat PHK sepihak dari posisi <b>${title}</b> dengan alasan restrukturisasi perusahaan.`,
+            choice1Text: "📄 Terima PHK dengan Pasrah (Pesangon Dipotong Setengah)",
+            choice1Log: `📉 **TERKENA BADAI PHK:** Perusahaan melakukan efisiensi dan mem-PHK kamu dari posisi **${title}** dengan pesangon seadanya`,
+            choice1Toast: "Kamu terkena PHK mendadak!",
+            choice2Text: "⚖️ Sewa Pengacara Buruh & Gugat ke PHI (Biaya Rp 8 Jt • 50% Bertahan)",
+            choice2Cost: 8,
+            choice2WinLog: `⚖️ **MENANG SENGKETA BURUH:** Gugatanmu di Pengadilan Hubungan Industrial berhasil! Perusahaan batal mem-PHK kamu dari **${title}**.`,
+            choice2LoseLog: `📉 **KALAH SENGKETA & DI-PHK:** Sudah keluar biaya pengacara **-Rp 8 Jt**, kamu tetap di-PHK dari posisi **${title}**!`,
+            hasSeverance: true
+        };
+    }
+
     function triggerRandomEvent62() {
         if (!player) return;
 
@@ -7739,8 +8633,8 @@
                         {
                             text: "⚔️ Ikut Solidaritas Tongkrongan & Tawuran!",
                             fn: () => {
-                                modifyStats({ health: -randInt(8, 18), edu: -randInt(5, 10), happy: -randInt(4, 10) });
-                                applyCrimeConsequences("Tawuran Antar Sekolah & Tertangkap Polisi", { confiscateAssets: false });
+                                modifyStats({ health: -randInt(4, 9), edu: -randInt(5, 10), happy: -randInt(4, 10) });
+                                triggerCourtTrial("Tawuran Antar Sekolah & Tertangkap Polisi", 1, false);
                             }
                         }
                     ]
@@ -7785,6 +8679,80 @@
         // USIA DEWASA & LANSIA (18 - 80 TAHUN) — DILENGKAPI COBAAN BERAT SURVIVAL +62
         const adultEvents = [
             {
+                emoji: "📸",
+                title: `Tilang Elektronik ETLE & Operasi Zebra (${player.city.name})!`,
+                desc: `Kamera <b>ETLE</b> di perempatan utama <b>${player.city.name}</b> menangkap pelanggaran marka jalan, sementara di depan ada razia gabungan Polisi & Dishub!`,
+                choices: [
+                    {
+                        text: "💳 Bayar Denda Tilang BRIVA Resmi (Rp 500 Rb)",
+                        fn: () => {
+                            player.money = roundMoney(player.money - 0.5);
+                            addLog("📸 Kamu membayar denda tilang elektronik ETLE secara resmi sebesar **-Rp 500 Rb**.", "normal");
+                        }
+                    },
+                    {
+                        text: "🤝 'Damai di Tempat' Salam Tempel (Rp 200 Rb • Risiko Viral)",
+                        fn: () => {
+                            player.money = roundMoney(player.money - 0.2);
+                            if (Math.random() < 0.7) {
+                                addLog("🤫 Urusan beres lewat salam tempel **-Rp 200 Rb** tanpa slip tilang.", "anomaly");
+                            } else {
+                                modifyStats({ social: -randInt(6, 12), happy: -randInt(4, 8) });
+                                addLog("📱 Aksimu terekam kamera warga dan viral di media sosial hingga bikin malu!", "danger");
+                            }
+                        }
+                    }
+                ]
+            },
+            {
+                emoji: "💌",
+                title: "Musim Nikah: Undangan Kondangan Beruntun 5 Tempat!",
+                desc: `Akhir pekan ini ada 5 undangan resepsi pernikahan dari teman sekolah, rekan kantor, dan sepupu di <b>${player.city.name}</b>!`,
+                choices: [
+                    {
+                        text: "✉️ Hadiri Semua & Isi Amplop Pantas (Rp 1,5 Jt • Sosial Naik)",
+                        fn: () => {
+                            player.money = roundMoney(player.money - 1.5);
+                            modifyStats({ social: randInt(5, 11), happy: randInt(2, 6) });
+                            addLog("💌 Kamu menghadiri seluruh undangan kondangan (-Rp 1,5 Jt) dan mempererat jaringan sosial!", "love");
+                        }
+                    },
+                    {
+                        text: "🍱 Datang Makan Prasmanan Saja Tanpa Isi Amplop (Gratis • Risiko Ketahuan)",
+                        fn: () => {
+                            if (Math.random() < 0.5) {
+                                modifyStats({ happy: randInt(2, 5) });
+                                addLog("😋 Berhasil kenyang makan prasmanan rendang & es doger gratis tanpa ketahuan panitia!", "anomaly");
+                            } else {
+                                modifyStats({ social: -randInt(8, 15), happy: -randInt(5, 10) });
+                                addLog("🙈 Ketahuan menyelipkan amplop kosong! Namamu langsung jadi bahan ghibah grup WA!", "danger");
+                            }
+                        }
+                    }
+                ]
+            },
+            {
+                emoji: "🌊",
+                title: `Banjir Rob & Macet Total di ${player.city.name}!`,
+                desc: `Hujan deras berjam-jam membuat jalan protokol <b>${player.city.name}</b> terendam banjir setinggi lutut dan kendaraan mogok massal!`,
+                choices: [
+                    {
+                        text: "🔧 Panggil Towing & Servis Bengkel Resmi (Rp 2,5 Jt)",
+                        fn: () => {
+                            player.money = roundMoney(player.money - 2.5);
+                            addLog(`🌊 Kendaraanmu dievakuasi dari banjir **${player.city.name}** dengan biaya servis **-Rp 2,5 Jt**.`, "danger");
+                        }
+                    },
+                    {
+                        text: "🚶 Terobos Banjir Sambil Dorong Motor (Kesehatan Drop)",
+                        fn: () => {
+                            modifyStats({ health: -randInt(5, 11), happy: -randInt(4, 9) });
+                            addLog(`🌧️ Kamu menerobos banjir di **${player.city.name}** hingga demam dan masuk angin berat!`, "danger");
+                        }
+                    }
+                ]
+            },
+            {
                 emoji: "🛵",
                 title: "Motor Matic Turun Mesin & Pajak STNK Mati",
                 desc: "Saat berangkat beraktivitas di tengah kemacetan, motor andalanmu mendadak mogok berasap dan ternyata pajak STNK tahunannya juga sudah jatuh tempo!",
@@ -7807,72 +8775,86 @@
                     }
                 ]
             },
-            {
-                emoji: "📉",
-                title: "Cobaan Berat: Badai Efisiensi & PHK Mendadak / Lapak Digusur!",
-                desc: player.job && player.job.isInformal
-                    ? `Truk Satpol PP dan petugas ketertiban mendadak menggelar razia besar-besaran di lokasi jualanmu sebagai <b>${player.job.title}</b>! Gerobak dan peralatan dagangmu terancam diangkut paksa.`
-                    : (player.job
-                        ? `Gelombang efisiensi ekonomi menghantam tempat kerjamu! Manajemen memanggilmu ke ruangan HRD dan menyodorkan surat PHK sepihak dari posisi <b>${player.job.title}</b> dengan alasan restrukturisasi.`
-                        : `Harga sembako, beras, dan tarif kontrakan melonjak drastis tahun ini sementara kamu belum memiliki penghasilan tetap!`),
-                choices: [
-                    {
-                        text: player.job && player.job.isInformal
-                            ? "💸 Bayar Denda Sidang Tipiring & Tebus Gerobak (Rp 3 Jt)"
-                            : (player.job ? "📄 Terima PHK dengan Pasrah (Pesangon Dipotong Setengah)" : "💳 Gadaikan Barang / Ngutang Warung (Rp 3 Jt)"),
-                        fn: () => {
-                            if (player.job && player.job.isInformal) {
-                                player.money = roundMoney(player.money - 3);
-                                modifyStats({ happy: -randInt(8, 14), health: -randInt(3, 7) });
-                                addLog(`🚨 **RAZIA LAPAK KAKI LIMA:** Kamu terpaksa menebus gerobak jualanmu sebesar **-Rp 3 Jt** agar tetap bisa berjualan sebagai **${player.job.title}**.`, "danger");
-                            } else if (player.job) {
-                                const oldTitle = player.job.title;
-                                const smallSev = roundMoney(player.salary * 0.25);
-                                player.job = null;
-                                player.salary = 0;
-                                player.yearsWorked = 0;
-                                modifyStats({ money: smallSev, happy: -randInt(12, 22), social: -randInt(5, 10) });
-                                addLog(`📉 **TERKENA BADAI PHK:** Kamu resmi kehilangan pekerjaan sebagai **${oldTitle}** dan hanya diberi pesangon seadanya **+${formatShortJuta(smallSev)}**!`, "danger");
-                                showToast("Kamu terkena PHK mendadak!");
-                            } else {
-                                player.money = roundMoney(player.money - 3);
-                                modifyStats({ happy: -randInt(8, 15), health: -randInt(4, 9) });
-                                addLog(`💸 **KRISIS BIAYA HIDUP:** Lonjakan harga kebutuhan pokok menguras tabungamu sebesar **-Rp 3 Jt**!`, "danger");
-                            }
-                        }
-                    },
-                    {
-                        text: player.job && player.job.isInformal
-                            ? "🏃 Selamatkan Diri & Relakan Gerobak Disita (Kehilangan Pekerjaan!)"
-                            : (player.job ? "⚖️ Sewa Pengacara Buruh & Gugat ke PHI (Biaya Rp 8 Jt • 50% Bertahan)" : "🍜 Puasa & Makan Mie Instan Setiap Hari (Kesehatan Drop!)"),
-                        fn: () => {
-                            if (player.job && player.job.isInformal) {
-                                const oldTitle = player.job.title;
-                                player.job = null;
-                                player.salary = 0;
-                                modifyStats({ happy: -randInt(14, 22), health: -randInt(4, 8) });
-                                addLog(`🚨 **GEROBAK DISITA SATPOL PP:** Gerobak usahamu sebagai **${oldTitle}** diangkut petugas hingga kamu kehilangan mata pencaharian!`, "danger");
-                                showToast("Gerobak disita! Kamu kehilangan pekerjaan.");
-                            } else if (player.job) {
-                                player.money = roundMoney(player.money - 8);
-                                if (Math.random() < 0.50) {
-                                    modifyStats({ happy: randInt(2, 6) });
-                                    addLog(`⚖️ **MENANG SENGKETA BURUH:** Gugatanmu berhasil! Perusahaan batal memecatmu dari posisi **${player.job.title}**.`, "career");
+            (() => {
+                const termScen = player.job && !player.job.isInformal ? getContextualTerminationScenario(player.job) : null;
+                return {
+                    emoji: player.job && player.job.isInformal ? "🚨" : (termScen ? termScen.emoji : "📉"),
+                    title: player.job && player.job.isInformal
+                        ? "Cobaan Berat: Razia Satpol PP & Lapak Digusur!"
+                        : (termScen ? termScen.eventTitle : "Cobaan Berat: Lonjakan Biaya Hidup & Pengangguran!"),
+                    desc: player.job && player.job.isInformal
+                        ? `Truk Satpol PP dan petugas ketertiban mendadak menggelar razia besar-besaran di lokasi jualanmu sebagai <b>${player.job.title}</b>! Gerobak dan peralatan dagangmu terancam diangkut paksa.`
+                        : (termScen
+                            ? termScen.eventDesc
+                            : `Harga sembako, beras, dan tarif kontrakan melonjak drastis tahun ini sementara kamu belum memiliki penghasilan tetap!`),
+                    choices: [
+                        {
+                            text: player.job && player.job.isInformal
+                                ? "💸 Bayar Denda Sidang Tipiring & Tebus Gerobak (Rp 3 Jt)"
+                                : (termScen ? termScen.choice1Text : "💳 Gadaikan Barang / Ngutang Warung (Rp 3 Jt)"),
+                            fn: () => {
+                                if (player.job && player.job.isInformal) {
+                                    player.money = roundMoney(player.money - 3);
+                                    modifyStats({ happy: -randInt(5, 9), health: -randInt(2, 5) });
+                                    addLog(`🚨 **RAZIA LAPAK KAKI LIMA:** Kamu terpaksa menebus gerobak jualanmu sebesar **-Rp 3 Jt** agar tetap bisa berjualan sebagai **${player.job.title}**.`, "danger");
+                                } else if (termScen && player.job) {
+                                    const sevAmt = termScen.hasSeverance ? roundMoney(player.salary * 0.25) : 0;
+                                    player.job = null;
+                                    player.jobHours = 0;
+                                    player.salary = 0;
+                                    player.yearsWorked = 0;
+                                    player.govTermYears = 0;
+                                    player.govTermCount = 0;
+                                    modifyStats({ money: sevAmt, happy: -randInt(6, 11), social: -randInt(5, 10) });
+                                    const sevNote = sevAmt > 0 ? ` (Pesangon: **+${formatShortJuta(sevAmt)}**)!` : "!";
+                                    addLog(`${termScen.choice1Log}${sevNote}`, "danger");
+                                    showToast(termScen.choice1Toast);
                                 } else {
+                                    player.money = roundMoney(player.money - 3);
+                                    modifyStats({ happy: -randInt(5, 9), health: -randInt(3, 6) });
+                                    addLog(`💸 **KRISIS BIAYA HIDUP:** Lonjakan harga kebutuhan pokok menguras tabunganmu sebesar **-Rp 3 Jt**!`, "danger");
+                                }
+                            }
+                        },
+                        {
+                            text: player.job && player.job.isInformal
+                                ? "🏃 Selamatkan Diri & Relakan Gerobak Disita (Kehilangan Pekerjaan!)"
+                                : (termScen ? termScen.choice2Text : "🍜 Puasa & Makan Mie Instan Setiap Hari (Kesehatan Drop!)"),
+                            fn: () => {
+                                if (player.job && player.job.isInformal) {
                                     const oldTitle = player.job.title;
                                     player.job = null;
+                                    player.jobHours = 0;
                                     player.salary = 0;
-                                    modifyStats({ happy: -randInt(15, 25), health: -randInt(5, 10) });
-                                    addLog(`📉 **KALAH SENGKETA & DI-PHK:** Sudah keluar biaya pengacara **-Rp 8 Jt**, kamu tetap di-PHK dari posisi **${oldTitle}**!`, "danger");
+                                    modifyStats({ happy: -randInt(7, 12), health: -randInt(3, 6) });
+                                    addLog(`🚨 **GEROBAK DISITA SATPOL PP:** Gerobak usahamu sebagai **${oldTitle}** diangkut petugas hingga kamu kehilangan mata pencaharian!`, "danger");
+                                    showToast("Gerobak disita! Kamu kehilangan pekerjaan.");
+                                } else if (termScen && player.job) {
+                                    const cost = termScen.choice2Cost || 8;
+                                    player.money = roundMoney(player.money - cost);
+                                    if (Math.random() < 0.50) {
+                                        modifyStats({ happy: randInt(2, 6) });
+                                        addLog(termScen.choice2WinLog, "career");
+                                    } else {
+                                        player.job = null;
+                                        player.jobHours = 0;
+                                        player.salary = 0;
+                                        player.yearsWorked = 0;
+                                        player.govTermYears = 0;
+                                        player.govTermCount = 0;
+                                        modifyStats({ happy: -randInt(7, 12), social: -randInt(5, 10) });
+                                        addLog(termScen.choice2LoseLog, "danger");
+                                        showToast(termScen.choice1Toast);
+                                    }
+                                } else {
+                                    modifyStats({ health: -randInt(6, 11), happy: -randInt(5, 9) });
+                                    addLog(`🍜 **KRISIS GIZI SURVIVAL:** Demi menghemat uang, kamu hanya makan mie instan tiap hari hingga kesehatanmu merosot tajam!`, "danger");
                                 }
-                            } else {
-                                modifyStats({ health: -randInt(10, 18), happy: -randInt(8, 14) });
-                                addLog(`🍜 **KRISIS GIZI SURVIVAL:** Demi menghemat uang, kamu hanya makan mie instan tiap hari hingga kesehatanmu merosot tajam!`, "danger");
                             }
                         }
-                    }
-                ]
-            },
+                    ]
+                };
+            })(),
             {
                 emoji: "🏥",
                 title: "Cobaan Berat: Sakit Kritis Mendadak & Drama Kamar Penuh!",
@@ -7905,7 +8887,7 @@
                                 modifyStats({ health: -randInt(4, 9), happy: -randInt(5, 10) });
                                 addLog("🏥 Setelah menunggu berjam-jam di lorong IGD, kamu akhirnya mendapat kamar perawatan BPJS.", "normal");
                             } else {
-                                modifyStats({ health: -randInt(16, 28), happy: -randInt(10, 18) });
+                                modifyStats({ health: -randInt(7, 13), happy: -randInt(10, 18) });
                                 addLog("🚨 **KOMPLIKASI MEMBURuk:** Terlalu lama menunggu antrean kamar membuat kondisimu drop parah dan mengancam keselamatan jiwamu!", "danger");
                             }
                         }
@@ -7956,7 +8938,7 @@
                                 addLog("😎 Melihat nyalimu yang besar dan koneksimu, gerombolan preman tersebut langsung mundur!", "normal");
                             } else {
                                 player.money = roundMoney(player.money - 4);
-                                modifyStats({ health: -randInt(12, 22), happy: -randInt(10, 16) });
+                                modifyStats({ health: -randInt(6, 11), happy: -randInt(10, 16) });
                                 addLog("🤕 **DIKEROYOK & DIRUSAK:** Karena menolak bayar jatah preman, kamu dikeroyok hingga babak belur dan mengalami kerugian kerusakan **-Rp 4 Jt**!", "danger");
                             }
                         }
@@ -8025,6 +9007,219 @@
     // =========================================================================
     // 15. KEMATIAN (MAKSIMAL 80 TAHUN / HEALTH 0%) & SISTEM WARISAN 100% ASET
     // =========================================================================
+
+    // =========================================================================
+    // 15B. FUNGSI FITUR BARU: PET, BPJS, BISNIS AKTIF, PARTAI & HALL OF FAME
+    // =========================================================================
+    function adoptNewPet(catIdx) {
+        if (!player) return;
+        const cat = PETS_CATALOG[catIdx];
+        if (!cat) return;
+        if (player.money < cat.adoptCost) {
+            showToast(`Saldo kurang! Biaya adopsi ${cat.name} adalah ${formatShortJuta(cat.adoptCost)}.`);
+            return;
+        }
+        const aliveCount = (player.pets || []).filter(p => p.alive).length;
+        if (aliveCount >= 3) {
+            showToast("Maksimal memelihara 3 hewan peliharaan sekaligus di rumah!");
+            return;
+        }
+
+        const petNames = ["Mochi", "Cimol", "Oyen", "Blacky", "Bruno", "Ciko", "Boba", "Kiki", "Milo", "Chiko", "Snowy", "Joni"];
+        const chosenName = pickRandom(petNames) + " " + randInt(1, 99);
+        player.money = roundMoney(player.money - cat.adoptCost);
+        if (!player.pets) player.pets = [];
+        player.pets.push({
+            id: "pet_" + Date.now(),
+            speciesId: cat.id,
+            speciesName: cat.name,
+            icon: cat.icon,
+            name: chosenName,
+            age: 1,
+            maxAge: cat.maxAge,
+            annualCost: cat.annualCost,
+            health: 95,
+            hunger: 90,
+            rel: 75,
+            alive: true,
+            interactThisYear: 0
+        });
+        modifyStats({ happy: cat.happyBonus, social: cat.socialBonus });
+        playGameSound("love");
+        addLog(`🐾 **ADOPSI HEWAN PELIHARAAN:** Kamu resmi memelihara **${cat.icon} ${chosenName}** (${cat.name}) seharga **-${formatShortJuta(cat.adoptCost)}**!`, "love");
+        showToast(`Selamat datang ${chosenName}!`);
+        renderKeluargaSheet("pets");
+    }
+
+    function interactWithPet(petIdx, actionType) {
+        if (!player || !player.pets || !player.pets[petIdx]) return;
+        const pet = player.pets[petIdx];
+        if (!pet.alive) return;
+        if ((pet.interactThisYear || 0) >= 3) {
+            showToast(`${pet.name} sudah lelah beraktivitas tahun ini (Maks 3x/tahun)!`);
+            return;
+        }
+
+        if (actionType === "feed") {
+            if (player.money < 0.2) { showToast("Saldo kurang Rp 200 Rb!"); return; }
+            player.money = roundMoney(player.money - 0.2);
+            pet.interactThisYear = (pet.interactThisYear || 0) + 1;
+            pet.hunger = clamp(pet.hunger + 35, 0, 100);
+            pet.rel = clamp(pet.rel + randInt(5, 12), 0, 100);
+            modifyStats({ happy: randInt(2, 5) });
+            addLog(`🍖 Kamu memberi makanan & snack kesukaan untuk **${pet.icon} ${pet.name}** (-Rp 200 Rb). Ia terlihat sangat lahap!`, "love");
+            showToast(`${pet.name} kenyang & senang!`);
+        } else if (actionType === "play") {
+            pet.interactThisYear = (pet.interactThisYear || 0) + 1;
+            pet.rel = clamp(pet.rel + randInt(6, 14), 0, 100);
+            pet.health = clamp(pet.health + 4, 0, 100);
+            modifyStats({ happy: randInt(4, 9), health: randInt(1, 3), social: randInt(1, 3) });
+            addLog(`🎾 Kamu mengajak **${pet.icon} ${pet.name}** bermain dan jalan-jalan sore di taman komplek!`, "love");
+            showToast(`Seru bermain dengan ${pet.name}!`);
+        } else if (actionType === "vet") {
+            if (player.money < 1) { showToast("Saldo kurang Rp 1 Jt!"); return; }
+            player.money = roundMoney(player.money - 1);
+            pet.interactThisYear = (pet.interactThisYear || 0) + 1;
+            pet.health = clamp(pet.health + 35, 0, 100);
+            addLog(`🩺 Kamu membawa **${pet.icon} ${pet.name}** ke klinik dokter hewan untuk vaksinasi & vitamin (-Rp 1 Jt).`, "normal");
+            showToast(`Kesehatan ${pet.name} pulih!`);
+        } else if (actionType === "contest") {
+            if (player.money < 1.5) { showToast("Saldo kurang Rp 1,5 Jt!"); return; }
+            player.money = roundMoney(player.money - 1.5);
+            pet.interactThisYear = (pet.interactThisYear || 0) + 1;
+            if (pet.health >= 70 && pet.rel >= 70 && Math.random() < 0.55) {
+                const prize = randInt(5, 18);
+                player.money = roundMoney(player.money + prize);
+                modifyStats({ happy: 10, social: 8 });
+                addLog(`🏆 **JUARA KONTES HEWAN:** **${pet.icon} ${pet.name}** menyabet piala juara 1 kontes hewan peliharaan dan meraih hadiah **+Rp ${prize} Jt**!`, "money");
+                showToast(`Menang Kontes +Rp ${prize} Jt!`);
+            } else {
+                addLog(`🐾 **${pet.icon} ${pet.name}** ikut kontes hewan peliharaan (-Rp 1,5 Jt), namun belum berhasil naik podium kali ini.`, "normal");
+                showToast("Belum juara kontes kali ini.");
+            }
+        }
+        renderKeluargaSheet("pets");
+    }
+
+    function selectBpjsPlan(planId) {
+        if (!player) return;
+        const plan = BPJS_PLANS.find(b => b.id === planId);
+        if (!plan) return;
+        player.bpjsPlan = planId;
+        addLog(`🏥 **KEPESERTAAN BPJS:** Kamu memilih paket **${plan.name}** (${plan.annualCost > 0 ? `Iuran Rp ${plan.annualCost} Jt/thn` : 'Non-BPJS'}).`, "normal");
+        showToast(`Status BPJS: ${plan.name}`);
+        renderUpgradeSheet("kesehatan");
+    }
+
+    function medicalTreatment(mode) {
+        if (!player) return;
+        if (mode === "bpjs_rs") {
+            const plan = BPJS_PLANS.find(b => b.id === (player.bpjsPlan || "none"));
+            const baseFee = 1.5;
+            const finalFee = roundMoney(baseFee * (1 - (plan ? plan.coverage : 0)));
+            if (player.money < finalFee) { showToast(`Saldo kurang ${formatShortJuta(finalFee)}!`); return; }
+            player.money = roundMoney(player.money - finalFee);
+            const gain = randInt(8, 18);
+            modifyStats({ health: gain, happy: randInt(1, 4) });
+            addLog(`🏥 **RAWAT INAP RS (${plan ? plan.name : 'Umum'}):** Kamu menjalani perawatan medis dengan biaya **-${formatShortJuta(finalFee)}** dan kesehatanmu membaik.`, "normal");
+            showToast("Perawatan RS selesai!");
+        } else if (mode === "penang") {
+            if (player.money < 45) { showToast("Saldo kurang! Berobat ke Penang/Singapura butuh Rp 45 Jt."); return; }
+            player.money = roundMoney(player.money - 45);
+            const gain = randInt(25, 45);
+            modifyStats({ health: gain, happy: randInt(6, 12), looks: randInt(2, 5) });
+            addLog(`✈️ **BEROBAT KE PENANG / SINGAPURA:** Penanganan dokter spesialis luar negeri (-Rp 45 Jt) membuat staminamu pulih drastis!`, "love");
+            showToast("Pemulihan medis luar negeri sukses!");
+        }
+        renderUpgradeSheet("kesehatan");
+    }
+
+    function upgradeBusinessAsset(assetIdx) {
+        if (!player || !player.assets || !player.assets[assetIdx]) return;
+        const as = player.assets[assetIdx];
+        const lvl = as.bizLevel || 1;
+        const cost = roundMoney(as.price * 0.35 * lvl);
+        if (player.money < cost) {
+            showToast(`Saldo kurang! Butuh ${formatShortJuta(cost)} untuk ekspansi cabang.`);
+            return;
+        }
+        player.money = roundMoney(player.money - cost);
+        as.bizLevel = lvl + 1;
+        playGameSound("coin");
+        modifyStats({ social: 4, happy: 4 });
+        addLog(`🏢 **EKSPANSI CABANG BISNIS:** Kamu memperluas **${as.icon} ${as.name}** menjadi **Cabang Level ${as.bizLevel}** (-${formatShortJuta(cost)})!`, "money");
+        showToast(`${as.name} naik ke Level ${as.bizLevel}!`);
+        renderKarirSheet("aset");
+    }
+
+    function hireBusinessEmployee(assetIdx) {
+        if (!player || !player.assets || !player.assets[assetIdx]) return;
+        const as = player.assets[assetIdx];
+        const curEmp = as.employees || 0;
+        if (curEmp >= 10) {
+            showToast("Maksimal 10 karyawan per unit bisnis!");
+            return;
+        }
+        as.employees = curEmp + 1;
+        addLog(`👨‍💼 **REKRUT KARYAWAN:** Kamu merekrut 1 staf baru untuk **${as.icon} ${as.name}** (Total: ${as.employees} karyawan • Gaji Rp 4,5 Jt/thn per staf).`, "career");
+        showToast(`Total karyawan: ${as.employees} orang`);
+        renderKarirSheet("aset");
+    }
+
+    function joinPoliticalParty(pIdx) {
+        if (!player) return;
+        const pt = POLITICAL_PARTIES[pIdx];
+        if (!pt) return;
+        if (player.stats.social < pt.reqSocial) {
+            showToast(`Elektabilitas sosial kurang! Butuh Sosial ≥ ${pt.reqSocial}%.`);
+            return;
+        }
+        if (player.money < pt.fee) {
+            showToast(`Dana mahar/pendirian partai kurang! Butuh ${formatShortJuta(pt.fee)}.`);
+            return;
+        }
+        player.money = roundMoney(player.money - pt.fee);
+        player.politicalParty = { ...pt };
+        modifyStats({ social: 5, happy: 5 });
+        addLog(`🎗️ **KENDARAAN POLITIK AKTIF:** Kamu resmi bergabung/mendirikan **${pt.name}** (-${formatShortJuta(pt.fee)}) dan siap bertarung di Pilkada/Pilpres!`, "career");
+        showToast(`Resmi di ${pt.name}!`);
+        renderKarirSheet("pejabat");
+    }
+
+    function renderHallOfFameSheet() {
+        const tabsEl = document.getElementById("sheetTabs");
+        const bodyEl = document.getElementById("sheetBody");
+        tabsEl.innerHTML = `<button class="tab-btn active">🏆 Catatan Batu Nisan & Legasi Generasi</button>`;
+        bodyEl.innerHTML = "";
+
+        let list = [];
+        try {
+            const raw = safeStorageGet(HOF_STORAGE_KEY);
+            if (raw) list = JSON.parse(raw) || [];
+        } catch (e) {}
+
+        if (list.length === 0) {
+            bodyEl.innerHTML = `<div class="item-card" style="text-align:center;"><div style="font-size:32px;">📜</div><div class="item-title">Belum Ada Catatan Legasi</div><div class="item-desc">Tamatkan satu siklus kehidupan (tutup usia atau pindah kewarganegaraan #KaburAjaDulu) untuk mengukir namamu di Hall of Fame Warga +62!</div></div>`;
+            return;
+        }
+
+        list.forEach((item, idx) => {
+            const card = document.createElement("div");
+            card.className = "item-card";
+            card.style.borderColor = idx === 0 ? "#f59e0b" : "#decb9f";
+            card.innerHTML = `
+                <div style="display:flex; justify-content:space-between; align-items:center;">
+                    <span style="font-size:10px; font-weight:900; color:#b45309;">GENERASI KE-${item.generation} • ${item.city}</span>
+                    <span style="font-size:10px; font-weight:900; color:#15803d;">Kekayaan: ${formatShortJuta(item.netWorth)}</span>
+                </div>
+                <div class="item-title">${item.emoji || '🪦'} ${item.name} (${item.age} Thn)</div>
+                <div style="font-size:11px; font-weight:900; color:#7c2d12;">Gelar: ${item.legacyTitle}</div>
+                <div class="item-desc">Karier Terakhir: ${item.job}<br>${item.endReason}</div>
+            `;
+            bodyEl.appendChild(card);
+        });
+    }
+
     function checkDeathConditions() {
         if (!player || !player.alive) return true;
 
@@ -8043,7 +9238,44 @@
         return false;
     }
 
+    function computeLegacyTitle(p, totalNetWorth) {
+        if (p.migrated) return `✈️ Eksil Sultan #KaburAjaDulu (${p.migratedCountry ? p.migratedCountry.name : 'Luar Negeri'})`;
+        if (hasCriminalRecord() && (p.govHistory && Object.keys(p.govHistory).length > 0)) return "⛓️ Mantan Pejabat Terjerat Kasus Korupsi";
+        if (hasCriminalRecord()) return "⛓️ Warga Bertato SKCK Merah";
+        if (p.govHistory && p.govHistory.presiden > 0) return "👑 Mantan Presiden Republik +62";
+        if (totalNetWorth >= 10000) return "💎 Konglomerat Naga +62";
+        if (p.family && p.family.id === "sandwich" && totalNetWorth >= 500) return "🥪 Pejuang Sandwich Sukses Memutus Rantai";
+        if (totalNetWorth < 0) return "💸 Terlilit Pinjol Hingga Akhir Hayat";
+        return "🇮🇩 Warga +62 Teladan";
+    }
+
+    function recordToHallOfFame(title, reason, emoji) {
+        if (!player || player.recordedInHof) return;
+        player.recordedInHof = true;
+        const assetVal = (player.assets || []).reduce((s, a) => s + a.price, 0);
+        const totalNetWorth = roundMoney(player.money + assetVal);
+        const legacyTitle = computeLegacyTitle(player, totalNetWorth);
+        let list = [];
+        try {
+            const raw = safeStorageGet(HOF_STORAGE_KEY);
+            if (raw) list = JSON.parse(raw) || [];
+        } catch (e) {}
+        list.unshift({
+            name: player.name,
+            generation: player.generation,
+            age: player.age,
+            city: player.city ? player.city.name : "Nusantara",
+            job: getRoleLabel(),
+            netWorth: totalNetWorth,
+            legacyTitle: legacyTitle,
+            endReason: reason,
+            emoji: emoji
+        });
+        safeStorageSet(HOF_STORAGE_KEY, JSON.stringify(list.slice(0, 20)));
+    }
+
     function showEndGameModal(title, reason, emoji = "🪦") {
+        recordToHallOfFame(title, reason, emoji);
         const modal = document.getElementById("endModal");
         document.getElementById("endEmoji").textContent = emoji;
         document.getElementById("endTitle").textContent = title;
@@ -8227,7 +9459,35 @@
         };
 
         document.getElementById("endModal").classList.add("hidden");
-        addLog(`👑 **SUKSESI AHLI WARIS (GENERASI KE-${nextGen}):** Kamu kini melanjutkan hidup sebagai **${player.name}** (Usia ${player.age} Tahun) dari mendiang **${oldName}**, mewarisi **100% Uang (${formatShortJuta(player.money)})** beserta **${player.assets.length} Aset Properti/Bisnis** secara utuh (Bebas Pajak Warisan karena sudah dilaporkan di SPT)!`, "birth");
+        if (inheritedMoney < 0) {
+            const debtAbs = roundMoney(Math.abs(inheritedMoney));
+            showPopupEvent(
+                "⚖️",
+                "Sidang Waris & Warisan Hutang Keluarga!",
+                `Mendiang <b>${oldName}</b> meninggalkan tunggakan hutang/pinjol sebesar <b>-${formatShortJuta(debtAbs)}</b>! Sebagai ahli waris generasi ke-${nextGen}, tentukan sikapmu:`,
+                [
+                    {
+                        text: `💳 Terima & Lunasi Seluruh Hutang Keluarga (-${formatShortJuta(debtAbs)} • Nama Baik Terjaga)`,
+                        fn: () => {
+                            modifyStats({ social: 12, happy: -4 });
+                            addLog(`👑 **SUKSESI BERMARTABAT:** Kamu menanggung warisan hutang mendiang **${oldName}** sebesar **-${formatShortJuta(debtAbs)}** demi menjaga kehormatan keluarga!`, "birth");
+                        }
+                    },
+                    {
+                        text: "📜 Tolak Warisan di Pengadilan (Saldo Mulai dari Rp 0 Jt • Aset Disita Bank)",
+                        fn: () => {
+                            player.money = 0;
+                            player.assets = [];
+                            modifyStats({ social: -10 });
+                            addLog(`📜 **TOLAK WARISAN HUTANG:** Kamu secara resmi menolak warisan hutang mendiang **${oldName}** di pengadilan sehingga saldomu dimulai bersih dari **Rp 0 Jt**.`, "normal");
+                        }
+                    }
+                ],
+                "⚖️ HUKUM WARIS +62"
+            );
+        } else {
+            addLog(`👑 **SUKSESI AHLI WARIS (GENERASI KE-${nextGen}):** Kamu kini melanjutkan hidup sebagai **${player.name}** (Usia ${player.age} Tahun) dari mendiang **${oldName}**, mewarisi **100% Uang (${formatShortJuta(player.money)})** beserta **${player.assets.length} Aset Properti/Bisnis** secara utuh (Bebas Pajak Warisan karena sudah dilaporkan di SPT)!`, "birth");
+        }
         updateUI();
         showToast(`Melanjutkan hidup sebagai ${player.name}!`);
     }
@@ -8235,11 +9495,181 @@
     // =========================================================================
     // 16. INITIALIZATION ON WINDOW LOAD
     // =========================================================================
-    window.onload = function () {
+
+    // Dukungan Scroll Horizontal di Browser PC (Mouse Wheel & Drag-to-Scroll)
+    document.addEventListener("wheel", function (e) {
+        const scrollContainer = e.target.closest(".sheet-tabs, .badges-row");
+        if (scrollContainer && e.deltaY !== 0) {
+            e.preventDefault();
+            scrollContainer.scrollLeft += e.deltaY;
+        }
+    }, { passive: false });
+
+    (function enableDragScrollOnPC() {
+        let activeEl = null;
+        let startX = 0;
+        let scrollLeftStart = 0;
+        let moved = false;
+
+        document.addEventListener("mousedown", function (e) {
+            const target = e.target.closest(".sheet-tabs, .badges-row");
+            if (!target || e.button !== 0) return;
+            activeEl = target;
+            startX = e.pageX - target.offsetLeft;
+            scrollLeftStart = target.scrollLeft;
+            moved = false;
+            target.style.cursor = "grabbing";
+        });
+
+        document.addEventListener("mousemove", function (e) {
+            if (!activeEl) return;
+            const x = e.pageX - activeEl.offsetLeft;
+            const walk = x - startX;
+            if (Math.abs(walk) > 4) {
+                moved = true;
+                activeEl.scrollLeft = scrollLeftStart - walk;
+            }
+        });
+
+        document.addEventListener("mouseup", function () {
+            if (activeEl) {
+                activeEl.style.cursor = "grab";
+                activeEl = null;
+            }
+        });
+
+        document.addEventListener("click", function (e) {
+            if (moved && e.target.closest(".sheet-tabs, .badges-row")) {
+                e.stopPropagation();
+                e.preventDefault();
+                moved = false;
+            }
+        }, true);
+    })();
+
+
+    // =========================================================================
+    // 17. FITUR SAVE LOCALSTORAGE LENGKAP (AUTO-SAVE, MANUAL SAVE & EXPORT/IMPORT)
+    // =========================================================================
+    function manualSaveGameNow() {
+        if (!player) {
+            showToast("Belum ada karakter aktif untuk disimpan!");
+            return;
+        }
+        saveGameToLocal();
+        playGameSound("coin");
+        const nowStr = new Date().toLocaleTimeString("id-ID", { hour: "2-digit", minute: "2-digit", second: "2-digit" });
+        showToast(`💾 Tersimpan di LocalStorage (${nowStr})!`);
+    }
+
+    function openLocalStorageManager() {
+        if (!player) {
+            showToast("Mulai permainan dulu untuk menggunakan Save LocalStorage!");
+            return;
+        }
+        saveGameToLocal();
+        const raw = safeStorageGet(SAVE_STORAGE_KEY);
+        let savedTimeStr = "Baru saja";
+        try {
+            const parsed = JSON.parse(raw);
+            if (parsed && parsed.savedAt) {
+                savedTimeStr = new Date(parsed.savedAt).toLocaleString("id-ID");
+            }
+        } catch (e) {}
+
+        showPopupEvent(
+            "💾",
+            "Penyimpanan LocalStorage & Backup +62",
+            `Permainanmu otomatis tersimpan ke <b>Browser LocalStorage</b> setiap kali kamu mengambil keputusan atau menekan <b>+1 Tahun</b>.<br>
+            <div style="background:#f8f1df; border:1.5px solid #decb9f; border-radius:10px; padding:8px; margin-top:6px; font-size:11px;">
+                • Karakter Aktif: <b>${player.name}</b> (Usia ${player.age} Thn • Gen Ke-${player.generation})<br>
+                • Total Kekayaan: <b style="color:#15803d;">${formatShortJuta(player.money)}</b><br>
+                • Terakhir Disimpan: <b>${savedTimeStr}</b>
+            </div>`,
+            [
+                {
+                    text: "💾 Simpan Paksa ke LocalStorage Sekarang",
+                    fn: () => manualSaveGameNow()
+                },
+                {
+                    text: "📥 Unduh File Backup Save (.json)",
+                    fn: () => {
+                        const dataStr = safeStorageGet(SAVE_STORAGE_KEY) || "";
+                        const blob = new Blob([dataStr], { type: "application/json" });
+                        const url = URL.createObjectURL(blob);
+                        const a = document.createElement("a");
+                        a.href = url;
+                        a.download = `save-warga62-${player.name.toLowerCase().replace(/\s+/g, "-")}.json`;
+                        a.click();
+                        URL.revokeObjectURL(url);
+                        showToast("📥 File backup JSON berhasil diunduh!");
+                    }
+                },
+                {
+                    text: "📤 Muat / Restore dari File Backup (.json)",
+                    fn: () => {
+                        const inp = document.createElement("input");
+                        inp.type = "file";
+                        inp.accept = ".json,application/json";
+                        inp.onchange = (ev) => {
+                            const file = ev.target.files[0];
+                            if (!file) return;
+                            const reader = new FileReader();
+                            reader.onload = (re) => {
+                                try {
+                                    const obj = JSON.parse(re.target.result);
+                                    if (!obj || !obj.player || !obj.player.stats) {
+                                        showToast("File save JSON tidak valid!");
+                                        return;
+                                    }
+                                    safeStorageSet(SAVE_STORAGE_KEY, JSON.stringify(obj));
+                                    loadGameFromLocal();
+                                    showToast("✅ Progres berhasil dipulihkan dari file JSON!");
+                                } catch (err) {
+                                    showToast("Gagal membaca file backup JSON!");
+                                }
+                            };
+                            reader.readAsText(file);
+                        };
+                        inp.click();
+                    }
+                },
+                {
+                    text: "✕ Tutup Menu Save",
+                    fn: () => {}
+                }
+            ],
+            "💾 LOCALSTORAGE SAVE MANAGER"
+        );
+    }
+
+    // Daftarkan Service Worker PWA agar siap dibungkus menjadi APK (PWABuilder / TWA / Capacitor)
+    if ("serviceWorker" in navigator) {
+        window.addEventListener("load", function () {
+            navigator.serviceWorker.register("/sw.js").catch(function (err) {
+                console.warn("SW registration skipped:", err);
+            });
+        });
+    }
+
+    if ("caches" in window) {
+        caches.keys().then(function (names) {
+            names.forEach(function (name) { caches.delete(name); });
+        }).catch(function () {});
+    }
+
+    function initWarga62App() {
+        purgeLegacyAndCorruptStorage();
         if (!loadGameFromLocal()) {
             openSplashScreenModal();
         }
-    };
+    }
+
+    if (document.readyState === "loading") {
+        document.addEventListener("DOMContentLoaded", initWarga62App);
+    } else {
+        initWarga62App();
+    }
 </script>
 </body>
 </html>
